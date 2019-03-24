@@ -9,10 +9,6 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
-
 public class Main extends Application {
 
     @Override
@@ -32,8 +28,6 @@ public class Main extends Application {
         Vehicle vehicle = (Vehicle)  hibernateSession.getSession().load(Vehicle.class, new Integer(1));
         if(vehicle != null)
             System.out.println(vehicle.getName());
-
-
 
 
         launch();
