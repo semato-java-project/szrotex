@@ -37,7 +37,7 @@ public class Authorisation {
 
         md.update(input.getBytes());
         byte[] digest = md.digest();
-        String hash = DatatypeConverter.printHexBinary(digest);
+        String hash = DatatypeConverter.printHexBinary(digest).toLowerCase();
 
         return hash;
     }
@@ -63,9 +63,13 @@ public class Authorisation {
         criteria.add(Restrictions.eq("email", email));
         User user = (User) criteria.uniqueResult();
 
+        if (user == null) {
+            throw new InvalidCredentialsException("Invalid credentials.");
+        }
+
         String hashedPassword = this.generateHashedPassword(rawPassword, user.getSalt());
 
-        if (hashedPassword != user.getPassword()) {
+        if (! hashedPassword.equals(user.getPassword())) {
             throw new InvalidCredentialsException("Invalid credentials.");
         }
 
@@ -77,7 +81,5 @@ public class Authorisation {
             super(message);
         }
     }
-
-
 
 }

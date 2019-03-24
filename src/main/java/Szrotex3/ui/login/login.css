@@ -1,0 +1,42 @@
+
+.root
+{
+    -fx-background-color: #FFF;
+
+}
+.jfx-text-field
+{
+    -fx-pref-width: 220;
+}
+
+.jfx-password-field
+{
+    -fx-pref-width: 220;
+}
+
+
+#login_left_bg
+{
+    -fx-pref-width: 500;
+    -fx-pref-height: 600;
+    -fx-background-color: #FFFFFF;
+}
+
+#login_right_bg
+{
+    -fx-background-color: #242424;
+}
+
+#login_button
+{
+    -fx-background-color: #016984;
+    -fx-pref-width: 220;
+    -fx-pref-height: 30;
+    -fx-text-fill: #FFFFFF;
+}
+#login_button:hover
+{
+    -fx-background-color: #0093B9;
+}
+
+
