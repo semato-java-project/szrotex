@@ -15,7 +15,7 @@
          <children>
             <ImageView fitHeight="150.0" fitWidth="48.0" layoutX="86.0" layoutY="122.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../resources/assets/account_main.png" />
+                  <Image url="@../../../../resources/assets/account_main.png" />
                </image>
             </ImageView>
             <Text fx:id="username" fill="WHITE" layoutX="67.0" layoutY="188.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Witaj, Mietek" textAlignment="CENTER">
@@ -48,7 +48,7 @@
             </Text>
             <ImageView fx:id="CloseButton" fitHeight="18.0" fitWidth="18.0" layoutX="957.0" layoutY="30.0" onMousePressed="#handleCloseButtonAction" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../resources/assets/close_icon.png" />
+                  <Image url="@../../../../resources/assets/close_icon.png" />
                </image>
             </ImageView>
             <Text fill="WHITE" layoutX="47.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SEMATO">

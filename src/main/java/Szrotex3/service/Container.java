@@ -12,6 +12,7 @@ public class Container {
     BeanFactory factory = null;
 
     private Container() {
+//        this.context = new ClassPathXmlApplicationContext("/home/fishkiller/projects/java/semato/szrotex/src/main/resources/META-INF/beans.xml");
         this.context = new ClassPathXmlApplicationContext("META-INF/beans.xml");
         this.factory = this.context;
     }
