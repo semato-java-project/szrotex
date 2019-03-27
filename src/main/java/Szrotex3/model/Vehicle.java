@@ -6,15 +6,17 @@ public class Vehicle {
     private String name;
     private double price;
     private String color;
+    private String linkToImg;
 
     public Vehicle() {
 
     }
 
-    public Vehicle(String name, double price, String color) {
+    public Vehicle(String name, double price, String color, String linkToImg) {
         this.name = name;
         this.price = price;
         this.color = color;
+        this.linkToImg = linkToImg;
     }
 
     public int getId() {
