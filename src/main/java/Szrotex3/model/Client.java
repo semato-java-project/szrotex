@@ -3,11 +3,11 @@ package Szrotex3.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name='Client')
+@Table(name="Client")
 public class Client {
 
     @Id
-    @Column(name='id')
+    @Column(name="id")
     private int id;
 
     @PrimaryKeyJoinColumn

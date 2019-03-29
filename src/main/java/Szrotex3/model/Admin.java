@@ -2,9 +2,11 @@ package Szrotex3.model;
 
 import javax.persistence.*;
 
+@Entity
+@Table(name="Admin")
 public class Admin {
     @Id
-    @Column(name='id')
+    @Column(name="id")
     private int id;
 
     @PrimaryKeyJoinColumn

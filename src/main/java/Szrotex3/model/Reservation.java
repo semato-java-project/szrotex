@@ -8,7 +8,7 @@ import java.util.Date;
 @Table(name="reservation")
 public class Reservation {
     @Id
-    @Column(name='id')
+    @Column(name="id")
     private int id;
 
 
@@ -22,11 +22,11 @@ public class Reservation {
     private Client client;
 
 
-    @Column(name='date_start')
+    @Column(name="date_start")
     private Date date_start;
 
 
-    @Column(name='date_end')
+    @Column(name="date_end")
     private Date date_end;
 
 
