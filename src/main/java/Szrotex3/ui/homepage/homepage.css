@@ -1,0 +1,39 @@
+#leftpane_menu
+{
+    -fx-background-color: #242424;
+}
+
+#topbar
+{
+    -fx-background-color: #016984;
+}
+
+.menubutton
+{
+    -fx-background-color: #1A1A1A;
+
+    -fx-pref-width: 220;
+    -fx-pref-height: 50;
+    -fx-border-radius: 0;
+}
+
+.menubutton:hover
+{
+    -fx-background-color: #016984;
+}
+
+.pane
+{
+    -fx-background-color: #eaeaea;
+}
+/*
+.pricepane
+{
+    -fx-background-color: #2D2D2D;
+}
+
+.pricepane:hover
+{
+    -fx-background-color: #016984;
+}
+*/

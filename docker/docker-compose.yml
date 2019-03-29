@@ -1,0 +1,15 @@
+version: '3'
+services:
+  mysql:
+    container_name: szrotex_mysql
+    image: mysql:5.7.25
+    environment:
+      MYSQL_ROOT_PASSWORD: 'root'
+      MYSQL_USER: 'szrotex'
+      MYSQL_PASS: 'szrotex'
+    ports:
+      - 3306:3306
+    volumes:
+      - ./mysql_data:/var/lib/mysql
+volumes:
+  mysql_data:

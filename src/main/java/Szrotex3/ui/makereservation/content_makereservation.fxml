@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTimePicker?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="makereservation_content_pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="490.0" prefWidth="750.0" stylesheets="@makereservation.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Szrotex3.ui.makereservation.MakeReservationController">
+   <children>
+      <Pane fx:id="backToOfertaButton" accessibleRole="BUTTON" layoutX="10.0" layoutY="14.0" onMousePressed="#BackToOferta" prefHeight="35.0" prefWidth="128.0">
+         <children>
+            <ImageView fitHeight="30.0" fitWidth="30.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../resources/assets/back_arrow.png" />
+               </image>
+            </ImageView>
+            <Text fill="#016984" layoutX="36.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wróć do oferty">
+               <font>
+                  <Font name="Arial" size="13.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <JFXDatePicker defaultColor="#016984" layoutX="87.0" layoutY="177.0" promptText="Wybierz datę odbioru" />
+      <JFXDatePicker defaultColor="#016984" layoutX="87.0" layoutY="248.0" promptText="Wybierz datę zwrotu" />
+      <Text fill="#016984" layoutX="87.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data:">
+         <font>
+            <Font name="Arial" size="20.0" />
+         </font>
+      </Text>
+      <Text fill="#016984" layoutX="288.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Godzina:">
+         <font>
+            <Font name="Arial" size="20.0" />
+         </font>
+      </Text>
+      <JFXTimePicker defaultColor="#016984" layoutX="290.0" layoutY="177.0" prefWidth="110.0" />
+      <JFXTimePicker defaultColor="#016984" layoutX="290.0" layoutY="248.0" prefWidth="110.0" />
+      <Text fill="#016984" layoutX="482.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wybrany samochód:">
+         <font>
+            <Font name="Arial" size="20.0" />
+         </font>
+      </Text>
+      <JFXButton id="reseveButton" layoutX="473.0" layoutY="386.0" prefWidth="200.0" text="REZERWUJĘ" />
+      <Pane id="backgroundpane" layoutX="87.0" layoutY="386.0" prefHeight="25.0" prefWidth="387.0" />
+   </children>
+</AnchorPane>

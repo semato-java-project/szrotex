@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="oferta_content_pane" prefHeight="490.0" prefWidth="750.0" stylesheets="@content_oferta.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Szrotex3.ui.oferta.OfertaController">
+   <children>
+      <Pane prefHeight="110.0" prefWidth="750.0" styleClass="OneCarPane">
+         <children>
+            <Text fill="#016984" layoutX="234.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Car Name">
+               <font>
+                  <Font name="Arial" size="20.0" />
+               </font></Text>
+            <ImageView fitHeight="100.0" fitWidth="180.0" layoutX="14.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../resources/assets/bmw_m2_login.png" />
+               </image>
+            </ImageView>
+            <Text fill="WHITE" layoutX="655.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Price" text="239 zł">
+               <font>
+                  <Font name="Arial" size="15.0" />
+               </font>
+            </Text>
+            <Text layoutX="234.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Należy zmienić obrazek na mniejszy aby się tak nie skalował, tutaj z bazy opis samochodu się wrzuci" wrappingWidth="220.0" />
+            <Text layoutX="656.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="brutto / doba" />
+            <JFXButton fx:id="ReserveButton" layoutX="606.0" layoutY="66.0" onAction="#ShowReservationDetails" styleClass="ReserveButton" text="ZAREZERWUJ" />
+         </children>
+      </Pane>
+      <Pane layoutX="-5.0" layoutY="120.0" prefHeight="110.0" prefWidth="750.0" styleClass="OneCarPane">
+         <children>
+            <Text fill="#016984" layoutX="234.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Car Name">
+               <font>
+                  <Font name="Arial" size="20.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="100.0" fitWidth="180.0" layoutX="14.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../resources/assets/bmw_m2_login.png" />
+               </image>
+            </ImageView>
+            <Text fill="WHITE" layoutX="655.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Price" text="239 zł">
+               <font>
+                  <Font name="Arial" size="15.0" />
+               </font>
+            </Text>
+            <Text layoutX="234.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Należy zmienić obrazek na mniejszy aby się tak nie skalował, tutaj z bazy opis samochodu się wrzuci" wrappingWidth="220.0" />
+            <Text layoutX="656.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="brutto / doba" />
+            <JFXButton layoutX="606.0" layoutY="66.0" onAction="#ShowReservationDetails" styleClass="ReserveButton" text="ZAREZERWUJ" />
+         </children>
+      </Pane>
+      <Pane layoutX="-7.0" layoutY="240.0" prefHeight="110.0" prefWidth="750.0" styleClass="OneCarPane">
+         <children>
+            <Text fill="#016984" layoutX="234.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Car Name">
+               <font>
+                  <Font name="Arial" size="20.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="100.0" fitWidth="180.0" layoutX="14.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../resources/assets/bmw_m2_login.png" />
+               </image>
+            </ImageView>
+            <Text fill="WHITE" layoutX="655.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Price" text="239 zł">
+               <font>
+                  <Font name="Arial" size="15.0" />
+               </font>
+            </Text>
+            <Text layoutX="234.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Należy zmienić obrazek na mniejszy aby się tak nie skalował, tutaj z bazy opis samochodu się wrzuci" wrappingWidth="220.0" />
+            <Text layoutX="656.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="brutto / doba" />
+            <JFXButton layoutX="606.0" layoutY="66.0" onAction="#ShowReservationDetails" styleClass="ReserveButton" text="ZAREZERWUJ" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="MainAnchorPane" prefHeight="600.0" prefWidth="1000.0" stylesheets="@homepage.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Szrotex3.ui.homepage.HomePageController">
+   <children>
+      <Pane id="leftpane_menu" prefHeight="600.0" prefWidth="220.0">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="48.0" layoutX="86.0" layoutY="122.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../resources/assets/account_main.png" />
+               </image>
+            </ImageView>
+            <Text fx:id="username" fill="WHITE" layoutX="67.0" layoutY="188.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Witaj, Mietek" textAlignment="CENTER">
+               <font>
+                  <Font name="Arial" size="15.0" />
+               </font></Text>
+            <Text fill="#016984" layoutX="22.0" layoutY="207.0" strokeType="OUTSIDE" strokeWidth="0.0" text="obecnie brak pojazdów w ofercie" textAlignment="CENTER" wrappingWidth="175.4721622467041">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font></Text>
+            <JFXButton layoutY="297.0" onAction="#changeContentToOferta" styleClass="menubutton" text="Oferta" textFill="WHITE" textOverrun="CLIP" />
+            <JFXButton layoutY="352.0" onAction="#changeContentToKlienci" styleClass="menubutton" text="Klienci" textFill="WHITE" textOverrun="CLIP" />
+            <JFXButton layoutY="407.0" onAction="#changeContentToUstawienia" styleClass="menubutton" text="Ustawienia" textFill="WHITE" textOverrun="CLIP" />
+            <JFXButton layoutY="462.0" onAction="#changeContentToWypozyczenia" styleClass="menubutton" text="Wypożyczenia" textFill="WHITE" textOverrun="CLIP" />
+            <JFXButton fx:id="LogOutButton" layoutY="517.0" onAction="#logOut" styleClass="menubutton" text="Wyloguj" textFill="WHITE" textOverrun="CLIP" />
+            <Text fill="WHITE" layoutX="55.0" layoutY="261.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Panel administratora">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Text>
+            <Separator layoutX="10.0" layoutY="230.0" opacity="0.17" prefWidth="200.0" />
+            <Separator layoutX="10.0" layoutY="276.0" opacity="0.17" prefWidth="200.0" />
+         </children></Pane>
+      <Pane id="topbar" prefHeight="90.0" prefWidth="1000.0">
+         <children>
+            <Text fx:id="TopPathInfo" fill="WHITE" layoutX="245.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Oferta">
+               <font>
+                  <Font name="Arial" size="23.0" />
+               </font>
+            </Text>
+            <ImageView fx:id="CloseButton" fitHeight="18.0" fitWidth="18.0" layoutX="957.0" layoutY="30.0" onMousePressed="#handleCloseButtonAction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../resources/assets/close_icon.png" />
+               </image>
+            </ImageView>
+            <Text fill="WHITE" layoutX="47.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SEMATO">
+               <font>
+                  <Font name="Arial Black" size="27.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="68.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="C A R  R E N T">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <AnchorPane fx:id="holderPane" layoutX="231.0" layoutY="100.0" prefHeight="490.0" prefWidth="750.0" />
+   </children>
+</AnchorPane>
