@@ -31,10 +31,13 @@
         <!-- Drop and re-create the database schema on startup -->
         <property name="hbm2ddl.auto">update</property>
 
-        <mapping resource="hibernate/hbm/Vehicle.hbm.xml"/>
-        <mapping resource="hibernate/hbm/User.hbm.xml"/>
-        <mapping resource="hibernate/hbm/Car.hbm.xml"/>
 
+        <mapping resource="hibernate/hbm/User.hbm.xml"/>
+        <mapping class="Szrotex3.model.Car"/>
+        <mapping class="Szrotex3.model.Vehicle"/>
+        <mapping class="Szrotex3.model.Client"/>
+        <mapping class="Szrotex3.model.Admin"/>
+        <mapping class="Szrotex3.model.Reservation"/>
 
     </session-factory>
 
