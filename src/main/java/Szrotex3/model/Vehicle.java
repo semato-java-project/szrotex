@@ -3,23 +3,23 @@ package Szrotex3.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name='vehicle');
+@Table(name="vehicle")
 public class Vehicle {
 
-    @id
-    @Column(name='id')
+    @Id
+    @Column(name="id")
     private int id;
 
-    @Column(name='name')
+    @Column(name="name")
     private String name;
 
-    @Column(name='price')
+    @Column(name="price")
     private double price;
 
-    @Column(name='color')
+    @Column(name="color")
     private String color;
 
-    @Column(name='linkToImg')
+    @Column(name="linkToImg")
     private String linkToImg;
 
     public Vehicle() {

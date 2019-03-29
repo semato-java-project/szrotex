@@ -3,38 +3,38 @@ package Szrotex3.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name='car')
+@Table(name="car")
 public class Car {
 
     @Id
-    @Column(name = 'id');
+    @Column(name = "id")
     private int id;
 
-    @Column(name = 'brand');
+    @Column(name = "brand")
     private String brand;
 
-    @Column(name = 'model');
+    @Column(name = "model")
     private String model;
 
-    @Column(name = 'engineCapacity');
+    @Column(name = "engineCapacity")
     private double engineCapacity;
 
-    @Column(name = 'engineType');
+    @Column(name = "engineType")
     private String engineType;
 
-    @Column(name = 'transsmision');
+    @Column(name = "transsmision")
     private String transsmision;
 
-    @Column(name = 'enginePower');
+    @Column(name = "enginePower")
     private int enginePower;
 
-    @Column(name = 'productionYear');
+    @Column(name = "productionYear")
     private int productionYear;
 
-    @Column(name = 'doorsQuantity');
+    @Column(name = "doorsQuantity")
     private int doorsQuantity;
 
-    @Column(name = 'seatsQuantity');
+    @Column(name = "seatsQuantity")
     private int seatsQuantity;
 
     @PrimaryKeyJoinColumn
