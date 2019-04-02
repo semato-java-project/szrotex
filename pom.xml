@@ -51,8 +51,6 @@
 
     </dependencies>
 
-
-
     <build>
         <plugins>
             <plugin>
@@ -86,10 +84,6 @@
                     <include>**/*.fxml</include>
                     <include>**/*.css</include>
                 </includes>
-            </resource>
-            <resource>
-                <targetPath>${basedir}/target/resources/assets</targetPath>
-                <directory>src/main/resources/assets</directory>
             </resource>
         </resources>
     </build>

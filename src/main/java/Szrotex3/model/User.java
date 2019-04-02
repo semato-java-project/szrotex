@@ -3,17 +3,35 @@ package Szrotex3.model;
 import Szrotex3.service.Authorisation;
 import Szrotex3.service.Container;
 
+import javax.persistence.*;
 import java.sql.Date;
 import java.util.Calendar;
 
+@Entity
+@Table(name = "user")
 public class User {
 
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    @Column(name = "id")
     private int id;
+
+    @Column(name = "email")
     private String email;
+
+    @Column(name = "password")
     private String password;
+
+    @Column(name = "salt")
     private String salt;
+
+    @Column(name = "created_at")
     private Date createdAt;
+
+    @Column(name = "first_name")
     private String firstName;
+
+    @Column(name = "last_name")
     private String lastName;
 
     public User() {
