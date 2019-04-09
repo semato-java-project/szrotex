@@ -48,13 +48,13 @@ public class OneToOneTestCar {
 
         System.out.println("VehicleId: " + vehicleId);
 
-        hibernateSession.getSession().delete(fetchedBoat);
+        hibernateSession.getSession().delete(fetchedCar);
         hibernateSession.getSession().flush();
 
-        Boat deletedBoat = (Boat)  hibernateSession.getSession().get(Boat.class, boatId);
+        Car deletedCar = (Car)  hibernateSession.getSession().get(Car.class, carId);
         Vehicle deletedVehicle = (Vehicle)  hibernateSession.getSession().get(Vehicle.class, vehicleId);
 
-        assertNull(deletedBoat);
+        assertNull(deletedCar);
         assertNull(deletedVehicle);
 
     }
