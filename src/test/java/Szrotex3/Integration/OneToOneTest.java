@@ -45,7 +45,7 @@ public class OneToOneTest {
         System.out.println("VehicleId: " + vehicleId);
 
         //hibernateSession.getSession().delete(fetchedBoat);
-        hibernateSession.getSession().flush();
+        //hibernateSession.getSession().flush();
 
         //Boat deletedBoat = (Boat)  hibernateSession.getSession().get(Boat.class, boatId);
         //Vehicle deletedVehicle = (Vehicle)  hibernateSession.getSession().get(Vehicle.class, vehicleId);
