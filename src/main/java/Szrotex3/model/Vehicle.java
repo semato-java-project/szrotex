@@ -3,22 +3,24 @@ package Szrotex3.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "vehicle")
+@Table(name="vehicle")
 public class Vehicle {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
-    @Column(name = "id")
+    @GeneratedValue
+    @Column(name="id")
     private int id;
 
-    @Column(name = "name")
+    @Column(name="name")
     private String name;
 
-    @Column(name = "price")
+    @Column(name="price")
     private double price;
 
-    @Column(name = "color")
+    @Column(name="color")
     private String color;
+
+    @Column(name="linkToImg")
     private String linkToImg;
 
     public Vehicle() {
@@ -34,6 +36,10 @@ public class Vehicle {
 
     public int getId() {
         return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -58,6 +64,14 @@ public class Vehicle {
 
     public void setColor(String color) {
         this.color = color;
+    }
+
+    public String getLinkToImg() {
+        return linkToImg;
+    }
+
+    public void setLinkToImg(String linkToImg) {
+        this.linkToImg = linkToImg;
     }
 
 }

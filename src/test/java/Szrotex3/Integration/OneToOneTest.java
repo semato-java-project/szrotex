@@ -33,6 +33,7 @@ public class OneToOneTest {
 
         Vehicle fetchedVehicle = fetchedBoat.getVehicle();
 
+
         assertNotNull(fetchedVehicle);
 
         assertEquals(newVehicle.getName(), fetchedVehicle.getName());
