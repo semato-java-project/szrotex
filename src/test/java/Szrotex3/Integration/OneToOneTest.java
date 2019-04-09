@@ -15,7 +15,7 @@ public class OneToOneTest {
 
         HibernateSession hibernateSession = (HibernateSession) Container.getBean("hibernateSession");
 
-        Vehicle newVehicle = new Vehicle("Maxus 33", 42, "black");
+        Vehicle newVehicle = new Vehicle("Maxus 33", 42, "black", "/src/main/resources/assets/jakisorbrazek.img");
         hibernateSession.getSession().persist(newVehicle);
 
         Boat newBoat = new Boat(newVehicle,6201);

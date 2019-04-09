@@ -34,6 +34,7 @@
 
         <mapping resource="hibernate/hbm/User.hbm.xml"/>
         <mapping class="Szrotex3.model.Car"/>
+        <mapping class="Szrotex3.model.Boat"/>
         <mapping class="Szrotex3.model.Vehicle"/>
         <mapping class="Szrotex3.model.Client"/>
         <mapping class="Szrotex3.model.Admin"/>
