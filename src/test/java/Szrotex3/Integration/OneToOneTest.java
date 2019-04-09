@@ -2,6 +2,7 @@ package Szrotex3.Integration;
 
 import Szrotex3.model.Boat;
 import Szrotex3.model.Vehicle;
+import Szrotex3.model.Car;
 import Szrotex3.service.Container;
 import Szrotex3.service.HibernateSession;
 import org.junit.Test;
@@ -18,35 +19,39 @@ public class OneToOneTest {
         Vehicle newVehicle = new Vehicle("Maxus 33", 42, "black", "/src/main/resources/assets/jakisorbrazek.img");
         hibernateSession.getSession().persist(newVehicle);
 
-        Boat newBoat = new Boat(newVehicle,6201);
+        /*Boat newBoat = new Boat(newVehicle,6201);
+        hibernateSession.getSession().persist(newBoat);*/
 
-        hibernateSession.getSession().persist(newBoat);
+        Car newCar = new Car(newVehicle, "Peugeot", "206", 1.4, "diesel", "manual", 125, 2000, 2, 5);
+        hibernateSession.getSession().persist(newCar);
         hibernateSession.getSession().flush();
 
-        int boatId = newBoat.getId();
+        int carId = newCar.getId();
+        System.out.println("CarId: " + carId);
 
-        Boat fetchedBoat = (Boat)  hibernateSession.getSession().get(Boat.class, boatId);
+        Car fetchedCar = (Car)  hibernateSession.getSession().get(Car.class, carId);
 
-        assertNotNull(fetchedBoat);
+        assertNotNull(fetchedCar);
 
-        assertEquals(newBoat.getDisplacement(), fetchedBoat.getDisplacement());
+        assertEquals(newCar.getBrand(), fetchedCar.getBrand());
 
-        Vehicle fetchedVehicle = fetchedBoat.getVehicle();
+        Vehicle fetchedVehicle = fetchedCar.getVehicle();
 
         assertNotNull(fetchedVehicle);
 
         assertEquals(newVehicle.getName(), fetchedVehicle.getName());
 
         int vehicleId = fetchedVehicle.getId();
+        System.out.println("VehicleId: " + vehicleId);
 
-        hibernateSession.getSession().delete(fetchedBoat);
+        //hibernateSession.getSession().delete(fetchedBoat);
         hibernateSession.getSession().flush();
 
-        Boat deletedBoat = (Boat)  hibernateSession.getSession().get(Boat.class, boatId);
-        Vehicle deletedVehicle = (Vehicle)  hibernateSession.getSession().get(Vehicle.class, vehicleId);
+        //Boat deletedBoat = (Boat)  hibernateSession.getSession().get(Boat.class, boatId);
+        //Vehicle deletedVehicle = (Vehicle)  hibernateSession.getSession().get(Vehicle.class, vehicleId);
 
-        assertNull(deletedBoat);
-        assertNull(deletedVehicle);
+        //assertNull(deletedBoat);
+        //assertNull(deletedVehicle);
 
     }
 

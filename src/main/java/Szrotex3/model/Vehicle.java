@@ -7,6 +7,7 @@ import javax.persistence.*;
 public class Vehicle {
 
     @Id
+    @GeneratedValue
     @Column(name="id")
     private int id;
 
@@ -65,6 +66,13 @@ public class Vehicle {
         this.color = color;
     }
 
+    public String getLinkToImg() {
+        return linkToImg;
+    }
+
+    public void setLinkToImg(String linkToImg) {
+        this.linkToImg = linkToImg;
+    }
 }
 
 
