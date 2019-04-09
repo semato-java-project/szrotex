@@ -32,7 +32,7 @@
         <property name="hbm2ddl.auto">update</property>
 
         <mapping class="Szrotex3.model.Vehicle"/>
-        <mapping resource="hibernate/hbm/User.hbm.xml"/>
+        <mapping class="Szrotex3.model.User"/>
         <mapping class="Szrotex3.model.Boat"/>
 
     </session-factory>
