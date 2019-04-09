@@ -73,6 +73,7 @@ public class Vehicle {
     public void setLinkToImg(String linkToImg) {
         this.linkToImg = linkToImg;
     }
+
 }
 
 

@@ -134,6 +134,7 @@ public class Car {
         this.productionYear = productionYear;
     }
 
+
     public int getDoorsQuantity() {
         return doorsQuantity;
     }
@@ -148,5 +149,6 @@ public class Car {
 
     public void setSeatsQuantity(int seatsQuantity) {
         this.seatsQuantity = seatsQuantity;
+
     }
 }
