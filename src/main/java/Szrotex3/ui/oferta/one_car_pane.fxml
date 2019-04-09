@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="110.0" prefWidth="735.0" styleClass="OneCarPane" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Text fill="#016984" layoutX="196.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Car Name">
+         <font>
+            <Font name="Arial" size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="196.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Należy zmienić obrazek na mniejszy aby się tak nie skalował, tutaj z bazy opis samochodu się wrzuci" wrappingWidth="220.0" />
+      <Text fill="#016984" layoutX="649.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="239 zł">
+         <font>
+            <Font name="Arial" size="27.0" />
+         </font>
+      </Text>
+      <Text layoutX="649.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="brutto / doba" />
+      <JFXButton layoutX="595.0" layoutY="66.0" styleClass="ReserveButton" stylesheets="@content_oferta.css" text="ZAREZERWUJ" />
+      <ImageView fitHeight="100.0" fitWidth="180.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../resources/assets/bmw_m2_login.png" />
+         </image>
+      </ImageView>
+   </children>
+</Pane>
