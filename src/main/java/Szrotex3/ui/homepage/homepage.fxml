@@ -18,7 +18,7 @@
                   <Image url="@/assets/account_main.png" />
                </image>
             </ImageView>
-            <Text fx:id="username" fill="WHITE" layoutX="67.0" layoutY="188.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Witaj, Mietek" textAlignment="CENTER">
+            <Text fx:id="username" fill="WHITE" layoutX="6.0" layoutY="187.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Witaj, Mietek" textAlignment="CENTER" wrappingWidth="207.84716796875">
                <font>
                   <Font name="Arial" size="15.0" />
                </font></Text>
