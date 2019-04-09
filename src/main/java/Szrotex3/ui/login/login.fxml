@@ -21,17 +21,23 @@
             <JFXPasswordField fx:id="password" focusColor="#016984" layoutX="130.0" layoutY="301.0" promptText="Hasło" />
             <ImageView fitHeight="70.0" fitWidth="80.0" layoutX="205.0" layoutY="121.0" pickOnBounds="true" preserveRatio="true">
                <image>
+
                   <Image url="@/assets/outline_lock_black_48dp.png" />
+
                </image>
             </ImageView>
             <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="72.0" layoutY="238.0">
                <image>
+
                   <Image url="@/assets/baseline_account_circle_black_48dp.png" />
+
                </image>
             </ImageView>
             <ImageView layoutX="74.0" layoutY="308.0">
                <image>
+
                   <Image url="@/assets/baseline_vpn_key_black_18dp.png" />
+
                </image>
             </ImageView>
             <JFXButton id="login_button" layoutX="130.0" layoutY="377.0" onAction="#handleLoginButtonAction" text="ZALOGUJ" />
@@ -44,7 +50,9 @@
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#016984" height="116.0" layoutY="98.0" stroke="BLACK" strokeMiterLimit="0.0" strokeType="INSIDE" strokeWidth="0.0" width="500.0" />
             <ImageView fitHeight="308.0" fitWidth="630.0" layoutX="-130.0" layoutY="278.0" pickOnBounds="true" preserveRatio="true">
                <image>
+
                   <Image url="@/assets/bmw_m2_login.png" />
+
                </image>
             </ImageView>
             <Text fill="WHITE" layoutX="92.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SEMATO">
@@ -59,7 +67,9 @@
             </Text>
             <ImageView fx:id="CloseButton" fitHeight="18.0" fitWidth="18.0" layoutX="462.0" layoutY="14.0" onMousePressed="#handleCloseButtonAction" pickOnBounds="true" preserveRatio="true">
                <image>
+
                   <Image url="@/assets/close_icon.png" />
+
                </image>
             </ImageView>
          </children></Pane>

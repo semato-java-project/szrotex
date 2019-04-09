@@ -1,33 +1,80 @@
 package Szrotex3.model;
 
-import java.util.Date;
+import javax.persistence.*;
 
-public class Car extends Vehicle {
+@Entity
+@Table(name="car")
+public class Car {
+
+    @Id
+    @Column(name = "id")
     private int id;
+
+    @Column(name = "brand")
     private String brand;
+
+    @Column(name = "model")
     private String model;
+
+    @Column(name = "engineCapacity")
     private double engineCapacity;
+
+    @Column(name = "engineType")
     private String engineType;
+
+    @Column(name = "transsmision")
+    private String transsmision;
+
+    @Column(name = "enginePower")
     private int enginePower;
+
+    @Column(name = "productionYear")
     private int productionYear;
-    private int countOfDoors;
-    private int countOfSeats;
+
+    @Column(name = "doorsQuantity")
+    private int doorsQuantity;
+
+    @Column(name = "seatsQuantity")
+    private int seatsQuantity;
+
+    @PrimaryKeyJoinColumn
+    @OneToOne(cascade = CascadeType.ALL, optional = false)
+    private Vehicle vehicle;
 
     public Car()
     {
 
     }
 
-    public Car(String name, double price, String color, String linkToImg, String brand, String model, double engineCapacity, String engineType, int enginePower, int productionYear, int countOfDoors, int countOfSeats) {
-        super(name, price, color, linkToImg);
+    public Car(Vehicle vehicle, String brand, String model, double engineCapacity, String engineType, String transsmision, int enginePower, int productionYear, int doorsQuantity, int seatsQuantity) {
+        this.setVehicle(vehicle);
         this.brand = brand;
         this.model = model;
         this.engineCapacity = engineCapacity;
         this.engineType = engineType;
+        this.transsmision = transsmision;
         this.enginePower = enginePower;
         this.productionYear = productionYear;
-        this.countOfDoors = countOfDoors;
-        this.countOfSeats = countOfSeats;
+        this.doorsQuantity = doorsQuantity;
+        this.seatsQuantity = seatsQuantity;
+
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Vehicle getVehicle() {
+        return vehicle;
+    }
+
+    public void setVehicle(Vehicle vehicle) {
+        this.id= vehicle.getId();
+        this.vehicle = vehicle;
     }
 
 
@@ -63,6 +110,14 @@ public class Car extends Vehicle {
         this.engineType = engineType;
     }
 
+    public String getTranssmision() {
+        return transsmision;
+    }
+
+    public void setTranssmision(String transsmision) {
+        this.transsmision = transsmision;
+    }
+
     public int getEnginePower() {
         return enginePower;
     }
@@ -79,19 +134,21 @@ public class Car extends Vehicle {
         this.productionYear = productionYear;
     }
 
-    public int getCountOfDoors() {
-        return countOfDoors;
+
+    public int getDoorsQuantity() {
+        return doorsQuantity;
     }
 
-    public void setCountOfDoors(int countOfDoors) {
-        this.countOfDoors = countOfDoors;
+    public void setDoorsQuantity(int doorQuantity) {
+        this.doorsQuantity = doorsQuantity;
     }
 
-    public int getCountOfSeats() {
-        return countOfSeats;
+    public int getSeatsQuantity() {
+        return seatsQuantity;
     }
 
-    public void setCountOfSeats(int countOfSeats) {
-        this.countOfSeats = countOfSeats;
+    public void setSeatsQuantity(int seatsQuantity) {
+        this.seatsQuantity = seatsQuantity;
+
     }
 }

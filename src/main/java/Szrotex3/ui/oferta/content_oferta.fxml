@@ -18,7 +18,9 @@
                </font></Text>
             <ImageView fitHeight="100.0" fitWidth="180.0" layoutX="14.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                <image>
+
                   <Image url="@/assets/bmw_m2_login.png" />
+
                </image>
             </ImageView>
             <Text fill="WHITE" layoutX="655.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Price" text="239 zł">
@@ -40,7 +42,9 @@
             </Text>
             <ImageView fitHeight="100.0" fitWidth="180.0" layoutX="14.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                <image>
+
                   <Image url="@/assets/bmw_m2_login.png" />
+
                </image>
             </ImageView>
             <Text fill="WHITE" layoutX="655.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Price" text="239 zł">
@@ -62,7 +66,9 @@
             </Text>
             <ImageView fitHeight="100.0" fitWidth="180.0" layoutX="14.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                <image>
+
                   <Image url="@/assets/bmw_m2_login.png" />
+
                </image>
             </ImageView>
             <Text fill="WHITE" layoutX="655.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Price" text="239 zł">
