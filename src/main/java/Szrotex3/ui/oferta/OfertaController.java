@@ -19,7 +19,17 @@ public class OfertaController implements Initializable {
 
 
     @FXML
-    private AnchorPane oferta_content_pane;
+    public AnchorPane oferta_content_pane;
+
+
+    private static OfertaController instance;
+
+    public OfertaController(){
+        instance = this;
+    }
+    public static OfertaController getInstance(){
+        return instance;
+    }
 
 //   @FXML
 //    private JFXButton ReserveButton;

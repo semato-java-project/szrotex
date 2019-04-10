@@ -1,30 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Point3D?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="110.0" prefWidth="735.0" styleClass="OneCarPane" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="110.0" prefWidth="735.0" styleClass="OneCarPane" stylesheets="@content_oferta.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Szrotex3.ui.oferta.OfertaCarPaneController">
    <children>
-      <Text fill="#016984" layoutX="196.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Car Name">
+      <Pane blendMode="SRC_ATOP" prefHeight="110.0" prefWidth="15.0" styleClass="CarBackground">
+         <rotationAxis>
+            <Point3D x="1.0" y="1.0" z="1.0" />
+         </rotationAxis>
+      </Pane>
+      <Text fx:id="Marka" fill="#242424" layoutX="216.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BMW">
          <font>
             <Font name="Arial" size="20.0" />
          </font>
       </Text>
-      <Text layoutX="196.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Należy zmienić obrazek na mniejszy aby się tak nie skalował, tutaj z bazy opis samochodu się wrzuci" wrappingWidth="220.0" />
-      <Text fill="#016984" layoutX="649.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="239 zł">
+      <Text layoutX="393.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="5 osobowy" />
+      <Text fill="#242424" layoutX="648.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="239 zł">
          <font>
             <Font name="Arial" size="27.0" />
          </font>
       </Text>
-      <Text layoutX="649.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="brutto / doba" />
-      <JFXButton layoutX="595.0" layoutY="66.0" styleClass="ReserveButton" stylesheets="@content_oferta.css" text="ZAREZERWUJ" />
-      <ImageView fitHeight="100.0" fitWidth="180.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+      <Text fill="#016984" layoutX="648.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="brutto / doba" />
+      <JFXButton fx:id="ReserveButton" layoutX="595.0" layoutY="66.0" onAction="#ShowReservationDetails" styleClass="ReserveButton" stylesheets="@content_oferta.css" text="ZAREZERWUJ" />
+      <ImageView fitHeight="100.0" fitWidth="180.0" layoutX="12.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../resources/assets/bmw_m2_login.png" />
+         </image>
+      </ImageView>
+      <Text fx:id="Model" fill="#016984" layoutX="216.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="M2">
+         <font>
+            <Font name="Arial Bold" size="29.0" />
+         </font>
+      </Text>
+      <Text layoutX="396.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Benzyna" />
+      <ImageView fitHeight="22.0" fitWidth="25.0" layoutX="368.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../resources/assets/oil-icon.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="22.0" fitWidth="25.0" layoutX="368.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../resources/assets/baseline_person_black_18dp.png" />
          </image>
       </ImageView>
    </children>

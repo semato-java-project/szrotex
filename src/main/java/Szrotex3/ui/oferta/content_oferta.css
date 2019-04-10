@@ -1,11 +1,22 @@
 .OneCarPane
 {
-    -fx-background-color: #E8E8E8;
+    -fx-background-color: #ffffff;
 }
 
 .OneCarPane:hover
 {
-    -fx-background-color: #d4d4d4;
+    -fx-background-color: #f3f3f3;
+    -fx-pref-width: 725;
+}
+
+
+.CarBackground {
+    -fx-opacity: 0;
+    -fx-background-color: #016984;
+}
+
+.OneCarPane:hover > .CarBackground{
+    -fx-opacity: 1;
 }
 
 
@@ -28,3 +39,5 @@
     -fx-fill: #242424;
     -fx-font-size: 28;
 }
+
+
