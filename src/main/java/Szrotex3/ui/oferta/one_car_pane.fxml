@@ -2,6 +2,7 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.geometry.Point3D?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
@@ -20,7 +21,7 @@
             <Font name="Arial" size="20.0" />
          </font>
       </Text>
-      <Text layoutX="393.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="5 osobowy" />
+      <Text layoutX="387.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="5 osobowy" />
       <Text fill="#242424" layoutX="648.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="239 zł">
          <font>
             <Font name="Arial" size="27.0" />
@@ -30,7 +31,7 @@
       <JFXButton fx:id="ReserveButton" layoutX="595.0" layoutY="66.0" onAction="#ShowReservationDetails" styleClass="ReserveButton" stylesheets="@content_oferta.css" text="ZAREZERWUJ" />
       <ImageView fitHeight="100.0" fitWidth="180.0" layoutX="12.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../resources/assets/bmw_m2_login.png" />
+            <Image url="@/assets/bmw_m2_login.png" />
          </image>
       </ImageView>
       <Text fx:id="Model" fill="#016984" layoutX="216.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="M2">
@@ -38,15 +39,40 @@
             <Font name="Arial Bold" size="29.0" />
          </font>
       </Text>
-      <Text layoutX="396.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Benzyna" />
-      <ImageView fitHeight="22.0" fitWidth="25.0" layoutX="368.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="17.0" fitWidth="20.0" layoutX="363.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../resources/assets/oil-icon.png" />
+            <Image url="@/assets/baseline_person_black_18dp.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="22.0" fitWidth="25.0" layoutX="368.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+      <Text layoutX="517.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="cośtam" />
+      <ImageView fitHeight="17.0" fitWidth="20.0" layoutX="493.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../resources/assets/baseline_person_black_18dp.png" />
+            <Image url="@/assets/baseline_person_black_18dp.png" />
+         </image>
+      </ImageView>
+      <Separator layoutX="355.0" layoutY="23.0" orientation="VERTICAL" prefHeight="70.0" />
+      <Text layoutX="387.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="5 osobowy" />
+      <ImageView fitHeight="17.0" fitWidth="20.0" layoutX="363.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@/assets/baseline_person_black_18dp.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="517.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="cośtam" />
+      <ImageView fitHeight="17.0" fitWidth="20.0" layoutX="493.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@/assets/baseline_person_black_18dp.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="387.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="5 osobowy" />
+      <ImageView fitHeight="17.0" fitWidth="20.0" layoutX="363.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@/assets/baseline_person_black_18dp.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="517.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="cośtam" />
+      <ImageView fitHeight="17.0" fitWidth="20.0" layoutX="493.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@/assets/baseline_person_black_18dp.png" />
          </image>
       </ImageView>
    </children>
