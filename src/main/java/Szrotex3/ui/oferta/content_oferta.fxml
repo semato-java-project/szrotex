@@ -6,7 +6,7 @@
 
 <AnchorPane fx:id="oferta_content_pane" prefHeight="490.0" prefWidth="750.0" stylesheets="@content_oferta.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Szrotex3.ui.oferta.OfertaController">
    <children>
-      <ScrollPane hbarPolicy="NEVER" hmax="650.0" prefHeight="490.0" prefWidth="750.0">
+      <ScrollPane hbarPolicy="NEVER" hmax="650.0" prefHeight="490.0" prefWidth="750.0" styleClass="ScrollPane" stylesheets="@content_oferta.css">
          <content>
             <VBox fx:id="container_oferta" prefHeight="490.0" prefWidth="750.0" spacing="5.0" />
          </content>
