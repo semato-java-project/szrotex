@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -20,7 +22,7 @@
 
                </image>
             </ImageView>
-            <Text fx:id="username" fill="WHITE" layoutX="67.0" layoutY="188.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Witaj, Mietek" textAlignment="CENTER">
+            <Text fx:id="username" fill="WHITE" layoutX="6.0" layoutY="187.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Witaj, Mietek" textAlignment="CENTER" wrappingWidth="207.84716796875">
                <font>
                   <Font name="Arial" size="15.0" />
                </font></Text>
@@ -28,11 +30,29 @@
                <font>
                   <Font name="Arial" size="12.0" />
                </font></Text>
-            <JFXButton layoutY="297.0" onAction="#changeContentToOferta" styleClass="menubutton" text="Oferta" textFill="WHITE" textOverrun="CLIP" />
-            <JFXButton layoutY="352.0" onAction="#changeContentToKlienci" styleClass="menubutton" text="Klienci" textFill="WHITE" textOverrun="CLIP" />
-            <JFXButton layoutY="407.0" onAction="#changeContentToUstawienia" styleClass="menubutton" text="Ustawienia" textFill="WHITE" textOverrun="CLIP" />
-            <JFXButton layoutY="462.0" onAction="#changeContentToWypozyczenia" styleClass="menubutton" text="Wypożyczenia" textFill="WHITE" textOverrun="CLIP" />
-            <JFXButton fx:id="LogOutButton" layoutY="517.0" onAction="#logOut" styleClass="menubutton" text="Wyloguj" textFill="WHITE" textOverrun="CLIP" />
+            <JFXButton layoutX="-1.0" layoutY="297.0" onAction="#changeContentToOferta" styleClass="menubutton" text="Oferta    " textFill="WHITE">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></JFXButton>
+            <JFXButton layoutY="352.0" onAction="#changeContentToKlienci" styleClass="menubutton" text="Klienci    " textFill="WHITE" textOverrun="CLIP">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></JFXButton>
+            <JFXButton layoutY="407.0" onAction="#changeContentToUstawienia" styleClass="menubutton" text="   Ustawienia" textFill="WHITE" textOverrun="CLIP">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></JFXButton>
+            <JFXButton layoutY="462.0" onAction="#changeContentToWypozyczenia" styleClass="menubutton" text="        Wypożyczenia" textFill="WHITE" textOverrun="CLIP">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></JFXButton>
+            <JFXButton fx:id="LogOutButton" layoutY="517.0" onAction="#logOut" styleClass="menubutton" text="Wyloguj" textFill="WHITE" textOverrun="CLIP">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></JFXButton>
             <Text fill="WHITE" layoutX="55.0" layoutY="261.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Panel administratora">
                <font>
                   <Font name="Arial" size="12.0" />
@@ -40,6 +60,31 @@
             </Text>
             <Separator layoutX="10.0" layoutY="230.0" opacity="0.17" prefWidth="200.0" />
             <Separator layoutX="10.0" layoutY="276.0" opacity="0.17" prefWidth="200.0" />
+            <ImageView fitHeight="23.0" fitWidth="23.0" layoutX="55.0" layoutY="309.0" nodeOrientation="INHERIT" opacity="0.8">
+               <image>
+                  <Image url="@/assets/menu_car.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="23.0" fitWidth="23.0" layoutX="55.0" layoutY="366.0" nodeOrientation="INHERIT" opacity="0.8">
+               <image>
+                  <Image url="@/assets/menu_clients.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="23.0" fitWidth="23.0" layoutX="54.0" layoutY="421.0" nodeOrientation="INHERIT" opacity="0.8">
+               <image>
+                  <Image url="@/assets/menu_settings.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="23.0" fitWidth="23.0" layoutX="54.0" layoutY="476.0" nodeOrientation="INHERIT" opacity="0.8">
+               <image>
+                  <Image url="@/assets/menu_papers.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="23.0" fitWidth="23.0" layoutX="54.0" layoutY="531.0" nodeOrientation="INHERIT" opacity="0.8">
+               <image>
+                  <Image url="@/assets/menu_logout.png" />
+               </image>
+            </ImageView>
          </children></Pane>
       <Pane id="topbar" prefHeight="90.0" prefWidth="1000.0">
          <children>

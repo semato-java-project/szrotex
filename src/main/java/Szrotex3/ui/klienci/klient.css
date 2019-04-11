@@ -1,0 +1,9 @@
+
+.client_pane{
+    -fx-background-color: #ffffff;
+}
+
+.client_pane:hover{
+    -fx-background-color: #F3F3F3;
+}
+
