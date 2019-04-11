@@ -3,6 +3,7 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXDatePicker?>
 <?import com.jfoenix.controls.JFXTimePicker?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -20,11 +21,17 @@
                   <Image url="@/assets/back_arrow.png" />
 
                </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </ImageView>
             <Text fill="#016984" layoutX="36.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wróć do oferty">
                <font>
                   <Font name="Arial" size="13.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Text>
          </children>
       </Pane>
@@ -47,7 +54,10 @@
             <Font name="Arial" size="20.0" />
          </font>
       </Text>
-      <JFXButton id="reseveButton" layoutX="473.0" layoutY="386.0" prefWidth="200.0" text="REZERWUJĘ" />
+      <JFXButton id="reseveButton" layoutX="473.0" layoutY="386.0" prefWidth="200.0" text="REZERWUJĘ">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXButton>
       <Pane id="backgroundpane" layoutX="87.0" layoutY="386.0" prefHeight="25.0" prefWidth="387.0" />
    </children>
 </AnchorPane>
