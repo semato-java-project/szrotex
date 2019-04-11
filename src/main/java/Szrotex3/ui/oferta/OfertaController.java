@@ -31,19 +31,8 @@ public class OfertaController implements Initializable {
         return instance;
     }
 
-//   @FXML
-//    private JFXButton ReserveButton;
-
     @FXML
     private VBox container_oferta;
-
-//    @FXML
-//    void ShowReservationDetails(ActionEvent event) {
-//        oferta_content_pane.getChildren().clear();
-//        HomePageController.getInstance().createContentPage(oferta_content_pane,"/Szrotex3/ui/makereservation/content_makereservation.fxml");
-//        HomePageController.getInstance().setTopPath("Szczegóły rezerwacji");
-//    }
-
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {

@@ -1,5 +1,7 @@
 package Szrotex3;
 
+import Szrotex3.model.Car;
+import Szrotex3.model.Vehicle;
 import Szrotex3.ui.login.LoginController;
 import javafx.application.Application;
 
