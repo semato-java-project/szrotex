@@ -11,6 +11,12 @@
     -fx-background-color: #242424;
 }
 
-.backReservation{
+.backReservation
+{
     -fx-background-color: #01647e;
+}
+
+#SelectClientButton
+{
+    -fx-background-color: #242424;
 }
