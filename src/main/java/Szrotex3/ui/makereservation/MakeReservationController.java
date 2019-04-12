@@ -9,9 +9,9 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import Szrotex3.ui.homepage.HomePageController;
-import Szrotex3.ui.oferta.OfertaController;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+
 
 import java.net.URL;
 import java.util.ResourceBundle;

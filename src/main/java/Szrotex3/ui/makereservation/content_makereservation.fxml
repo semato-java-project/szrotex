@@ -95,7 +95,7 @@
             </Text>
          </children>
       </Pane>
-      <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="97.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="97.0" layoutY="113.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@/assets/baseline_account_circle_black_48dp.png" />
          </image>
@@ -120,7 +120,7 @@
             <Font name="Arial Bold" size="14.0" />
          </font>
       </Text>
-      <Text fx:id="ClientName" layoutX="141.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Imie">
+      <Text fx:id="ClientName" layoutX="138.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Imie">
          <font>
             <Font size="14.0" />
          </font>
@@ -130,7 +130,7 @@
             <Font size="14.0" />
          </font>
       </Text>
-      <JFXButton fx:id="SelectClientButton" layoutX="297.0" layoutY="118.0" onAction="#SelectClientActon" prefWidth="130.0" text="Wybierz klienta" textFill="WHITE">
+      <JFXButton fx:id="SelectClientButton" layoutX="298.0" layoutY="118.0" onAction="#SelectClientActon" prefWidth="130.0" text="Wybierz klienta" textFill="WHITE">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>

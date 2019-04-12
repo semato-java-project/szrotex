@@ -41,7 +41,10 @@
 
                </image>
             </ImageView>
-            <JFXButton id="login_button" layoutX="130.0" layoutY="377.0" onAction="#handleLoginButtonAction" text="ZALOGUJ" />
+            <JFXButton id="login_button" layoutX="130.0" layoutY="377.0" onAction="#handleLoginButtonAction" text="ZALOGUJ">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></JFXButton>
             <Text layoutX="60.0" layoutY="572.0" opacity="0.33" strokeType="OUTSIDE" strokeWidth="0.0" text="Autorzy: Sebastian Tatarczuch | Mateusz Pasich | Tomasz Wąsacz" />
             <Label fx:id="login_label" layoutX="167.0" layoutY="424.0" textFill="#ae0000" />
          </children>
