@@ -43,6 +43,14 @@ public class MakeReservationController extends MainController {
     @FXML
     private JFXButton SelectClientButton;
 
+    public Text getClientName() {
+        return ClientName;
+    }
+
+    public Text getClientSurname() {
+        return ClientSurname;
+    }
+
     private static MakeReservationController instance;
 
     public MakeReservationController(){

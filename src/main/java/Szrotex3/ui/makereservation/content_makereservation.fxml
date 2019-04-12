@@ -95,7 +95,7 @@
             </Text>
          </children>
       </Pane>
-      <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="97.0" layoutY="113.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="97.0" layoutY="117.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@/assets/baseline_account_circle_black_48dp.png" />
          </image>
