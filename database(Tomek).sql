@@ -80,10 +80,10 @@ INSERT INTO `car` (`id`, `brand`, `model`, `engineCapacity`, `engineType`, `engi
 
 CREATE TABLE `client` (
   `id` int(10) UNSIGNED NOT NULL,
-  `createdAt` date NOT NULL,
+  `created_at` date NOT NULL,
   `email` varchar(100) NOT NULL,
-  `firstName` varchar(50) NOT NULL,
-  `lastName` varchar(50) NOT NULL,
+  `first_name` varchar(50) NOT NULL,
+  `last_name` varchar(50) NOT NULL,
   `phone` int(9) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -91,7 +91,7 @@ CREATE TABLE `client` (
 -- Zrzut danych tabeli `client`
 --
 
-INSERT INTO `client` (`id`, `createdAt`, `email`, `firstName`, `lastName`, `phone`) VALUES
+INSERT INTO `client` (`id`, `created_at`, `email`, `first_name`, `last_name`, `phone`) VALUES
 (1, '2019-04-13', 'maja.wasilewska@testgmail.com', 'Maja', 'Wasilewska', 844231079),
 (2, '2019-04-13', 'damian.laskowski@testwp.pl', 'Damian', 'Laskowski', 454452444),
 (3, '2019-04-13', 'oliwia.lewandowska@testonet.pl', 'Oliwia', 'Lewnadowska', 219856483),
@@ -155,7 +155,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `email`, `password`, `salt`, `created_at`, `first_name`, `last_name`) VALUES
-(1, 'admin@example.com', '0a10553aa8f8a9b297ee7748b64bb346', '97c26f1cfc6b906947f73401bbaf26b2', '2019-03-24 19:21:43', 'admin', 'admin');
+(1, 'admin@example.com', '0a10553aa8f8a9b297ee7748b64bb346', '97c26f1cfc6b906947f73401bbaf26b2', '2019-03-24 19:21:43', 'admin', 'admin'),
+(2, 'a', 'c336be70f95564207789b259dbdd79f0', 'c5a5193a6bfa98b7861cd9fe2eb49577', '2019-03-13 20:05:22', 'dev', 'dev');
 
 -- --------------------------------------------------------
 
