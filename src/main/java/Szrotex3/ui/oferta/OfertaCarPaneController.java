@@ -6,8 +6,11 @@ import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 
+import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -43,6 +46,9 @@ public class OfertaCarPaneController {
     @FXML
     private JFXButton ReserveButton;
 
+    @FXML
+    private ImageView CarImg;
+
 
     private static OfertaCarPaneController instance;
     public OfertaCarPaneController() {
@@ -54,7 +60,7 @@ public class OfertaCarPaneController {
 
     public void setCarInfo(int carId,String brand, String model,double engineCapacity,
                            String engineType, String transsmision,int enginePower,
-                           int doorsQuantity,int seatsQuantity){
+                           int doorsQuantity,int seatsQuantity, String linkToImg){
         CarIdForReservation = carId;
         Brand.setText(brand);
         Model.setText(model);
@@ -64,6 +70,10 @@ public class OfertaCarPaneController {
         Transsmision.setText(transsmision);
         SeatsQuantity.setText(String.valueOf(seatsQuantity));
         DoorsQuantity.setText(String.valueOf(doorsQuantity));
+
+        Image image = new Image(new File(linkToImg).toURI().toString());
+        System.out.println(new File(linkToImg).toURI().toString());
+        CarImg.setImage(image);
 
     }
 

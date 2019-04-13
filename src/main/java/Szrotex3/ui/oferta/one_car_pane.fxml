@@ -37,9 +37,9 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <ImageView fitHeight="100.0" fitWidth="180.0" layoutX="13.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="CarImg" fitHeight="100.0" fitWidth="180.0" layoutX="13.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@/assets/cars/bentleyc.png" />
+                  <Image url="@/assets/cars/bentleyc.png" backgroundLoading="true"/>
                </image>
             </ImageView>
             <Text fx:id="Model" fill="#016984" layoutX="216.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="M2">
