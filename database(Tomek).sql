@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 13 Kwi 2019, 15:14
+-- Czas generowania: 13 Kwi 2019, 20:49
 -- Wersja serwera: 10.1.38-MariaDB
 -- Wersja PHP: 7.3.3
 
@@ -33,13 +33,6 @@ CREATE TABLE `boat` (
   `displacement` int(10) UNSIGNED DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Zrzut danych tabeli `boat`
---
-
-INSERT INTO `boat` (`id`, `displacement`) VALUES
-(2, 5842);
-
 -- --------------------------------------------------------
 
 --
@@ -64,7 +57,20 @@ CREATE TABLE `car` (
 --
 
 INSERT INTO `car` (`id`, `brand`, `model`, `engineCapacity`, `engineType`, `enginePower`, `productionYear`, `doorsQuantity`, `transsmision`, `seatsQuantity`) VALUES
-(1, 'Peugeot', '206', 1.4, 'manual', 100, 2000, 3, NULL, 5);
+(1, 'BMW', 'X5 ', 3, 'Diesel', 313, 2016, 5, 'auto', 5),
+(2, 'Alfa Romeo', 'Stelvio', 2, 'Turbo', 280, 2017, 5, 'auto', 5),
+(3, 'Audi', 'A7', 3, 'Diesel', 286, 2018, 5, 'auto', 5),
+(4, 'Porsche', 'Cayenne', 43563, 'Petrol', 400, 2015, 5, 'manual', 5),
+(5, 'Porsche', '911 Targa 4', 43532, 'Petrol', 350, 2014, 3, 'manual', 2),
+(6, 'Mazda', 'CX-3', 2, 'Petrol', 150, 2017, 5, 'auto', 5),
+(7, 'Mercedes Benz', 'SLS', 43618, 'Petrol', 571, 2010, 3, 'manual', 2),
+(8, 'Mercedes Benz', 'Klasa G', 6, 'Petrol', 630, 2018, 5, 'auto', 5),
+(9, 'Mercedes Benz', 'GLK', 3, 'Diesel', 224, 2008, 5, 'auto', 5),
+(10, 'Maserati', 'Granturismo', 43562, 'Petrol', 460, 2017, 2, 'auto', 4),
+(11, 'Lamborgihni', 'Aventador', 43621, 'Petrol', 740, 2018, 2, 'auto', 2),
+(12, 'Ferrari ', '458 Italia', 5, 'Petrol', 605, 2015, 2, 'auto', 2),
+(13, 'Tesla', 'Model S', 4, 'Electric', 367, 2014, 5, 'auto', 5),
+(14, 'Bentley', 'Continental GT', 6, 'Petrol', 635, 2015, 2, 'auto', 4);
 
 -- --------------------------------------------------------
 
@@ -159,7 +165,6 @@ INSERT INTO `user` (`id`, `email`, `password`, `salt`, `created_at`, `first_name
 
 CREATE TABLE `vehicle` (
   `id` int(10) UNSIGNED NOT NULL,
-  `name` varchar(255) NOT NULL,
   `price` decimal(10,2) UNSIGNED DEFAULT NULL,
   `color` varchar(45) DEFAULT NULL,
   `linkToImg` varchar(255) DEFAULT NULL
@@ -169,9 +174,21 @@ CREATE TABLE `vehicle` (
 -- Zrzut danych tabeli `vehicle`
 --
 
-INSERT INTO `vehicle` (`id`, `name`, `price`, `color`, `linkToImg`) VALUES
-(1, 'Peugeot 607', '11.00', 'gray', NULL),
-(2, 'Antila 26cc', '27.00', 'navy', NULL);
+INSERT INTO `vehicle` (`id`, `price`, `color`, `linkToImg`) VALUES
+(1, '230.00', 'black', '@/assets/cars/bmwx5.png'),
+(2, '214.00', 'silver', '@/assets/cars/alfas.png'),
+(3, '369.00', 'white', '@/assets/cars/audia7.png'),
+(4, '250.00', 'black', '@/assets/cars/porschec.png'),
+(5, '381.00', 'white', '@/assets/cars/porschet.png'),
+(6, '188.00', 'blue', '@/assets/cars/mazdacx.png'),
+(7, '499.00', 'grey', '@/assets/cars/mbs.png'),
+(8, '554.00', 'black', '@/assets/cars/mbg.png'),
+(9, '170.00', 'white', '@/assets/cars/mbg.png'),
+(10, '388.00', 'blue', '@/assets/cars/maseratig.png'),
+(11, '532.00', 'green', '@/assets/cars/lamborgihnia.png'),
+(12, '444.00', 'red', '@/assets/cars/ferrarii.png'),
+(13, '259.00', 'black', '@/assets/cars/teslas.png'),
+(14, '421.00', 'orange', '@/assets/cars/bentleyc.png');
 
 --
 -- Indeksy dla zrzutów tabel
@@ -236,7 +253,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT dla tabeli `vehicle`
 --
 ALTER TABLE `vehicle`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- Ograniczenia dla zrzutów tabel
