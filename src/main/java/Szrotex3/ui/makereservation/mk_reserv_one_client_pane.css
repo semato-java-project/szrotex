@@ -1,0 +1,20 @@
+.OneClientPane
+{
+    -fx-background-color: #ffffff;
+}
+
+.OneClientPane:hover
+{
+    -fx-background-color: #f3f3f3;
+}
+
+#SelectClientBtn
+{
+    -fx-background-color: #242424;
+}
+
+#SelectClientBtn:hover
+{
+    -fx-background-color: #016984;
+}
+

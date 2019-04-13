@@ -36,7 +36,6 @@
         <mapping class="Szrotex3.model.Boat"/>
         <mapping class="Szrotex3.model.Vehicle"/>
         <mapping class="Szrotex3.model.Client"/>
-        <mapping class="Szrotex3.model.Admin"/>
         <mapping class="Szrotex3.model.Reservation"/>
         <mapping class="Szrotex3.model.User"/>
 

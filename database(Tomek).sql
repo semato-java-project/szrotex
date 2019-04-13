@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 09 Kwi 2019, 19:41
+-- Czas generowania: 13 Kwi 2019, 15:14
 -- Wersja serwera: 10.1.38-MariaDB
 -- Wersja PHP: 7.3.3
 
@@ -21,23 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Baza danych: `szrotex`
 --
-
--- --------------------------------------------------------
-
---
--- Struktura tabeli dla tabeli `admin`
---
-
-CREATE TABLE `admin` (
-  `id` int(10) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Zrzut danych tabeli `admin`
---
-
-INSERT INTO `admin` (`id`) VALUES
-(1);
 
 -- --------------------------------------------------------
 
@@ -76,6 +59,13 @@ CREATE TABLE `car` (
   `seatsQuantity` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
+--
+-- Zrzut danych tabeli `car`
+--
+
+INSERT INTO `car` (`id`, `brand`, `model`, `engineCapacity`, `engineType`, `enginePower`, `productionYear`, `doorsQuantity`, `transsmision`, `seatsQuantity`) VALUES
+(1, 'Peugeot', '206', 1.4, 'manual', 100, 2000, 3, NULL, 5);
+
 -- --------------------------------------------------------
 
 --
@@ -83,8 +73,29 @@ CREATE TABLE `car` (
 --
 
 CREATE TABLE `client` (
-  `id` int(10) UNSIGNED NOT NULL
+  `id` int(10) UNSIGNED NOT NULL,
+  `createdAt` date NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `firstName` varchar(50) NOT NULL,
+  `lastName` varchar(50) NOT NULL,
+  `phone` int(9) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Zrzut danych tabeli `client`
+--
+
+INSERT INTO `client` (`id`, `createdAt`, `email`, `firstName`, `lastName`, `phone`) VALUES
+(1, '2019-04-13', 'maja.wasilewska@testgmail.com', 'Maja', 'Wasilewska', 844231079),
+(2, '2019-04-13', 'damian.laskowski@testwp.pl', 'Damian', 'Laskowski', 454452444),
+(3, '2019-04-13', 'oliwia.lewandowska@testonet.pl', 'Oliwia', 'Lewnadowska', 219856483),
+(4, '2019-04-13', 'michalina.pawlik@testo2.pl', 'Michalina', 'Pawlik', 385863141),
+(5, '2019-04-13', 'filip.jasinski@testwp.pl', 'Filip', 'Jasiński', 86301814),
+(6, '2019-04-13', 'anna.wlodarczyk@testgmail.com', 'Anna', 'Włodarczyk', 229917576),
+(7, '2019-04-13', 'maria.dudek@testwp.pl', 'Maria', 'Dudek', 499662235),
+(8, '2019-04-13', 'karol.skowronski@testonet.pl', 'Karol', 'Skowroński', 875311434),
+(9, '2019-04-13', 'lukasz.kaminski@test.com', 'Łukasz', 'Kamiński', 139045332),
+(10, '2019-04-13', 'krzysztof.krawczyk@najlepszamuzyka.pl', 'Krzysztof', 'Krawczyk', 501423117);
 
 -- --------------------------------------------------------
 
@@ -101,7 +112,7 @@ CREATE TABLE `hibernate_sequence` (
 --
 
 INSERT INTO `hibernate_sequence` (`next_val`) VALUES
-(26);
+(29);
 
 -- --------------------------------------------------------
 
@@ -167,12 +178,6 @@ INSERT INTO `vehicle` (`id`, `name`, `price`, `color`, `linkToImg`) VALUES
 --
 
 --
--- Indeksy dla tabeli `admin`
---
-ALTER TABLE `admin`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indeksy dla tabeli `boat`
 --
 ALTER TABLE `boat`
@@ -231,48 +236,30 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT dla tabeli `vehicle`
 --
 ALTER TABLE `vehicle`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Ograniczenia dla zrzutów tabel
 --
 
 --
--- Ograniczenia dla tabeli `admin`
---
-ALTER TABLE `admin`
-  ADD CONSTRAINT `FKefe8st8bswe0gtcoxi063bgh9` FOREIGN KEY (`id`) REFERENCES `user` (`id`),
-  ADD CONSTRAINT `fk_admin_1` FOREIGN KEY (`id`) REFERENCES `user` (`id`) ON DELETE CASCADE;
-
---
 -- Ograniczenia dla tabeli `boat`
 --
 ALTER TABLE `boat`
-  ADD CONSTRAINT `FKh8f4yp5p3wk7x40cnii9rlfny` FOREIGN KEY (`id`) REFERENCES `vehicle` (`id`),
-  ADD CONSTRAINT `fk_boat_1` FOREIGN KEY (`id`) REFERENCES `vehicle` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `FKh8f4yp5p3wk7x40cnii9rlfny` FOREIGN KEY (`id`) REFERENCES `vehicle` (`id`);
 
 --
 -- Ograniczenia dla tabeli `car`
 --
 ALTER TABLE `car`
-  ADD CONSTRAINT `FKfugwdpykh9kb35q1quro44hrm` FOREIGN KEY (`id`) REFERENCES `vehicle` (`id`),
-  ADD CONSTRAINT `car_ibfk_1` FOREIGN KEY (`id`) REFERENCES `vehicle` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Ograniczenia dla tabeli `client`
---
-ALTER TABLE `client`
-  ADD CONSTRAINT `FKj8e3ytei0f40ssumts95th28a` FOREIGN KEY (`id`) REFERENCES `user` (`id`),
-  ADD CONSTRAINT `fk_client_1` FOREIGN KEY (`id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `FKfugwdpykh9kb35q1quro44hrm` FOREIGN KEY (`id`) REFERENCES `vehicle` (`id`);
 
 --
 -- Ograniczenia dla tabeli `reservation`
 --
 ALTER TABLE `reservation`
   ADD CONSTRAINT `FKkgohlqki8f2mklx7edyoq0l5f` FOREIGN KEY (`client_id`) REFERENCES `client` (`id`),
-  ADD CONSTRAINT `FKrm327sr0rb11mme0kbsm37od5` FOREIGN KEY (`vehicle_id`) REFERENCES `vehicle` (`id`),
-  ADD CONSTRAINT `fk_reservation_1` FOREIGN KEY (`vehicle_id`) REFERENCES `vehicle` (`id`),
-  ADD CONSTRAINT `fk_reservation_2` FOREIGN KEY (`client_id`) REFERENCES `client` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `FKrm327sr0rb11mme0kbsm37od5` FOREIGN KEY (`vehicle_id`) REFERENCES `vehicle` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
