@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 09 Kwi 2019, 19:41
+-- Czas generowania: 13 Kwi 2019, 14:52
 -- Wersja serwera: 10.1.38-MariaDB
 -- Wersja PHP: 7.3.3
 
@@ -21,23 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Baza danych: `szrotex`
 --
-
--- --------------------------------------------------------
-
---
--- Struktura tabeli dla tabeli `admin`
---
-
-CREATE TABLE `admin` (
-  `id` int(10) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Zrzut danych tabeli `admin`
---
-
-INSERT INTO `admin` (`id`) VALUES
-(1);
 
 -- --------------------------------------------------------
 
@@ -76,6 +59,13 @@ CREATE TABLE `car` (
   `seatsQuantity` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
+--
+-- Zrzut danych tabeli `car`
+--
+
+INSERT INTO `car` (`id`, `brand`, `model`, `engineCapacity`, `engineType`, `enginePower`, `productionYear`, `doorsQuantity`, `transsmision`, `seatsQuantity`) VALUES
+(1, 'Peugeot', '206', 1.4, 'manual', 100, 2000, 3, NULL, 5);
+
 -- --------------------------------------------------------
 
 --
@@ -83,7 +73,12 @@ CREATE TABLE `car` (
 --
 
 CREATE TABLE `client` (
-  `id` int(10) UNSIGNED NOT NULL
+  `id` int(10) UNSIGNED NOT NULL,
+  `createdAt` date NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `firstName` varchar(50) NOT NULL,
+  `lastName` varchar(50) NOT NULL,
+  `phone` int(9) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -101,7 +96,7 @@ CREATE TABLE `hibernate_sequence` (
 --
 
 INSERT INTO `hibernate_sequence` (`next_val`) VALUES
-(26);
+(29);
 
 -- --------------------------------------------------------
 
@@ -167,12 +162,6 @@ INSERT INTO `vehicle` (`id`, `name`, `price`, `color`, `linkToImg`) VALUES
 --
 
 --
--- Indeksy dla tabeli `admin`
---
-ALTER TABLE `admin`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indeksy dla tabeli `boat`
 --
 ALTER TABLE `boat`
@@ -231,18 +220,11 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT dla tabeli `vehicle`
 --
 ALTER TABLE `vehicle`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Ograniczenia dla zrzutów tabel
 --
-
---
--- Ograniczenia dla tabeli `admin`
---
-ALTER TABLE `admin`
-  ADD CONSTRAINT `FKefe8st8bswe0gtcoxi063bgh9` FOREIGN KEY (`id`) REFERENCES `user` (`id`),
-  ADD CONSTRAINT `fk_admin_1` FOREIGN KEY (`id`) REFERENCES `user` (`id`) ON DELETE CASCADE;
 
 --
 -- Ograniczenia dla tabeli `boat`
