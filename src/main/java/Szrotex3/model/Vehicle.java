@@ -11,9 +11,6 @@ public class Vehicle {
     @Column(name="id")
     private int id;
 
-    @Column(name="name")
-    private String name;
-
     @Column(name="price")
     private double price;
 
@@ -27,8 +24,7 @@ public class Vehicle {
 
     }
 
-    public Vehicle(String name, double price, String color, String linkToImg) {
-        this.name = name;
+    public Vehicle(double price, String color, String linkToImg) {
         this.price = price;
         this.color = color;
         this.linkToImg = linkToImg;
@@ -40,14 +36,6 @@ public class Vehicle {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public double getPrice() {
