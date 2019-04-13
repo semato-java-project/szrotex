@@ -15,7 +15,7 @@ public class OneToOneTest {
 
         HibernateSession hibernateSession = (HibernateSession) Container.getBean("hibernateSession");
 
-        Vehicle newVehicle = new Vehicle("Maxus 33", 42, "black", "img.jpg");
+        Vehicle newVehicle = new Vehicle(42, "black", "img.jpg");
         hibernateSession.getSession().persist(newVehicle);
 
         Boat newBoat = new Boat(newVehicle,6201);
@@ -35,8 +35,6 @@ public class OneToOneTest {
 
 
         assertNotNull(fetchedVehicle);
-
-        assertEquals(newVehicle.getName(), fetchedVehicle.getName());
 
         int vehicleId = fetchedVehicle.getId();
 
