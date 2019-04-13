@@ -22,7 +22,7 @@ public class Client {
     private String email;
 
     @Column(name="phone")
-    private String phone;
+    private int phone;
 
     @Column(name="createdAt")
     private Date createdAt;
@@ -33,7 +33,7 @@ public class Client {
     {
     }
 
-    public Client(int id, String firstName, String lastName, String email, String phone, Date createdAt) {
+    public Client(int id, String firstName, String lastName, String email, int phone, Date createdAt) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -66,11 +66,11 @@ public class Client {
         this.email = email;
     }
 
-    public String getPhone() {
+    public int getPhone() {
         return phone;
     }
 
-    public void setPhone(String phone) {
+    public void setPhone(int phone) {
         this.phone = phone;
     }
 
