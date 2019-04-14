@@ -49,7 +49,7 @@ public class addNewClientController {
 
     @FXML
     void handleAddClientAction(ActionEvent event) {
-        Client newClient(clientName.getText(), clientSurname.getText(), clientEmail.getText(), clientPhone.getText(), clientPesel.getText(), clientIdNumber.getText(), clientBirthDate.getText(), clientCity.getText(), clientStreet.getText(), clientApartmentNumber.getText(), clientPostalCode.getText());
+        //Client newClient(clientName.getText(), clientSurname.getText(), clientEmail.getText(), clientPhone.getText(), clientPesel.getText(), clientIdNumber.getText(), clientBirthDate.getText(), clientCity.getText(), clientStreet.getText(), clientApartmentNumber.getText(), clientPostalCode.getText());
 
     }
 
