@@ -3,7 +3,8 @@ package Szrotex3.model;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
-import java.sql.Date;
+import java.util.Calendar;
+import java.util.Date;
 
 @Entity
 @Table(name="client")
@@ -177,7 +178,29 @@ public class Client {
 
     public int getAge()
     {
-        int age=0;
+
+        Calendar now = Calendar.getInstance();
+        now.setTime(Calendar.getInstance().getTime());
+
+        Calendar calBirthDate = Calendar.getInstance();
+        calBirthDate.setTime(birthDate);
+
+        System.out.println(now.get(Calendar.YEAR) + " " + now.get(Calendar.MONTH) + " " + now.get(Calendar.DAY_OF_MONTH) );
+        System.out.println(calBirthDate.get(Calendar.YEAR) + " " + calBirthDate.get(Calendar.MONTH) + " " + calBirthDate.get(Calendar.DAY_OF_MONTH) );
+
+
+        int age=now.get(Calendar.YEAR)-calBirthDate.get(Calendar.YEAR);
+        if(now.get(Calendar.MONTH)<calBirthDate.get(Calendar.MONTH)) {
+            age--;
+        }
+        else if(now.get(Calendar.MONTH)==calBirthDate.get(Calendar.MONTH))
+        {
+             if(now.get(Calendar.DAY_OF_MONTH)<=calBirthDate.get(Calendar.DAY_OF_MONTH)) {
+                 age--;
+             }
+        }
+
+
         return age;
     }
 
