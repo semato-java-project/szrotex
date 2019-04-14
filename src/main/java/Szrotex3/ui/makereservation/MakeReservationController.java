@@ -1,7 +1,14 @@
 package Szrotex3.ui.makereservation;
 
+import Szrotex3.model.Car;
+import Szrotex3.model.Client;
+import Szrotex3.service.Container;
+import Szrotex3.service.Reservation;
 import Szrotex3.ui.MainController;
+import Szrotex3.ui.exception.UserException;
+import Szrotex3.ui.homepage.HomePageController;
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXDatePicker;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.effect.BoxBlur;
@@ -10,17 +17,23 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
-import Szrotex3.ui.homepage.HomePageController;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-
 import java.io.File;
 import java.net.URL;
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.Date;
 import java.util.ResourceBundle;
 
 
 public class MakeReservationController extends MainController {
+
+    private Car car;
+
+    private Client client;
 
     @FXML
     private Pane backToOfertaButton;
@@ -52,6 +65,11 @@ public class MakeReservationController extends MainController {
     @FXML
     private Text Price;
 
+    @FXML
+    private JFXDatePicker dateStart;
+
+    @FXML
+    private JFXDatePicker dateEnd;
 
     public Text getClientName() {
         return ClientName;
@@ -71,33 +89,80 @@ public class MakeReservationController extends MainController {
         return instance;
     }
 
+    public void setClient(Client client) {
+        this.client = client;
+        ClientName.setText(client.getFirstName());
+        ClientSurname.setText(client.getLastName());
+    }
 
-    public void setCarReservationInfo(int idCar, String brand, String model, Image CarImgOferta, Text PriceFromOferta){
+    public void setCar(Car car){
 
-        CarId.setText(String.valueOf(idCar));
-        Brand.setText(brand);
-        Model.setText(model);
-        Price.setText(PriceFromOferta.getText());
-        CarImg.setImage(CarImgOferta);
+        this.car = car;
+
+        CarId.setText(String.valueOf(car.getId()));
+        Brand.setText(car.getBrand());
+        Model.setText(car.getModel());
+        Price.setText(String.valueOf(car.getVehicle().getPrice()));
+        Image image = new Image(new File(car.getVehicle().getLinkToImg()).toURI().toString());
+        CarImg.setImage(image);
 
     }
 
     @FXML
-    void BackToOferta(MouseEvent event) {
+    void backToOferta(MouseEvent event) {
        makereservation_content_pane.getChildren().clear();
        HomePageController.getInstance().changeContentToOferta();
     }
 
     @FXML
-    void SelectClientActon(ActionEvent event) {
-
+    void selectClientActon(ActionEvent event) {
         BoxBlur blur = new BoxBlur(5,5,5);
         makereservation_content_pane.setEffect(blur);
         loadPage("/Szrotex3/ui/makereservation/makereservation_select_client.fxml");
     }
 
+    @FXML
+    void makeReservationActon(ActionEvent event) {
+
+        try {
+
+            if (this.client == null) {
+                throw new UserException("Klient nie został wybrany.");
+            }
+
+            if (this.car == null) {
+                throw new UserException("Pojazd nie został wybrany.");
+            }
+
+            LocalDate localDateStart = this.dateStart.getValue();
+            LocalDate localDateEnd = this.dateEnd.getValue();
+
+            Instant instantStart = Instant.from(localDateStart.atStartOfDay(ZoneId.systemDefault()));
+            Instant instantEnd = Instant.from(localDateEnd.atStartOfDay(ZoneId.systemDefault()));
+
+            Date dateStart = Date.from(instantStart);
+            Date dateEnd = Date.from(instantEnd);
+
+            Reservation reservationService = (Reservation) Container.getBean("reservation");
+            Szrotex3.model.Reservation reservationObiect = reservationService.makeReservation(
+                    this.car.getVehicle(),
+                    this.client,
+                    dateStart,
+                    dateEnd
+            );
+
+            if (reservationObiect == null) {
+                throw new UserException("Rezerwacja nie może zostać wykonana w podanym terminie.");
+            }
+        } catch (UserException e) {
+            String message = e.getMessage();
+            throw e; // wyświetlić popup/komunikat z message zamiast throwa
+        }
+
+        // wyświetlić popup/komunikat, że się udało
 
 
+    }
 
     // Jest opcja zeby wywalic te dwie metody? bez tego sie nie kompiluje
     @Override

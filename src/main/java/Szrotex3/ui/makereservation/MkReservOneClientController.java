@@ -1,14 +1,14 @@
 package Szrotex3.ui.makereservation;
 
 import Szrotex3.model.Client;
-import Szrotex3.ui.oferta.OfertaCarPaneController;
 import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.text.Text;
-import javafx.stage.Stage;
 
 public class MkReservOneClientController {
+
+    Client client;
 
     @FXML
     private Text Client_name;
@@ -30,26 +30,18 @@ public class MkReservOneClientController {
         return instance;
     }
 
+    public void setClient(Client client) {
+        this.client = client;
+        Client_name.setText(client.getFirstName());
+        Client_surname.setText(client.getLastName());
+        Client_id.setText(String.valueOf(client.getId()));
+    }
 
     @FXML
     void SelectThisClient(ActionEvent event) {
-        MakeReservationController.getInstance().getClientName().setText(Client_name.getText());
-        MakeReservationController.getInstance().getClientSurname().setText(Client_surname.getText());
-
+        MakeReservationController.getInstance().setClient(client);
         MakeReservationSelectClientController.getInstance().CloseWindow();
         MakeReservationController.getInstance().makereservation_content_pane.setEffect(null);
-
     }
 
-    public void setClient_name(String name) {
-        Client_name.setText(name);
-    }
-
-    public void setClient_surname(String surname) {
-        Client_surname.setText(surname);
-    }
-
-    public void setClient_id(int id){
-        Client_id.setText(String.valueOf(id));
-    }
 }
