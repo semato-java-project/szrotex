@@ -27,3 +27,11 @@
 {
     -fx-background-color: #242424;
 }
+
+#housenumber{
+    -fx-pref-width: 80;
+}
+
+#postcode{
+    -fx-pref-width: 100;
+}
