@@ -3,13 +3,9 @@ package Szrotex3.ui.oferta;
 import Szrotex3.model.Car;
 import Szrotex3.service.Container;
 import Szrotex3.service.HibernateSession;
-import Szrotex3.ui.homepage.HomePageController;
-import com.jfoenix.controls.JFXButton;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 
@@ -51,18 +47,7 @@ public class OfertaController implements Initializable {
           AnchorPane carsPane;
             try {
                 carsPane = FXMLLoader.load(getClass().getResource("one_car_pane.fxml"));
-                OfertaCarPaneController.getInstance().setCarInfo(
-                        carObjects.get(i).getId(),
-                        carObjects.get(i).getBrand(),
-                        carObjects.get(i).getModel(),
-                        carObjects.get(i).getEngineCapacity(),
-                        carObjects.get(i).getEngineType(),
-                        carObjects.get(i).getTranssmision(),
-                        carObjects.get(i).getEnginePower(),
-                        carObjects.get(i).getDoorsQuantity(),
-                        carObjects.get(i).getSeatsQuantity(),
-                        carObjects.get(i).getVehicle().getLinkToImg(),
-                        carObjects.get(i).getVehicle().getPrice());
+                OfertaCarPaneController.getInstance().setCar(carObjects.get(i));
                 container_oferta.getChildren().add(carsPane);
 
             } catch (IOException e) {

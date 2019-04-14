@@ -11,7 +11,6 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -60,9 +59,7 @@ public class MakeReservationSelectClientController implements Initializable {
             AnchorPane clientsPane;
             try {
                 clientsPane = FXMLLoader.load(getClass().getResource("mk_reserv_one_client_pane.fxml"));
-                MkReservOneClientController.getInstance().setClient_name(clientObjects.get(i).getFirstName());
-                MkReservOneClientController.getInstance().setClient_surname(clientObjects.get(i).getLastName());
-                MkReservOneClientController.getInstance().setClient_id(clientObjects.get(i).getId());
+                MkReservOneClientController.getInstance().setClient(clientObjects.get(i));
                 SelectClient_container.getChildren().add(clientsPane);
             } catch (IOException e) {
                 e.printStackTrace();
