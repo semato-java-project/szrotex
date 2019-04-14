@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 14 Kwi 2019, 13:05
+-- Czas generowania: 14 Kwi 2019, 18:50
 -- Wersja serwera: 10.1.38-MariaDB
 -- Wersja PHP: 7.3.3
 
@@ -84,24 +84,31 @@ CREATE TABLE `client` (
   `email` varchar(100) NOT NULL,
   `first_name` varchar(50) NOT NULL,
   `last_name` varchar(50) NOT NULL,
-  `phone` int(9) NOT NULL
+  `phone` varchar(9) NOT NULL,
+  `pesel` varchar(11) CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
+  `id_number` varchar(9) CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
+  `birth_date` date NOT NULL,
+  `city` varchar(50) CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
+  `street` varchar(100) CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
+  `apartment_number` varchar(10) CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
+  `postal_code` varchar(7) CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Zrzut danych tabeli `client`
 --
 
-INSERT INTO `client` (`id`, `created_at`, `email`, `first_name`, `last_name`, `phone`) VALUES
-(1, '2019-04-13', 'maja.wasilewska@testgmail.com', 'Maja', 'Wasilewska', 844231079),
-(2, '2019-04-13', 'damian.laskowski@testwp.pl', 'Damian', 'Laskowski', 454452444),
-(3, '2019-04-13', 'oliwia.lewandowska@testonet.pl', 'Oliwia', 'Lewnadowska', 219856483),
-(4, '2019-04-13', 'michalina.pawlik@testo2.pl', 'Michalina', 'Pawlik', 385863141),
-(5, '2019-04-13', 'filip.jasinski@testwp.pl', 'Filip', 'Jasiński', 86301814),
-(6, '2019-04-13', 'anna.wlodarczyk@testgmail.com', 'Anna', 'Włodarczyk', 229917576),
-(7, '2019-04-13', 'maria.dudek@testwp.pl', 'Maria', 'Dudek', 499662235),
-(8, '2019-04-13', 'karol.skowronski@testonet.pl', 'Karol', 'Skowroński', 875311434),
-(9, '2019-04-13', 'lukasz.kaminski@test.com', 'Łukasz', 'Kamiński', 139045332),
-(10, '2019-04-13', 'krzysztof.krawczyk@najlepszamuzyka.pl', 'Krzysztof', 'Krawczyk', 501423117);
+INSERT INTO `client` (`id`, `created_at`, `email`, `first_name`, `last_name`, `phone`, `pesel`, `id_number`, `birth_date`, `city`, `street`, `apartment_number`, `postal_code`) VALUES
+(1, '2019-04-13', 'maja.wasilewska@testgmail.com', 'Maja', 'Wasilewska', '844231079', '82030141900', 'ALJ678225', '1982-03-01', 'Koszalin', 'Połczyńska', '148', '75-816'),
+(2, '2019-04-13', 'damian.laskowski@testwp.pl', 'Damian', 'Laskowski', '454452444', '80042264598', 'ADD394345', '1980-04-22', 'Łódź', 'Piasta', '148', '93-562'),
+(3, '2019-04-13', 'oliwia.lewandowska@testonet.pl', 'Oliwia', 'Lewnadowska', '219856483', '63062386666', 'AXP071617', '1963-06-23', 'Lublin', 'Sieciecha Wojciecha', '19', '20-381'),
+(4, '2019-04-13', 'michalina.pawlik@testo2.pl', 'Michalina', 'Pawlik', '385863141', '87051934285', 'AZV369785', '1987-05-19', 'Kraków', 'Traczy', '6', '30-799'),
+(5, '2019-04-13', 'filip.jasinski@testwp.pl', 'Filip', 'Jasiński', '86301814', '49062723919', 'AOV128343', '1949-06-27', 'Wrocław', 'Limanowska', '27', '54-029'),
+(6, '2019-04-13', 'anna.wlodarczyk@testgmail.com', 'Anna', 'Włodarczyk', '229917576', '72030860066', 'ATP235053', '1972-03-08', 'Bydgoszcz', 'Sandowcza', '53', '85-435'),
+(7, '2019-04-13', 'maria.dudek@testwp.pl', 'Maria', 'Dudek', '499662235', '77111595446', 'AQA376752', '1977-11-15', 'Kielce', 'Konstytucji', '32', '25-509'),
+(8, '2019-04-13', 'karol.skowronski@testonet.pl', 'Karol', 'Skowroński', '875311434', '86010579451', 'AGO868424', '1986-01-05', 'Bydgoszcz', 'Karlowicza Mieczysława', '51', '85-092'),
+(9, '2019-04-13', 'lukasz.kaminski@test.com', 'Łukasz', 'Kamiński', '139045332', '77082222932', 'ASA467940', '1977-08-22', 'Warszawa', 'Wilgi', '81', '04-831'),
+(10, '2019-04-13', 'krzysztof.krawczyk@najlepszamuzyka.pl', 'Krzysztof', 'Krawczyk', '501423117', '74101673818', 'AGK743705', '1974-10-16', 'Poznań', 'Paderewskiego Ignacego', '128', '61-770');
 
 -- --------------------------------------------------------
 
@@ -118,7 +125,7 @@ CREATE TABLE `hibernate_sequence` (
 --
 
 INSERT INTO `hibernate_sequence` (`next_val`) VALUES
-(29);
+(30);
 
 -- --------------------------------------------------------
 
@@ -133,6 +140,13 @@ CREATE TABLE `reservation` (
   `date_start` datetime DEFAULT NULL,
   `date_end` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Zrzut danych tabeli `reservation`
+--
+
+INSERT INTO `reservation` (`id`, `vehicle_id`, `client_id`, `date_start`, `date_end`) VALUES
+(29, 12, 1, '2019-04-02 00:00:00', '2019-04-03 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -242,7 +256,7 @@ ALTER TABLE `vehicle`
 -- AUTO_INCREMENT dla tabeli `reservation`
 --
 ALTER TABLE `reservation`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT dla tabeli `user`
@@ -277,6 +291,7 @@ ALTER TABLE `car`
 --
 ALTER TABLE `reservation`
   ADD CONSTRAINT `FKkgohlqki8f2mklx7edyoq0l5f` FOREIGN KEY (`client_id`) REFERENCES `client` (`id`),
+  ADD CONSTRAINT `FKoewar6f18rkn4iptr6da4oysv` FOREIGN KEY (`client_id`) REFERENCES `client` (`id`),
   ADD CONSTRAINT `FKrm327sr0rb11mme0kbsm37od5` FOREIGN KEY (`vehicle_id`) REFERENCES `vehicle` (`id`);
 COMMIT;
 

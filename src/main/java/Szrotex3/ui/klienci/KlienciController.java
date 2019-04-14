@@ -1,5 +1,9 @@
 package Szrotex3.ui.klienci;
 
+
+import Szrotex3.model.Client;
+import Szrotex3.service.Container;
+import Szrotex3.service.HibernateSession;
 import Szrotex3.ui.homepage.HomePageController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -10,6 +14,7 @@ import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class KlienciController implements Initializable {
@@ -24,13 +29,15 @@ public class KlienciController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        HibernateSession hibernateSession = (HibernateSession) Container.getBean("hibernateSession");
+        List<Client> clientObjects = (List<Client>) hibernateSession.getSession().createCriteria(Client.class).list();
 
-        Node[] nodes = new Node[10];
-        for (int i = 0; i < nodes.length; i++) {
-
+        for (int i = 0; i < clientObjects.size(); i++) {
+                Node clients;
             try {
-                nodes[i] = FXMLLoader.load(getClass().getResource("klient.fxml"));
-                client_container.getChildren().add(nodes[i]);
+                clients = FXMLLoader.load(getClass().getResource("klient.fxml"));
+                ContentClientController.getInstance().setClient(clientObjects.get(i));
+                client_container.getChildren().add(clients);
             } catch (IOException e) {
                 e.printStackTrace();
             }
