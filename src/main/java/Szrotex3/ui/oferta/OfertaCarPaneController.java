@@ -1,23 +1,23 @@
 package Szrotex3.ui.oferta;
 
+import Szrotex3.model.Car;
 import Szrotex3.ui.homepage.HomePageController;
 import Szrotex3.ui.makereservation.MakeReservationController;
 import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 
 import java.io.File;
-import java.net.URL;
-import java.util.ResourceBundle;
 
 public class OfertaCarPaneController {
 
 
     private int CarIdForReservation;
+
+    private Car car;
 
     @FXML
     private Text Brand;
@@ -61,32 +61,35 @@ public class OfertaCarPaneController {
         return instance;
     }
 
-    public void setCarInfo(int carId,String brand, String model,double engineCapacity,
-                           String engineType, String transsmision,int enginePower,
-                           int doorsQuantity,int seatsQuantity, String linkToImg, double price){
-        CarIdForReservation = carId;
-        Brand.setText(brand);
-        Model.setText(model);
-        EnginePower.setText(String.valueOf(enginePower));
-        EngineType.setText(engineType);
-        EngineCapacity.setText(String.valueOf(engineCapacity));
-        Transsmision.setText(transsmision);
-        SeatsQuantity.setText(String.valueOf(seatsQuantity));
-        DoorsQuantity.setText(String.valueOf(doorsQuantity));
-        Price.setText(String.valueOf(price));
+    public void setCar(Car car){
 
-        Image image = new Image(new File(linkToImg).toURI().toString());
-        System.out.println(new File(linkToImg).toURI().toString()); //do testowania czy poprawna sciezka sie pojawia
+        this.car = car;
+
+        CarIdForReservation = car.getId();
+        Brand.setText(car.getBrand());
+        Model.setText(car.getModel());
+        EnginePower.setText(String.valueOf(car.getEnginePower()));
+        EngineType.setText(car.getEngineType());
+        EngineCapacity.setText(String.valueOf(car.getEngineCapacity()));
+        Transsmision.setText(car.getTranssmision());
+        SeatsQuantity.setText(String.valueOf(car.getSeatsQuantity()));
+        DoorsQuantity.setText(String.valueOf(car.getDoorsQuantity()));
+        Price.setText(String.valueOf(car.getVehicle().getPrice()));
+
+        Image image = new Image(new File(car.getVehicle().getLinkToImg()).toURI().toString());
+        System.out.println(new File(car.getVehicle().getLinkToImg()).toURI().toString()); //do testowania czy poprawna sciezka sie pojawia
         CarImg.setImage(image);
 
     }
+
+
 
     @FXML
     void ShowReservationDetails(ActionEvent event) {
         OfertaController.getInstance().oferta_content_pane.getChildren().clear();
         HomePageController.getInstance().createContentPage(OfertaController.getInstance().oferta_content_pane,"/Szrotex3/ui/makereservation/content_makereservation.fxml");
         HomePageController.getInstance().setTopPath("Szczegóły rezerwacji");
-        MakeReservationController.getInstance().setCarReservationInfo(CarIdForReservation,Brand.getText(),Model.getText(), CarImg.getImage(), Price);
+        MakeReservationController.getInstance().setCar(this.car);
 
     }
 }
