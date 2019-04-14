@@ -2,6 +2,8 @@ package Szrotex3.ui.klienci;
 
 import Szrotex3.model.Client;
 import Szrotex3.ui.MainController;
+import Szrotex3.ui.addNewClient.AddNewClientController;
+import Szrotex3.ui.homepage.HomePageController;
 import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -119,6 +121,15 @@ public class ClientController extends MainController {
         BoxBlur blur = new BoxBlur(5,5,5);
         contentKlienciController.getInstance().getMainAnchorPane().setEffect(blur);
         loadPage("/Szrotex3/ui/klienci/deleteClientAlert.fxml");
+    }
+
+    @FXML
+    void handleEditClientAction(ActionEvent event) {
+        HomePageController.getInstance().changeContentToAddNewClient(event);
+        HomePageController.getInstance().setTopPath("Edytuj Klienta");
+        AddNewClientController.getInstance().setClient(client);
+        AddNewClientController.getInstance().getAddoreditButton().setText("Edytuj Klienta");
+
     }
 
     @Override

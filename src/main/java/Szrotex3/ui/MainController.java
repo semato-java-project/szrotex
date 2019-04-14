@@ -58,7 +58,7 @@ public abstract class MainController extends Application implements Initializabl
             Parent root = FXMLLoader.load(getClass().getResource(path));
             Stage stage = new Stage(StageStyle.TRANSPARENT);
             stage.initStyle(StageStyle.TRANSPARENT);
-            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.initModality(Modality.APPLICATION_MODAL.APPLICATION_MODAL);
             stage.setTitle("Semato - Car Rent App");
             Scene scene = new Scene(root);
             stage.setScene(scene);
