@@ -44,6 +44,24 @@
 }
 
 
+#addClientButton
+{
+    -fx-background-color: #016984;
+    -fx-pref-width: 257;
+    -fx-pref-height: 30;
+    -fx-text-fill: #FFFFFF;
+}
+#addClientButton:hover
+{
+    -fx-background-color: #0093B9;
+}
+
+
+
+#backgroundpane
+{
+    -fx-background-color: #242424;
+}
 
 .ScrollPane{
     -fx-background-color:transparent;
