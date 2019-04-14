@@ -52,6 +52,7 @@ public class MakeReservationController extends MainController {
     @FXML
     private Text Price;
 
+
     public Text getClientName() {
         return ClientName;
     }
@@ -71,16 +72,14 @@ public class MakeReservationController extends MainController {
     }
 
 
-    public void setCarReservationInfo(int idCar,String brand, String model, String linkToImg, double price){
+    public void setCarReservationInfo(int idCar, String brand, String model, Image CarImgOferta, Text PriceFromOferta){
 
         CarId.setText(String.valueOf(idCar));
         Brand.setText(brand);
         Model.setText(model);
-        Price.setText(String.valueOf(price));
+        Price.setText(PriceFromOferta.getText());
+        CarImg.setImage(CarImgOferta);
 
-        Image image = new Image(new File(linkToImg).toURI().toString());
-        System.out.println(new File(linkToImg).toURI().toString()); //do testowania czy poprawna sciezka sie pojawia
-        CarImg.setImage(image);
     }
 
     @FXML
