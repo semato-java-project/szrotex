@@ -23,10 +23,8 @@ import javafx.stage.Stage;
 
 import java.io.File;
 import java.net.URL;
-import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.time.ZoneId;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.ResourceBundle;
@@ -169,9 +167,6 @@ public class MakeReservationController extends MainController {
                     localTimeEnd.getMinute(),
                     0
             );
-
-            Instant instantStart = Instant.from(localDateStart.atStartOfDay(ZoneId.systemDefault()));
-            Instant instantEnd = Instant.from(localDateEnd.atStartOfDay(ZoneId.systemDefault()));
 
             Date dateStart = calendarStart.getTime();
             Date dateEnd = calendarEnd.getTime();
