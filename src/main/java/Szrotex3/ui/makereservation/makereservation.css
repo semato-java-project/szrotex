@@ -1,22 +1,27 @@
-#reseveButton
-{
+#reseveButton {
     -fx-background-color: #016984;
     -fx-text-fill: #FFFFFF;
-    -fx-background-radius: 0;
+    -fx-pref-height: 30;
 }
 
+#reseveButton:hover {
+    -fx-background-color: #0093B9;
+}
 
-#backgroundpane
-{
+#backgroundpane {
     -fx-background-color: #242424;
 }
 
-.backReservation
-{
-    -fx-background-color: #01647e;
+#backgroundpaneTop{
+    -fx-background-color: #242424;
+    -fx-background-radius: 4;
 }
 
-#SelectClientButton
-{
+.backReservation {
+    -fx-background-color: #01647e;
+    -fx-background-radius: 4;
+}
+
+#SelectClientButton {
     -fx-background-color: #242424;
 }

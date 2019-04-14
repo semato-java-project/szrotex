@@ -1,0 +1,29 @@
+.jfx-text-field
+{
+    -fx-pref-width: 220;
+}
+
+
+#AddClientButton
+{
+    -fx-background-color: #016984;
+    -fx-pref-width: 220;
+    -fx-pref-height: 30;
+    -fx-text-fill: #FFFFFF;
+}
+#AddClientButton:hover
+{
+    -fx-background-color: #0093B9;
+}
+
+#CancelButton
+{
+    -fx-background-color: #565656;
+    -fx-pref-width: 220;
+    -fx-pref-height: 30;
+    -fx-text-fill: #FFFFFF;
+}
+#CancelButton:hover
+{
+    -fx-background-color: #242424;
+}

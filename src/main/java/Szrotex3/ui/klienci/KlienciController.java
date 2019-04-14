@@ -1,5 +1,7 @@
 package Szrotex3.ui.klienci;
 
+import Szrotex3.ui.homepage.HomePageController;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -14,6 +16,11 @@ public class KlienciController implements Initializable {
 
     @FXML
     private VBox client_container;
+
+    @FXML
+    void AddNewClient(ActionEvent event) {
+        HomePageController.getInstance().changeContentToAddNewClient(event);
+    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
