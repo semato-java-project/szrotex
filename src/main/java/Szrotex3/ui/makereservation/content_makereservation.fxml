@@ -24,9 +24,9 @@
                   </Text>
                </children>
             </Pane>
-            <ImageView fitHeight="130.0" fitWidth="292.0" layoutX="-27.0" layoutY="177.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="CarImg" fitHeight="130.0" fitWidth="292.0" layoutX="-27.0" layoutY="177.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@/assets/cars/bentleyc.png" />
+                  <Image url="@/assets/cars/bentleyc.png" backgroundLoading="true"/>
                </image>
             </ImageView>
             <Text fx:id="Brand" fill="WHITE" layoutX="22.0" layoutY="101.0" opacity="0.59" strokeType="OUTSIDE" strokeWidth="0.0" text="BMW">
@@ -110,7 +110,7 @@
             <Font name="Arial" size="20.0" />
          </font>
       </Text>
-      <Text fill="#01647e" layoutX="298.0" layoutY="363.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2313 zł">
+      <Text fx:id="Price" fill="#01647e" layoutX="298.0" layoutY="363.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2313 zł">
          <font>
             <Font name="Arial Bold" size="34.0" />
          </font>

@@ -86,7 +86,7 @@ public class OfertaCarPaneController {
         OfertaController.getInstance().oferta_content_pane.getChildren().clear();
         HomePageController.getInstance().createContentPage(OfertaController.getInstance().oferta_content_pane,"/Szrotex3/ui/makereservation/content_makereservation.fxml");
         HomePageController.getInstance().setTopPath("Szczegóły rezerwacji");
-        MakeReservationController.getInstance().setCarReservationInfo(CarIdForReservation,Brand.getText(),Model.getText());
+        //MakeReservationController.getInstance().setCarReservationInfo(CarIdForReservation,Brand.getText(),Model.getText(), LinkToImg,Price);
 
     }
 }
