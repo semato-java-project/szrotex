@@ -1,14 +1,16 @@
 package Szrotex3.model;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 import javax.persistence.*;
 import java.sql.Date;
-import java.util.Calendar;
 
 @Entity
 @Table(name="client")
 public class Client {
 
     @Id
+    @GeneratedValue
     @Column(name="id")
     private int id;
 
@@ -25,11 +27,12 @@ public class Client {
     private String phone;
 
     @Column(name="created_at")
+    @CreationTimestamp
     private Date createdAt;
 
 
 
-    Client()
+    public Client()
     {
     }
 
