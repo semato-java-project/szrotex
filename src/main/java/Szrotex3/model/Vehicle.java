@@ -17,7 +17,7 @@ public class Vehicle {
     @Column(name="color")
     private String color;
 
-    @Column(name="linkToImg")
+    @Column(name="link_to_img")
     private String linkToImg;
 
     public Vehicle() {

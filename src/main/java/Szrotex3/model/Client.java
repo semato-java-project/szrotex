@@ -5,26 +5,26 @@ import java.sql.Date;
 import java.util.Calendar;
 
 @Entity
-@Table(name="Client")
+@Table(name="client")
 public class Client {
 
     @Id
     @Column(name="id")
     private int id;
 
-    @Column(name="firstName")
+    @Column(name="first_name")
     private String firstName;
 
-    @Column(name="lastName")
+    @Column(name="last_name")
     private String lastName;
 
     @Column(name="email")
     private String email;
 
     @Column(name="phone")
-    private int phone;
+    private String phone;
 
-    @Column(name="createdAt")
+    @Column(name="created_at")
     private Date createdAt;
 
 
@@ -33,7 +33,7 @@ public class Client {
     {
     }
 
-    public Client(int id, String firstName, String lastName, String email, int phone, Date createdAt) {
+    public Client(int id, String firstName, String lastName, String email, String phone, Date createdAt) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -66,11 +66,11 @@ public class Client {
         this.email = email;
     }
 
-    public int getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(int phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 
