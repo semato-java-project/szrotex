@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 14 Kwi 2019, 12:55
+-- Czas generowania: 14 Kwi 2019, 13:05
 -- Wersja serwera: 10.1.38-MariaDB
 -- Wersja PHP: 7.3.3
 
@@ -180,8 +180,8 @@ INSERT INTO `vehicle` (`id`, `price`, `color`, `link_to_img`) VALUES
 (2, '214.00', 'silver', 'src/main/resources/assets/cars/alfas.png'),
 (3, '369.00', 'white', 'src/main/resources/assets/cars/audia7.png'),
 (4, '250.00', 'black', 'src/main/resources/assets/cars/porschec.png'),
-(5, '381.00', 'white', 'src/main/resources/assets/porschet.png'),
-(6, '188.00', 'blue', 'src/main/resources/assets/mazdacx.png'),
+(5, '381.00', 'white', 'src/main/resources/assets/cars/porschet.png'),
+(6, '188.00', 'blue', 'src/main/resources/assets/cars/mazdacx.png'),
 (7, '499.00', 'grey', 'src/main/resources/assets/cars/mbs.png'),
 (8, '554.00', 'black', 'src/main/resources/assets/cars/mbg.png'),
 (9, '170.00', 'white', 'src/main/resources/assets/cars/mbglk.png'),
@@ -277,7 +277,6 @@ ALTER TABLE `car`
 --
 ALTER TABLE `reservation`
   ADD CONSTRAINT `FKkgohlqki8f2mklx7edyoq0l5f` FOREIGN KEY (`client_id`) REFERENCES `client` (`id`),
-  ADD CONSTRAINT `FKoewar6f18rkn4iptr6da4oysv` FOREIGN KEY (`client_id`) REFERENCES `client` (`id`),
   ADD CONSTRAINT `FKrm327sr0rb11mme0kbsm37od5` FOREIGN KEY (`vehicle_id`) REFERENCES `vehicle` (`id`);
 COMMIT;
 
