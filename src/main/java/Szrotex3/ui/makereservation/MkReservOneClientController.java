@@ -48,4 +48,8 @@ public class MkReservOneClientController {
     public void setClient_surname(String surname) {
         Client_surname.setText(surname);
     }
+
+    public void setClient_id(int id){
+        Client_id.setText(String.valueOf(id));
+    }
 }
