@@ -89,7 +89,7 @@ public class addNewClientController {
 
         //prompt o dodaniu nowego klienta, wymazanie pol.
 
-        HomePageController.getInstance().changeContentToKlienci(event);
+        //HomePageController.getInstance().changeContentToKlienci(event);
 
 
 
