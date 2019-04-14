@@ -124,34 +124,43 @@ public class MakeReservationController extends MainController {
     @FXML
     void makeReservationActon(ActionEvent event) {
 
-        if (this.client == null) {
-            throw new UserException("Klient nie został wybrany.");
+        try {
+
+            if (this.client == null) {
+                throw new UserException("Klient nie został wybrany.");
+            }
+
+            if (this.car == null) {
+                throw new UserException("Pojazd nie został wybrany.");
+            }
+
+            LocalDate localDateStart = this.dateStart.getValue();
+            LocalDate localDateEnd = this.dateEnd.getValue();
+
+            Instant instantStart = Instant.from(localDateStart.atStartOfDay(ZoneId.systemDefault()));
+            Instant instantEnd = Instant.from(localDateEnd.atStartOfDay(ZoneId.systemDefault()));
+
+            Date dateStart = Date.from(instantStart);
+            Date dateEnd = Date.from(instantEnd);
+
+            Reservation reservationService = (Reservation) Container.getBean("reservation");
+            Szrotex3.model.Reservation reservationObiect = reservationService.makeReservation(
+                    this.car.getVehicle(),
+                    this.client,
+                    dateStart,
+                    dateEnd
+            );
+
+            if (reservationObiect == null) {
+                throw new UserException("Rezerwacja nie może zostać wykonana w podanym terminie.");
+            }
+        } catch (UserException e) {
+            String message = e.getMessage();
+            throw e; // wyświetlić popup/komunikat z message zamiast throwa
         }
 
-        if (this.car == null) {
-            throw new UserException("Pojazd nie został wybrany.");
-        }
+        // wyświetlić popup/komunikat, że się udało
 
-        LocalDate localDateStart = this.dateStart.getValue();
-        LocalDate localDateEnd = this.dateEnd.getValue();
-
-        Instant instantStart = Instant.from(localDateStart.atStartOfDay(ZoneId.systemDefault()));
-        Instant instantEnd = Instant.from(localDateEnd.atStartOfDay(ZoneId.systemDefault()));
-
-        Date dateStart = Date.from(instantStart);
-        Date dateEnd = Date.from(instantEnd);
-
-        Reservation reservationService = (Reservation) Container.getBean("reservation");
-        Szrotex3.model.Reservation reservationObiect = reservationService.makeReservation(
-                this.car.getVehicle(),
-                this.client,
-                dateStart,
-                dateEnd
-        );
-
-        if (reservationObiect == null) {
-            throw new UserException("Rezerwacja nie może zostać wykonana w podanym terminie.");
-        }
 
     }
 
