@@ -17,7 +17,7 @@
          </image>
       </ImageView>
       <JFXTextField fx:id="ClientPESEL" focusColor="#016984" layoutX="125.0" layoutY="246.0" promptText="PESEL" />
-      <JFXTextField fx:id="ClientAge" focusColor="#016984" layoutX="125.0" layoutY="306.0" promptText="Wiek" />
+      <JFXTextField fx:id="ClientAge" focusColor="#016984" layoutX="125.0" layoutY="306.0" promptText="Data urodzenia" />
       <JFXTextField fx:id="ClientMail" focusColor="#016984" layoutX="445.0" layoutY="126.0" promptText="Adres email" />
       <JFXTextField fx:id="ClientNumber" focusColor="#016984" layoutX="445.0" layoutY="186.0" promptText="Numer telefonu" />
       <JFXTextField fx:id="ClientCode" focusColor="#016984" layoutX="445.0" layoutY="246.0" promptText="Numer dowodu" />
