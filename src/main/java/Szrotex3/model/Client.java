@@ -185,10 +185,6 @@ public class Client {
         Calendar calBirthDate = Calendar.getInstance();
         calBirthDate.setTime(birthDate);
 
-        System.out.println(now.get(Calendar.YEAR) + " " + now.get(Calendar.MONTH) + " " + now.get(Calendar.DAY_OF_MONTH) );
-        System.out.println(calBirthDate.get(Calendar.YEAR) + " " + calBirthDate.get(Calendar.MONTH) + " " + calBirthDate.get(Calendar.DAY_OF_MONTH) );
-
-
         int age=now.get(Calendar.YEAR)-calBirthDate.get(Calendar.YEAR);
         if(now.get(Calendar.MONTH)<calBirthDate.get(Calendar.MONTH)) {
             age--;
