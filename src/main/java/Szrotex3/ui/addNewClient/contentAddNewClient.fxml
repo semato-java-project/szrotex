@@ -7,6 +7,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
+<?import com.jfoenix.controls.JFXDatePicker?>
 <AnchorPane fx:id="AddClientPane" prefHeight="490.0" prefWidth="750.0" stylesheets="@addNewClient.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Szrotex3.ui.addNewClient.addNewClientController">
    <children>
       <JFXTextField fx:id="clientName" focusColor="#016984" layoutX="125.0" layoutY="126.0" promptText="Imie" />
@@ -18,7 +19,11 @@
          </image>
       </ImageView>
       <JFXTextField fx:id="clientPesel" focusColor="#016984" layoutX="125.0" layoutY="246.0" promptText="PESEL" />
-      <JFXTextField fx:id="clientBirthDate" focusColor="#016984" layoutX="125.0" layoutY="306.0" promptText="Data urodzenia" />
+      <JFXDatePicker fx:id="clientBirthDate" layoutX="125.0" layoutY="306.0" promptText="Data urodzenia" > <!--focusColor="#016984"-->
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXDatePicker>
       <JFXTextField fx:id="clientEmail" focusColor="#016984" layoutX="445.0" layoutY="126.0" promptText="Adres email" />
       <JFXTextField fx:id="clientPhone" focusColor="#016984" layoutX="445.0" layoutY="186.0" promptText="Numer telefonu" />
       <JFXTextField fx:id="clientIdNumber" focusColor="#016984" layoutX="445.0" layoutY="246.0" promptText="Numer dowodu" />

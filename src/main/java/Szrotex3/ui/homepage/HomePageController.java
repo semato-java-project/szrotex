@@ -112,7 +112,7 @@ public class HomePageController extends MainController {
     }
 
     @FXML
-    void changeContentToKlienci(ActionEvent event) {
+    public void changeContentToKlienci(ActionEvent event) {
         createContentPage(holderPane, "/Szrotex3/ui/klienci/content_klienci.fxml");
         setTopPath("Klienci");
     }
