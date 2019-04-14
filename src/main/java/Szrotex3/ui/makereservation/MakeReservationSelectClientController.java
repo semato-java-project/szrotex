@@ -11,6 +11,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -51,18 +52,17 @@ public class MakeReservationSelectClientController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-       /* HibernateSession hibernateSession = (HibernateSession) Container.getBean("hibernateSession");
+
+        HibernateSession hibernateSession = (HibernateSession) Container.getBean("hibernateSession");
         List<Client> clientObjects = (List<Client>) hibernateSession.getSession().createCriteria(Client.class).list();
 
-        clientObjects.get(1).getUser();*/
-
-
-        AnchorPane[] clients = new AnchorPane[10];
-        for (int i = 0; i < clients.length; i++) {
-
+        for (int i = 0; i < clientObjects.size(); i++) {
+            AnchorPane clientsPane;
             try {
-                clients[i] = FXMLLoader.load(getClass().getResource("mk_reserv_one_client_pane.fxml"));
-                SelectClient_container.getChildren().add(clients[i]);
+                clientsPane = FXMLLoader.load(getClass().getResource("mk_reserv_one_client_pane.fxml"));
+                MkReservOneClientController.getInstance().setClient_name(clientObjects.get(i).getFirstName());
+                MkReservOneClientController.getInstance().setClient_surname(clientObjects.get(i).getLastName());
+                SelectClient_container.getChildren().add(clientsPane);
             } catch (IOException e) {
                 e.printStackTrace();
             }
