@@ -25,60 +25,60 @@
                   <Font name="Arial" size="20.0" />
                </font>
             </Text>
-            <Text fx:id="EngineCapacity" layoutX="387.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="5 osobowy" />
+            <Text fx:id="EngineCapacity" layoutX="427.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="5 osobowy" />
             <Text fx:id="Price" fill="#242424" layoutX="640.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="239 zł">
                <font>
                   <Font name="Arial" size="27.0" />
                </font>
             </Text>
             <Text fill="#016984" layoutX="640.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="brutto / doba" />
-            <JFXButton fx:id="ReserveButton" layoutX="615.0" layoutY="66.0" onAction="#ShowReservationDetails" prefWidth="101.0" styleClass="ReserveButton" stylesheets="@content_oferta.css" text="ZAREZERWUJ">
+            <JFXButton fx:id="ReserveButton" focusTraversable="false" layoutX="615.0" layoutY="66.0" onAction="#ShowReservationDetails" prefWidth="101.0" styleClass="ReserveButton" stylesheets="@content_oferta.css" text="ZAREZERWUJ">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
             <ImageView fx:id="CarImg" fitHeight="100.0" fitWidth="180.0" layoutX="13.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@/assets/cars/bentleyc.png" backgroundLoading="true"/>
+                  <Image backgroundLoading="true" url="@/assets/cars/bentleyc.png" />
                </image>
             </ImageView>
-            <Text fx:id="Model" fill="#016984" layoutX="216.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="M2">
+            <Text fx:id="Model" fill="#016984" layoutX="216.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Continental GT">
                <font>
-                  <Font name="Arial Bold" size="29.0" />
+                  <Font name="Arial Bold" size="27.0" />
                </font>
             </Text>
-            <ImageView fitHeight="17.0" fitWidth="20.0" layoutX="363.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="17.0" fitWidth="20.0" layoutX="403.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@/assets/baseline_person_black_18dp.png" />
                </image>
             </ImageView>
-            <Text fx:id="Transsmision" layoutX="517.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="cośtam" />
-            <ImageView fitHeight="17.0" fitWidth="20.0" layoutX="493.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+            <Text fx:id="Transsmision" layoutX="557.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="cośtam" />
+            <ImageView fitHeight="17.0" fitWidth="20.0" layoutX="533.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@/assets/baseline_person_black_18dp.png" />
                </image>
             </ImageView>
-            <Separator layoutX="351.0" layoutY="23.0" orientation="VERTICAL" prefHeight="70.0" />
-            <Text fx:id="EngineType" layoutX="387.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="5 osobowy" />
-            <ImageView fitHeight="17.0" fitWidth="20.0" layoutX="363.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true">
+            <Separator layoutX="391.0" layoutY="23.0" orientation="VERTICAL" prefHeight="70.0" />
+            <Text fx:id="EngineType" layoutX="427.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="5 osobowy" />
+            <ImageView fitHeight="17.0" fitWidth="20.0" layoutX="403.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@/assets/baseline_person_black_18dp.png" />
                </image>
             </ImageView>
-            <Text fx:id="DoorsQuantity" layoutX="517.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="cośtam" />
-            <ImageView fitHeight="17.0" fitWidth="20.0" layoutX="493.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true">
+            <Text fx:id="DoorsQuantity" layoutX="557.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="cośtam" />
+            <ImageView fitHeight="17.0" fitWidth="20.0" layoutX="533.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@/assets/baseline_person_black_18dp.png" />
                </image>
             </ImageView>
-            <Text fx:id="EnginePower" layoutX="387.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="5 osobowy" />
-            <ImageView fitHeight="17.0" fitWidth="20.0" layoutX="363.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
+            <Text fx:id="EnginePower" layoutX="427.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="5 osobowy" />
+            <ImageView fitHeight="17.0" fitWidth="20.0" layoutX="403.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@/assets/baseline_person_black_18dp.png" />
                </image>
             </ImageView>
-            <Text fx:id="SeatsQuantity" layoutX="517.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="cośtam" />
-            <ImageView fitHeight="17.0" fitWidth="20.0" layoutX="493.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
+            <Text fx:id="SeatsQuantity" layoutX="557.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="cośtam" />
+            <ImageView fitHeight="17.0" fitWidth="20.0" layoutX="533.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@/assets/baseline_person_black_18dp.png" />
                </image>

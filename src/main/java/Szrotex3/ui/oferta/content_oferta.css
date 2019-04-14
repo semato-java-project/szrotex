@@ -46,7 +46,6 @@
     -fx-background-color:transparent;
 }
 
-
 .scroll-bar:vertical .track{
     -fx-background-color :transparent;
     -fx-border-color :transparent;
