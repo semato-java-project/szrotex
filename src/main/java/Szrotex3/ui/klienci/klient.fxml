@@ -16,7 +16,7 @@
       <Text fx:id="clientSurname" layoutX="132.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nazwisko" />
       <Text fx:id="clientEmail" layoutX="262.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="krzysztof.krawczyk@najlepszamuzyka.pl" />
       <Text fx:id="clientPhone" layoutX="262.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nr telefonu" />
-      <Text fx:id="clientId" fill="#016984" layoutX="48.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID:">
+      <Text fill="#016984" layoutX="48.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID:">
          <font>
             <Font name="Arial" size="12.0" />
          </font>
@@ -36,7 +36,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <Text layoutX="69.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" />
+      <Text fx:id="clientId" layoutX="69.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" />
       <ImageView fitHeight="28.0" fitWidth="28.0" layoutX="13.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@/assets/client/client_icon.png" />
