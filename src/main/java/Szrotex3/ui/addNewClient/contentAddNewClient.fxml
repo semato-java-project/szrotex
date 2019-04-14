@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="490.0" prefWidth="750.0" stylesheets="@addNewClient.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Szrotex3.ui.addNewClient.addNewClientController">
+   <children>
+      <JFXTextField fx:id="ClientName" focusColor="#016984" layoutX="125.0" layoutY="136.0" promptText="Imie" />
+      <JFXTextField fx:id="ClientSurname" focusColor="#016984" layoutX="125.0" layoutY="196.0" promptText="Nazwisko" />
+      <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="335.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@/assets/baseline_account_circle_black_48dp.png" />
+         </image>
+      </ImageView>
+      <JFXTextField fx:id="ClientPESEL" focusColor="#016984" layoutX="125.0" layoutY="256.0" promptText="PESEL"  />
+      <JFXTextField fx:id="ClientAge" focusColor="#016984" layoutX="125.0" layoutY="316.0" promptText="Wiek"  />
+      <JFXTextField fx:id="ClientMail" focusColor="#016984" layoutX="445.0" layoutY="136.0" promptText="Adres email" />
+      <JFXTextField fx:id="ClientNumber" focusColor="#016984" layoutX="445.0" layoutY="196.0" promptText="Numer telefonu" />
+      <JFXTextField fx:id="ClientCode" focusColor="#016984" layoutX="445.0" layoutY="256.0" promptText="Numer dowodu" />
+      <JFXTextField fx:id="ClientAddress" focusColor="#016984" layoutX="445.0" layoutY="316.0" promptText="Adres" />
+      <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="86.0" layoutY="139.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@/assets/baseline_person_black_18dp.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="86.0" layoutY="199.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@/assets/baseline_person_black_18dp.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="86.0" layoutY="259.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@/assets/client/client_card.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="86.0" layoutY="319.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@/assets/client/client_age.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="406.0" layoutY="139.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@/assets/client/client_mail.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="406.0" layoutY="199.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@/assets/client/client_phone.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="406.0" layoutY="259.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@/assets/client/client_card.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="406.0" layoutY="319.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@/assets/client/client_address.png" />
+         </image>
+      </ImageView>
+      <JFXButton id="CancelButton" layoutX="125.0" layoutY="415.0" onAction="#handleCancelAction" text="Anuluj">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton id="AddClientButton" layoutX="445.0" layoutY="415.0" onAction="#handleAddClientAction" text="Dodaj Klienta">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+   </children>
+</AnchorPane>
