@@ -7,7 +7,9 @@ import java.util.Date;
 @Entity
 @Table(name="reservation")
 public class Reservation {
+
     @Id
+    @GeneratedValue
     @Column(name="id")
     private int id;
 
@@ -23,11 +25,11 @@ public class Reservation {
 
 
     @Column(name="date_start")
-    private Date date_start;
+    private Date dateStart;
 
 
     @Column(name="date_end")
-    private Date date_end;
+    private Date dateEnd;
 
 
 
@@ -56,19 +58,19 @@ public class Reservation {
         this.client = client;
     }
 
-    public Date getDate_start() {
-        return date_start;
+    public Date getDateStart() {
+        return dateStart;
     }
 
-    public void setDate_start(Date date_start) {
-        this.date_start = date_start;
+    public void setDateStart(Date dateStart) {
+        this.dateStart = dateStart;
     }
 
-    public Date getDate_end() {
-        return date_end;
+    public Date getDateEnd() {
+        return dateEnd;
     }
 
-    public void setDate_end(Date date_end) {
-        this.date_end = date_end;
+    public void setDateEnd(Date dateEnd) {
+        this.dateEnd = dateEnd;
     }
 }
