@@ -41,7 +41,7 @@
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></JFXButton>
-            <JFXButton focusTraversable="false" layoutY="407.0" onAction="#changeContentToUstawienia" styleClass="menubutton" text="   Ustawienia" textFill="WHITE" textOverrun="CLIP">
+            <JFXButton focusTraversable="false" layoutY="407.0" onAction="#changeContentToAddNewClient" styleClass="menubutton" text="      Dodaj Klienta" textFill="WHITE" textOverrun="CLIP">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></JFXButton>
@@ -72,7 +72,7 @@
             </ImageView>
             <ImageView fitHeight="23.0" fitWidth="23.0" layoutX="54.0" layoutY="421.0" nodeOrientation="INHERIT" opacity="0.8">
                <image>
-                  <Image url="@/assets/menu_settings.png" />
+                  <Image url="@/assets/menu_addClient.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="23.0" fitWidth="23.0" layoutX="54.0" layoutY="476.0" nodeOrientation="INHERIT" opacity="0.8">

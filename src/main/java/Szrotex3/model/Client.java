@@ -3,7 +3,8 @@ package Szrotex3.model;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
-import java.sql.Date;
+import java.util.Calendar;
+import java.util.Date;
 
 @Entity
 @Table(name="client")
@@ -30,20 +31,46 @@ public class Client {
     @CreationTimestamp
     private Date createdAt;
 
+    @Column(name="pesel")
+    private String pesel;
 
+    @Column(name="id_number")
+    private String idNumber;
+
+    @Column(name="birth_date")
+    private Date birthDate;
+
+    @Column(name="city")
+    private String city;
+
+    @Column(name="street")
+    private String street;
+
+    @Column(name="apartment_number")
+    private String apartmentNumber;
+
+    @Column(name="postal_code")
+    private String postalCode;
 
     public Client()
     {
     }
 
-    public Client(int id, String firstName, String lastName, String email, String phone, Date createdAt) {
-        this.id = id;
+    public Client(String firstName, String lastName, String email, String phone, Date createdAt, String pesel, String idNumber, Date birthDate, String city, String street, String apartmentNumber, String postalCode) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.phone = phone;
         this.createdAt = createdAt;
+        this.pesel = pesel;
+        this.idNumber = idNumber;
+        this.birthDate = birthDate;
+        this.city = city;
+        this.street = street;
+        this.apartmentNumber = apartmentNumber;
+        this.postalCode = postalCode;
     }
+
 
     public String getFirstName() {
         return firstName;
@@ -93,5 +120,90 @@ public class Client {
         this.id = id;
     }
 
+    public String getPesel() {
+        return pesel;
+    }
+
+    public void setPesel(String pesel) {
+        this.pesel = pesel;
+    }
+
+    public String getIdNumber() {
+        return idNumber;
+    }
+
+    public void setIdNumber(String idNumber) {
+        this.idNumber = idNumber;
+    }
+
+    public Date getBirthDate() {
+        return birthDate;
+    }
+
+    public void setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getStreet() {
+        return street;
+    }
+
+    public void setStreet(String street) {
+        this.street = street;
+    }
+
+    public String getApartmentNumber() {
+        return apartmentNumber;
+    }
+
+    public void setApartmentNumber(String apartmentNumber) {
+        this.apartmentNumber = apartmentNumber;
+    }
+
+    public String getPostalCode() {
+        return postalCode;
+    }
+
+    public void setPostalCode(String postalCode) {
+        this.postalCode = postalCode;
+    }
+
+    public int getAge()
+    {
+
+        Calendar now = Calendar.getInstance();
+        now.setTime(Calendar.getInstance().getTime());
+
+        Calendar calBirthDate = Calendar.getInstance();
+        calBirthDate.setTime(birthDate);
+
+        int age=now.get(Calendar.YEAR)-calBirthDate.get(Calendar.YEAR);
+        if(now.get(Calendar.MONTH)<calBirthDate.get(Calendar.MONTH)) {
+            age--;
+        }
+        else if(now.get(Calendar.MONTH)==calBirthDate.get(Calendar.MONTH))
+        {
+             if(now.get(Calendar.DAY_OF_MONTH)<=calBirthDate.get(Calendar.DAY_OF_MONTH)) {
+                 age--;
+             }
+        }
+
+
+        return age;
+    }
+
+    public String getAddress()
+    {
+        String address=this.city + ", " + this.street + " " + this.apartmentNumber + ", " + this.postalCode;
+        return address;
+    }
 
 }
