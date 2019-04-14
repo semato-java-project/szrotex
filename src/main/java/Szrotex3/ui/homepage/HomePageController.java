@@ -129,4 +129,10 @@ public class HomePageController extends MainController {
         setTopPath("Dodaj Klienta");
     }
 
+    @FXML
+    public void changeContentToEditClient(ActionEvent event) {
+        createContentPage(holderPane, "/Szrotex3/ui/addNewClient/contentAddNewClient.fxml");
+        setTopPath("Edytuj Klienta");
+    }
+
 }

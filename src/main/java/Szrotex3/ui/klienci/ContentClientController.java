@@ -1,6 +1,7 @@
 package Szrotex3.ui.klienci;
 
 import Szrotex3.model.Client;
+import Szrotex3.ui.homepage.HomePageController;
 import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -79,8 +80,11 @@ public class ContentClientController implements Initializable {
             LeftPane.setPrefHeight(74);
             ClientSeparator.setPrefHeight(74);
         }
+    }
 
-
+    @FXML
+    void goToEditForm(ActionEvent event) {
+        HomePageController.getInstance().changeContentToEditClient(event);
     }
 
     public void setClient(Client client)
