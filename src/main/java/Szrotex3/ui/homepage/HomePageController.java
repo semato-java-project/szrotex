@@ -33,6 +33,19 @@ public class HomePageController extends MainController {
     private JFXButton LogOutButton;
 
     @FXML
+    private JFXButton OfertaButton;
+
+    @FXML
+    private JFXButton ClientButton;
+
+    @FXML
+    private JFXButton AddClientButton;
+
+    @FXML
+    private JFXButton RentButton;
+
+
+    @FXML
     private Text TopPathInfo;
 
 
@@ -84,6 +97,7 @@ public class HomePageController extends MainController {
         createContentPage(holderPane, "/Szrotex3/ui/oferta/content_oferta.fxml");
         setUsername("Witaj, " + LoginController.getInstance().getUsername());
         setTopPath("Oferta");
+
     }
 
     @FXML
@@ -110,8 +124,8 @@ public class HomePageController extends MainController {
     }
 
     @FXML
-    void changeContentToUstawienia(ActionEvent event) {
-        createContentPage(holderPane, "/Szrotex3/ui/ustawienia/content_ustawienia.fxml");
+    public void changeContentToAddNewClient(ActionEvent event) {
+        createContentPage(holderPane, "/Szrotex3/ui/addNewClient/content_addNewClient.fxml");
         setTopPath("Ustawienia");
     }
 
