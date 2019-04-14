@@ -75,8 +75,8 @@
             <Font name="Arial" size="20.0" />
          </font>
       </Text>
-      <JFXTimePicker defaultColor="#016984" layoutX="299.0" layoutY="202.0" prefWidth="110.0" />
-      <JFXTimePicker defaultColor="#016984" layoutX="299.0" layoutY="273.0" prefWidth="110.0" />
+      <JFXTimePicker fx:id="timeStart" defaultColor="#016984" layoutX="299.0" layoutY="202.0" prefWidth="110.0" />
+      <JFXTimePicker fx:id="timeEnd" defaultColor="#016984" layoutX="299.0" layoutY="273.0" prefWidth="110.0" />
       <JFXButton id="reseveButton" layoutX="473.0" layoutY="423.0" onAction="#makeReservationActon" prefHeight="25.0" prefWidth="214.0" text="REZERWUJĘ">
          <cursor>
             <Cursor fx:constant="HAND" />
