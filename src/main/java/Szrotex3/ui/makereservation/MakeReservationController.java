@@ -9,6 +9,7 @@ import Szrotex3.ui.exception.UserException;
 import Szrotex3.ui.homepage.HomePageController;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDatePicker;
+import com.jfoenix.controls.JFXTimePicker;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.effect.BoxBlur;
@@ -24,7 +25,9 @@ import java.io.File;
 import java.net.URL;
 import java.time.Instant;
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.time.ZoneId;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.ResourceBundle;
 
@@ -70,6 +73,12 @@ public class MakeReservationController extends MainController {
 
     @FXML
     private JFXDatePicker dateEnd;
+
+    @FXML
+    private JFXTimePicker timeStart;
+
+    @FXML
+    private JFXTimePicker timeEnd;
 
     public Text getClientName() {
         return ClientName;
@@ -137,11 +146,35 @@ public class MakeReservationController extends MainController {
             LocalDate localDateStart = this.dateStart.getValue();
             LocalDate localDateEnd = this.dateEnd.getValue();
 
+            LocalTime localTimeStart = this.timeStart.getValue();
+            LocalTime localTimeEnd = this.timeEnd.getValue();
+
+            Calendar calendarStart = Calendar.getInstance();
+            Calendar calendarEnd = Calendar.getInstance();
+
+            calendarStart.set(
+                    localDateStart.getYear(),
+                    localDateStart.getMonthValue() - 1,
+                    localDateStart.getDayOfMonth(),
+                    localTimeStart.getHour(),
+                    localTimeStart.getMinute(),
+                    0
+            );
+
+            calendarEnd.set(
+                    localDateEnd.getYear(),
+                    localDateEnd.getMonthValue() - 1,
+                    localDateEnd.getDayOfMonth(),
+                    localTimeEnd.getHour(),
+                    localTimeEnd.getMinute(),
+                    0
+            );
+
             Instant instantStart = Instant.from(localDateStart.atStartOfDay(ZoneId.systemDefault()));
             Instant instantEnd = Instant.from(localDateEnd.atStartOfDay(ZoneId.systemDefault()));
 
-            Date dateStart = Date.from(instantStart);
-            Date dateEnd = Date.from(instantEnd);
+            Date dateStart = calendarStart.getTime();
+            Date dateEnd = calendarEnd.getTime();
 
             Reservation reservationService = (Reservation) Container.getBean("reservation");
             Szrotex3.model.Reservation reservationObiect = reservationService.makeReservation(
@@ -160,7 +193,6 @@ public class MakeReservationController extends MainController {
         }
 
         // wyświetlić popup/komunikat, że się udało
-
 
     }
 
