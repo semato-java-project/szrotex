@@ -31,7 +31,7 @@ public class Client {
     private Date createdAt;
 
     @Column(name="pesel")
-    private String Pesel;
+    private String pesel;
 
     @Column(name="id_number")
     private String idNumber;
@@ -55,14 +55,21 @@ public class Client {
     {
     }
 
-    public Client(int id, String firstName, String lastName, String email, String phone, Date createdAt) {
-        this.id = id;
+    public Client(String firstName, String lastName, String email, String phone, Date createdAt, String pesel, String idNumber, Date birthDate, String city, String street, String apartmentNumber, String postalCode) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.phone = phone;
         this.createdAt = createdAt;
+        this.pesel = pesel;
+        this.idNumber = idNumber;
+        this.birthDate = birthDate;
+        this.city = city;
+        this.street = street;
+        this.apartmentNumber = apartmentNumber;
+        this.postalCode = postalCode;
     }
+
 
     public String getFirstName() {
         return firstName;
@@ -113,11 +120,11 @@ public class Client {
     }
 
     public String getPesel() {
-        return Pesel;
+        return pesel;
     }
 
     public void setPesel(String pesel) {
-        Pesel = pesel;
+        this.pesel = pesel;
     }
 
     public String getIdNumber() {
@@ -167,4 +174,17 @@ public class Client {
     public void setPostalCode(String postalCode) {
         this.postalCode = postalCode;
     }
+
+    public int getAge()
+    {
+        int age=0;
+        return age;
+    }
+
+    public String getAddress()
+    {
+        String address=this.city + ", " + this.street + " " + this.apartmentNumber + ", " + this.postalCode;
+        return address;
+    }
+
 }

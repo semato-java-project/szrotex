@@ -12,11 +12,11 @@
 
 <AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="140.0" prefWidth="735.0" styleClass="client_pane" stylesheets="@klient.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Szrotex3.ui.klienci.ContentClientController">
    <children>
-      <Text layoutX="132.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Imie" />
-      <Text layoutX="132.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nazwisko" />
-      <Text layoutX="262.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="krzysztof.krawczyk@najlepszamuzyka.pl" />
-      <Text layoutX="262.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nr telefonu" />
-      <Text fill="#016984" layoutX="48.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID:">
+      <Text fx:id="clientName" layoutX="132.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Imie" />
+      <Text fx:id="clientSurname" layoutX="132.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nazwisko" />
+      <Text fx:id="clientEmail" layoutX="262.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="krzysztof.krawczyk@najlepszamuzyka.pl" />
+      <Text fx:id="clientPhone" layoutX="262.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nr telefonu" />
+      <Text fx:id="clientId" fill="#016984" layoutX="48.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID:">
          <font>
             <Font name="Arial" size="12.0" />
          </font>
@@ -63,8 +63,8 @@
             <Image url="@/assets/client/client_phone.png" />
          </image>
       </ImageView>
-      <Text layoutX="132.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PESEL" />
-      <Text layoutX="262.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Numer Dowodu" />
+      <Text fx:id="clientPesel" layoutX="132.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PESEL" />
+      <Text fx:id="clientIdNumber" layoutX="262.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Numer Dowodu" />
       <ImageView fitHeight="18.0" fitWidth="18.0" layoutX="103.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@/assets/client/client_card.png" />
@@ -75,8 +75,8 @@
             <Image url="@/assets/client/client_card.png" />
          </image>
       </ImageView>
-      <Text layoutX="132.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="wiek" />
-      <Text layoutX="262.0" layoutY="121.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Adres zamieszkania" />
+      <Text fx:id="clientAge" layoutX="132.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="wiek" />
+      <Text fx:id="clientAddress" layoutX="262.0" layoutY="121.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Adres zamieszkania" />
       <ImageView fitHeight="18.0" fitWidth="18.0" layoutX="103.0" layoutY="108.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@/assets/client/client_age.png" />
