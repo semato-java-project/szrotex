@@ -1,0 +1,31 @@
+#background{
+
+    -fx-background-color: #016984;
+    -fx-background-radius: 10 ;
+}
+
+#cancelButton{
+
+    -fx-background-color: #343434;
+    -fx-pref-width: 120;
+    -fx-pref-height: 30;
+    -fx-text-fill: #FFFFFF;
+}
+
+#cancelButton:hover{
+    -fx-background-color: #242424;
+}
+
+#confirmButton{
+    -fx-background-color: #00a4ca;
+    -fx-pref-width: 120;
+    -fx-pref-height: 30;
+    -fx-text-fill: #FFFFFF;
+}
+
+#confirmButton:hover
+{
+
+    -fx-background-color: #FFFFFF;
+    -fx-text-fill: #000000;
+}

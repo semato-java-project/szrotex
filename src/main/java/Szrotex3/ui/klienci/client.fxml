@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="140.0" prefWidth="735.0" styleClass="client_pane" stylesheets="@klient.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Szrotex3.ui.klienci.ContentClientController">
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="140.0" prefWidth="735.0" styleClass="client_pane" stylesheets="@client.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Szrotex3.ui.klienci.ClientController">
    <children>
       <Text fx:id="clientName" layoutX="132.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Imie" />
       <Text fx:id="clientSurname" layoutX="132.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nazwisko" />
@@ -21,20 +21,29 @@
             <Font name="Arial" size="12.0" />
          </font>
       </Text>
-      <JFXButton fx:id="EditClientButton" focusTraversable="false" layoutX="623.0" layoutY="28.0" text="Edytuj" textFill="WHITE">
+      <JFXButton fx:id="EditClientButton" focusTraversable="false" layoutX="623.0" layoutY="28.0" onAction="#handleEditClientAction" text="Edytuj" textFill="WHITE">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
       </JFXButton>
-      <JFXButton fx:id="DeleteClientButton" layoutX="682.0" layoutY="28.0" text="Usuń" textFill="WHITE">
+      <JFXButton fx:id="DeleteClientButton" layoutX="682.0" layoutY="28.0" onAction="#handleDeleteClientAction" text="Usuń" textFill="WHITE">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
       </JFXButton>
       <JFXButton fx:id="ShowDetailsButton" layoutX="508.0" layoutY="28.0" onAction="#ShowDetailsButtonAction" text="Pokaż szczegóły" textFill="WHITE">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
       </JFXButton>
       <Text fx:id="clientId" layoutX="69.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" />
       <ImageView fitHeight="28.0" fitWidth="28.0" layoutX="13.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
