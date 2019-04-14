@@ -72,7 +72,7 @@ public class OfertaCarPaneController {
         DoorsQuantity.setText(String.valueOf(doorsQuantity));
 
         Image image = new Image(new File(linkToImg).toURI().toString());
-        System.out.println(new File(linkToImg).toURI().toString());
+        System.out.println(new File(linkToImg).toURI().toString()); //do testowania czy poprawna sciezka sie pojawia
         CarImg.setImage(image);
 
     }
