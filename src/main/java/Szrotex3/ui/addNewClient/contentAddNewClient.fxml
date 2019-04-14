@@ -7,7 +7,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="490.0" prefWidth="750.0" stylesheets="@addNewClient.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Szrotex3.ui.addNewClient.addNewClientController">
+<AnchorPane fx:id="AddClientPane" prefHeight="490.0" prefWidth="750.0" stylesheets="@addNewClient.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Szrotex3.ui.addNewClient.addNewClientController">
    <children>
       <JFXTextField fx:id="ClientName" focusColor="#016984" layoutX="125.0" layoutY="136.0" promptText="Imie" />
       <JFXTextField fx:id="ClientSurname" focusColor="#016984" layoutX="125.0" layoutY="196.0" promptText="Nazwisko" />
@@ -16,8 +16,8 @@
             <Image url="@/assets/baseline_account_circle_black_48dp.png" />
          </image>
       </ImageView>
-      <JFXTextField fx:id="ClientPESEL" focusColor="#016984" layoutX="125.0" layoutY="256.0" promptText="PESEL"  />
-      <JFXTextField fx:id="ClientAge" focusColor="#016984" layoutX="125.0" layoutY="316.0" promptText="Wiek"  />
+      <JFXTextField fx:id="ClientPESEL" focusColor="#016984" layoutX="125.0" layoutY="256.0" promptText="PESEL" />
+      <JFXTextField fx:id="ClientAge" focusColor="#016984" layoutX="125.0" layoutY="316.0" promptText="Wiek" />
       <JFXTextField fx:id="ClientMail" focusColor="#016984" layoutX="445.0" layoutY="136.0" promptText="Adres email" />
       <JFXTextField fx:id="ClientNumber" focusColor="#016984" layoutX="445.0" layoutY="196.0" promptText="Numer telefonu" />
       <JFXTextField fx:id="ClientCode" focusColor="#016984" layoutX="445.0" layoutY="256.0" promptText="Numer dowodu" />

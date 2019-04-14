@@ -47,9 +47,15 @@
 #addClientButton
 {
     -fx-background-color: #016984;
+    -fx-pref-width: 257;
+    -fx-pref-height: 30;
     -fx-text-fill: #FFFFFF;
-    -fx-background-radius: 0;
 }
+#addClientButton:hover
+{
+    -fx-background-color: #0093B9;
+}
+
 
 
 #backgroundpane
