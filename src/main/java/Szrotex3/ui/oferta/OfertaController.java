@@ -61,7 +61,8 @@ public class OfertaController implements Initializable {
                         carObjects.get(i).getEnginePower(),
                         carObjects.get(i).getDoorsQuantity(),
                         carObjects.get(i).getSeatsQuantity(),
-                        carObjects.get(i).getVehicle().getLinkToImg());
+                        carObjects.get(i).getVehicle().getLinkToImg(),
+                        carObjects.get(i).getVehicle().getPrice());
                 container_oferta.getChildren().add(carsPane);
 
             } catch (IOException e) {

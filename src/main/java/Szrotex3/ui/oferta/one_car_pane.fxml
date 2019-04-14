@@ -26,7 +26,7 @@
                </font>
             </Text>
             <Text fx:id="EngineCapacity" layoutX="387.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="5 osobowy" />
-            <Text fill="#242424" layoutX="640.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="239 zł">
+            <Text fx:id="Price" fill="#242424" layoutX="640.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="239 zł">
                <font>
                   <Font name="Arial" size="27.0" />
                </font>

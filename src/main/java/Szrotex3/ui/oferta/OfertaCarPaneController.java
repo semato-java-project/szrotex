@@ -49,6 +49,9 @@ public class OfertaCarPaneController {
     @FXML
     private ImageView CarImg;
 
+    @FXML
+    private Text Price;
+
 
     private static OfertaCarPaneController instance;
     public OfertaCarPaneController() {
@@ -60,7 +63,7 @@ public class OfertaCarPaneController {
 
     public void setCarInfo(int carId,String brand, String model,double engineCapacity,
                            String engineType, String transsmision,int enginePower,
-                           int doorsQuantity,int seatsQuantity, String linkToImg){
+                           int doorsQuantity,int seatsQuantity, String linkToImg, double price){
         CarIdForReservation = carId;
         Brand.setText(brand);
         Model.setText(model);
@@ -70,6 +73,7 @@ public class OfertaCarPaneController {
         Transsmision.setText(transsmision);
         SeatsQuantity.setText(String.valueOf(seatsQuantity));
         DoorsQuantity.setText(String.valueOf(doorsQuantity));
+        Price.setText(String.valueOf(price));
 
         Image image = new Image(new File(linkToImg).toURI().toString());
         System.out.println(new File(linkToImg).toURI().toString()); //do testowania czy poprawna sciezka sie pojawia
