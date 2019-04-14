@@ -62,6 +62,7 @@ public class Reservation {
         return dateStart;
     }
 
+
     public void setDateStart(Date dateStart) {
         this.dateStart = dateStart;
     }
@@ -69,6 +70,7 @@ public class Reservation {
     public Date getDateEnd() {
         return dateEnd;
     }
+
 
     public void setDateEnd(Date dateEnd) {
         this.dateEnd = dateEnd;

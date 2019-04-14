@@ -16,25 +16,25 @@ public class Car {
     @Column(name = "model")
     private String model;
 
-    @Column(name = "engineCapacity")
+    @Column(name = "engine_capacity")
     private double engineCapacity;
 
-    @Column(name = "engineType")
+    @Column(name = "engine_type")
     private String engineType;
 
     @Column(name = "transsmision")
     private String transsmision;
 
-    @Column(name = "enginePower")
+    @Column(name = "engine_power")
     private int enginePower;
 
-    @Column(name = "productionYear")
+    @Column(name = "production_year")
     private int productionYear;
 
-    @Column(name = "doorsQuantity")
+    @Column(name = "doors_quantity")
     private int doorsQuantity;
 
-    @Column(name = "seatsQuantity")
+    @Column(name = "seats_quantity")
     private int seatsQuantity;
 
     @PrimaryKeyJoinColumn

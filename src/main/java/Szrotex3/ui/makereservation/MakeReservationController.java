@@ -5,6 +5,8 @@ import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.effect.BoxBlur;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
@@ -13,6 +15,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 
+import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -43,6 +46,13 @@ public class MakeReservationController extends MainController {
     @FXML
     private JFXButton SelectClientButton;
 
+    @FXML
+    private ImageView CarImg;
+
+    @FXML
+    private Text Price;
+
+
     public Text getClientName() {
         return ClientName;
     }
@@ -62,11 +72,14 @@ public class MakeReservationController extends MainController {
     }
 
 
-    public void setCarReservationInfo(int idCar,String brand, String model){
+    public void setCarReservationInfo(int idCar, String brand, String model, Image CarImgOferta, Text PriceFromOferta){
 
         CarId.setText(String.valueOf(idCar));
         Brand.setText(brand);
         Model.setText(model);
+        Price.setText(PriceFromOferta.getText());
+        CarImg.setImage(CarImgOferta);
+
     }
 
     @FXML
