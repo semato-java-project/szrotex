@@ -10,6 +10,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 
 import java.io.IOException;
@@ -17,10 +18,28 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class KlienciController implements Initializable {
+public class contentKlienciController implements Initializable {
 
+
+    private static  contentKlienciController instance;
+
+    public contentKlienciController() {
+        instance = this;
+    }
+
+    public static contentKlienciController getInstance(){
+        return instance;
+    }
     @FXML
     private VBox client_container;
+
+    public AnchorPane getMainAnchorPane() {
+        return MainAnchorPane;
+    }
+
+    @FXML
+    private AnchorPane MainAnchorPane;
+
 
     @FXML
     void AddNewClient(ActionEvent event) {
@@ -35,8 +54,8 @@ public class KlienciController implements Initializable {
         for (int i = 0; i < clientObjects.size(); i++) {
                 Node clients;
             try {
-                clients = FXMLLoader.load(getClass().getResource("klient.fxml"));
-                ContentClientController.getInstance().setClient(clientObjects.get(i));
+                clients = FXMLLoader.load(getClass().getResource("client.fxml"));
+                ClientController.getInstance().setClient(clientObjects.get(i));
                 client_container.getChildren().add(clients);
             } catch (IOException e) {
                 e.printStackTrace();

@@ -10,6 +10,7 @@ import javafx.scene.text.Text;
 
 public class addNewClientController {
 
+
     @FXML
     private AnchorPane AddClientPane;
 

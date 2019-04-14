@@ -10,6 +10,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Modality;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -57,6 +58,7 @@ public abstract class MainController extends Application implements Initializabl
             Parent root = FXMLLoader.load(getClass().getResource(path));
             Stage stage = new Stage(StageStyle.TRANSPARENT);
             stage.initStyle(StageStyle.TRANSPARENT);
+            stage.initModality(Modality.APPLICATION_MODAL);
             stage.setTitle("Semato - Car Rent App");
             Scene scene = new Scene(root);
             stage.setScene(scene);

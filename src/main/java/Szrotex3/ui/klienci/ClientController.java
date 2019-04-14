@@ -1,19 +1,21 @@
 package Szrotex3.ui.klienci;
 
 import Szrotex3.model.Client;
+import Szrotex3.ui.MainController;
 import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Separator;
+import javafx.scene.effect.BoxBlur;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class ContentClientController implements Initializable {
+public class ClientController extends MainController {
 
     private Client client;
 
@@ -98,11 +100,11 @@ public class ContentClientController implements Initializable {
         clientAddress.setText(client.getAddress());
     }
 
-    private static ContentClientController instance;
-    public ContentClientController() {
+    private static ClientController instance;
+    public ClientController() {
         instance = this;
     }
-    public static ContentClientController getInstance() {
+    public static ClientController getInstance() {
         return instance;
     }
 
@@ -110,5 +112,17 @@ public class ContentClientController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         anchorPane.setPrefHeight(74);
         ClientSeparator.setPrefHeight(74);
+    }
+
+    @FXML
+    void handleDeleteClientAction(ActionEvent event) {
+        BoxBlur blur = new BoxBlur(5,5,5);
+        contentKlienciController.getInstance().getMainAnchorPane().setEffect(blur);
+        loadPage("/Szrotex3/ui/klienci/deleteClientAlert.fxml");
+    }
+
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+
     }
 }
