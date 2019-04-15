@@ -83,8 +83,11 @@ public class ClientController extends MainController {
             LeftPane.setPrefHeight(74);
             ClientSeparator.setPrefHeight(74);
         }
+    }
 
-
+    @FXML
+    void goToEditForm(ActionEvent event) {
+        HomePageController.getInstance().changeContentToEditClient(event);
     }
 
     public void setClient(Client client)
@@ -128,7 +131,7 @@ public class ClientController extends MainController {
         HomePageController.getInstance().changeContentToAddNewClient(event);
         HomePageController.getInstance().setTopPath("Edytuj Klienta");
         AddNewClientController.getInstance().setClient(client);
-        AddNewClientController.getInstance().getAddoreditButton().setText("Edytuj Klienta");
+        AddNewClientController.getInstance().getAddOrEditButton().setText("Edytuj Klienta");
 
     }
 

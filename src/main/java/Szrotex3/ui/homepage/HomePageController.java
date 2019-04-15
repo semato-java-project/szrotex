@@ -62,6 +62,10 @@ public class HomePageController extends MainController {
         TopPathInfo.setText(name);
     }
 
+    public String getTopPath(){
+        return TopPathInfo.getText();
+    }
+
     public void setUsername(String uname){
         this.username.setText(uname);
     }
@@ -112,7 +116,7 @@ public class HomePageController extends MainController {
     }
 
     @FXML
-    void changeContentToKlienci(ActionEvent event) {
+    public void changeContentToKlienci(ActionEvent event) {
         createContentPage(holderPane, "/Szrotex3/ui/klienci/content_klienci.fxml");
         setTopPath("Klienci");
     }
@@ -127,6 +131,12 @@ public class HomePageController extends MainController {
     public void changeContentToAddNewClient(ActionEvent event) {
         createContentPage(holderPane, "/Szrotex3/ui/addNewClient/contentAddNewClient.fxml");
         setTopPath("Dodaj Klienta");
+    }
+
+    @FXML
+    public void changeContentToEditClient(ActionEvent event) {
+        createContentPage(holderPane, "/Szrotex3/ui/addNewClient/contentAddNewClient.fxml");
+        setTopPath("Edytuj Klienta");
     }
 
 }
