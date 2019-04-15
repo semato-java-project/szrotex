@@ -6,8 +6,8 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-
 <?import com.jfoenix.controls.JFXDatePicker?>
+
 <AnchorPane fx:id="AddClientPane" prefHeight="490.0" prefWidth="750.0" stylesheets="@addNewClient.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Szrotex3.ui.addNewClient.addNewClientController">
    <children>
       <JFXTextField fx:id="clientName" focusColor="#016984" layoutX="125.0" layoutY="126.0" promptText="Imie" />
@@ -73,7 +73,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton id="AddClientButton" layoutX="445.0" layoutY="429.0" onAction="#handleAddClientAction" text="Dodaj Klienta">
+      <JFXButton id="AddClientButton" fx:id="addoreditButton" layoutX="445.0" layoutY="429.0" onAction="#handleAddClientAction" text="Dodaj Klienta">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
