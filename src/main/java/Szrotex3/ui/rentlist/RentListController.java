@@ -33,7 +33,7 @@ public class RentListController implements Initializable {
             AnchorPane rentPane;
             try {
                 rentPane = FXMLLoader.load(getClass().getResource("/Szrotex3/ui/rentlist/OneRent.fxml"));
-                //OneRentController.getInstance().setReservation(carObjects.get(i));
+                OneRentController.getInstance().setReservation(reservationObjects.get(i));
                 rentContainer.getChildren().add(rentPane);
 
             } catch (IOException e) {
