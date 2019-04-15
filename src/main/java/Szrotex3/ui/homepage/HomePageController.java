@@ -119,7 +119,7 @@ public class HomePageController extends MainController {
 
     @FXML
     void changeContentToWypozyczenia(ActionEvent event) {
-        createContentPage(holderPane, "/Szrotex3/ui/wypozyczenia/content_wypozyczenia.fxml");
+        createContentPage(holderPane, "/Szrotex3/ui/rentlist/RentList.fxml");
         setTopPath("Wypożyczenia");
     }
 

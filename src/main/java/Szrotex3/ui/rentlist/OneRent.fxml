@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="oneRentPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="110.0" prefWidth="730.0" stylesheets="@Rent.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Szrotex3.ui.rentlist.OneRentController">
+   <children>
+      <ImageView fitHeight="37.0" fitWidth="37.0" layoutX="16.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@/assets/rent/reservation_person.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="208.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@/assets/rent/reservationList_car.png" />
+         </image>
+      </ImageView>
+      <Text fx:id="Brand" fill="#242424" layoutX="255.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BMW">
+         <font>
+            <Font name="Arial" size="20.0" />
+         </font>
+      </Text>
+      <Text fx:id="Model" fill="#016984" layoutX="255.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Continental">
+         <font>
+            <Font name="Arial Bold" size="27.0" />
+         </font>
+      </Text>
+      <Separator layoutX="435.0" layoutY="21.0" orientation="VERTICAL" prefHeight="70.0" />
+      <Separator layoutX="193.0" layoutY="18.0" orientation="VERTICAL" prefHeight="70.0" />
+      <Text fill="#016984" layoutX="508.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Koszt całkowity:" />
+      <Text fill="#016984" layoutX="508.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="od:" />
+      <Text fill="#016984" layoutX="625.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="do:" />
+      <Text fx:id="EngineCapacity" layoutX="531.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2019-09-03" />
+      <Text fx:id="EngineCapacity1" layoutX="650.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2019-09-03" />
+      <Pane id="pricebackground" layoutX="606.0" layoutY="49.0" prefHeight="37.0" prefWidth="110.0">
+         <children>
+            <Text fx:id="Price" fill="WHITE" layoutX="18.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2392">
+               <font>
+                  <Font name="Arial" size="27.0" />
+               </font>
+            </Text>
+            <Text fx:id="Price1" fill="WHITE" layoutX="86.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="zł">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Text fx:id="EngineCapacity2" layoutX="232.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" />
+      <Text fill="#016984" layoutX="215.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="id:" />
+      <Text fx:id="EngineCapacity21" layoutX="39.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" />
+      <Text fill="#016984" layoutX="22.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="id:" />
+      <Text fx:id="Brand1" fill="#242424" layoutX="63.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Imie">
+         <font>
+            <Font name="Arial" size="20.0" />
+         </font>
+      </Text>
+      <Text fx:id="Brand11" fill="#016984" layoutX="63.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nazwisko">
+         <font>
+            <Font name="Arial Bold" size="20.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="448.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@/assets/rent/reservationList_date.png" />
+         </image>
+      </ImageView>
+      <Text fx:id="EngineCapacity22" layoutX="471.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" />
+      <Text fill="#016984" layoutX="454.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="id:" />
+      <Pane id="focusPane" blendMode="SRC_ATOP" layoutY="-2.0" prefHeight="110.0" prefWidth="8.0" styleClass="CarBackground" />
+   </children>
+</AnchorPane>
