@@ -70,7 +70,7 @@ INSERT INTO `car` (`id`, `brand`, `model`, `engine_capacity`, `engine_type`, `en
 (11, 'Lamborgihni', 'Aventador', 6.5, 'Petrol', 740, 2018, 2, 'auto', 2),
 (12, 'Ferrari ', '458 Italia', 5, 'Petrol', 605, 2015, 2, 'auto', 2),
 (13, 'Tesla', 'Model S', 4, 'Electric', 367, 2014, 5, 'auto', 5),
-(14, 'Bentley', 'Continental GT', 6, 'Petrol', 635, 2015, 2, 'auto', 4);
+(14, 'Bentley', 'Continental', 6, 'Petrol', 635, 2015, 2, 'auto', 4);
 
 -- --------------------------------------------------------
 
