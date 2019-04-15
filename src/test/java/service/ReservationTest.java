@@ -50,7 +50,6 @@ public class ReservationTest {
         reservation.setDateEnd(getDate(1975, 01, 25, 12,52,33));
         reservation.setVehicle(vehicle);
         hibernateSession.getSession().persist(reservation);
-
         hibernateSession.getSession().flush();
 
         assertFalse(reservationService.isAvailable(
@@ -136,6 +135,31 @@ public class ReservationTest {
         hibernateSession.getSession().delete(vehicle);
         hibernateSession.getSession().delete(client);
         hibernateSession.getSession().flush();
+
+    }
+
+    @Test
+    public void countPriceTest() {
+
+        Reservation reservationService = (Reservation) Container.getBean("reservation");
+
+        Vehicle vehicle = new Vehicle(42.42, "black", "img.jpg");
+
+        Client client = new Client();
+        client.setEmail("reservationTest@example.com");
+        client.setFirstName("Test");
+        client.setLastName("Test");
+        client.setPhone("123456");
+
+        Szrotex3.model.Reservation reservation = new Szrotex3.model.Reservation();
+        reservation.setClient(client);
+        reservation.setDateStart(getDate(1975, 01, 20, 12,52,33));
+        reservation.setDateEnd(getDate(1975, 01, 22, 12,52,33));
+        reservation.setVehicle(vehicle);
+
+        double countedPrice = reservationService.countPrice(reservation);
+
+        assertEquals(84.84, countedPrice, 0.0001);
 
     }
 
