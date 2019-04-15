@@ -76,5 +76,10 @@ public class Reservation {
         return reservation;
     }
 
+    public double countPrice(Szrotex3.model.Reservation reservation) {
+        long diff = reservation.getDateEnd().getTime() - reservation.getDateStart().getTime();
+        return (reservation.getVehicle().getPrice() * diff) / (1000 * 60 * 60 * 24);
+    }
+
 
 }
