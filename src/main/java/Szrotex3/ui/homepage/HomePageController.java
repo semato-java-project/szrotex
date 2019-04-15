@@ -62,6 +62,10 @@ public class HomePageController extends MainController {
         TopPathInfo.setText(name);
     }
 
+    public String getTopPath(){
+        return TopPathInfo.getText();
+    }
+
     public void setUsername(String uname){
         this.username.setText(uname);
     }

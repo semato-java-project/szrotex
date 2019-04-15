@@ -76,7 +76,7 @@ public class AddNewClientController {
 
     @FXML
     void handleAddClientAction(ActionEvent event) {
-        if(AddNewClientController.getInstance().getAddOrEditButton().getText() == "Dodaj klienta") {
+        if(HomePageController.getInstance().getTopPath() == "Dodaj Klienta") {
             String firstName = clientName.getText();
             String lastName = clientSurname.getText();
             String email = clientEmail.getText();
@@ -113,9 +113,10 @@ public class AddNewClientController {
 
                     hibernateSession.getSession().flush();
 
+                    //prompt o dodaniu nowego klienta - opcjonalnie
 
                     HomePageController.getInstance().changeContentToKlienci(event);
-                    //prompt o dodaniu nowego klienta, wymazanie pol.
+
                 }
             } else {
                 System.out.println("Wprowadź datę urodzenia!");
@@ -159,13 +160,6 @@ public class AddNewClientController {
             }
         }
 
-
-
-
-
-        //TODO: poprawic polskie znaki
-
-
     }
 
 
@@ -173,6 +167,8 @@ public class AddNewClientController {
     {
         boolean validation=true;
         String ifEmpty="Pole nie może być puste!";
+
+        //Kazdy System.out.println można tutaj zamienić na alerta bądź wstawić do formularza pod każdym fieldem pole które będzie uzupełniane w ifach w momencie wystąpienia błędu
 
         if(clientToValidate.getFirstName().length() == 0)
         {
