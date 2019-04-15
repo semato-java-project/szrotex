@@ -13,19 +13,21 @@ import javafx.scene.layout.AnchorPane;
 
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class addNewClientController {
+public class AddNewClientController {
 
-    private static addNewClientController instance;
+    private static AddNewClientController instance;
 
-    public addNewClientController(){
+    public AddNewClientController(){
         instance = this;
     }
-    public static addNewClientController getInstance(){
+    public static AddNewClientController getInstance(){
         return instance;
     }
 
@@ -74,24 +76,56 @@ public class addNewClientController {
 
     @FXML
     void handleAddClientAction(ActionEvent event) {
-        String firstName = clientName.getText();
-        String lastName = clientSurname.getText();
-        String email = clientEmail.getText();
-        String phone = clientPhone.getText();
-        String pesel = clientPesel.getText();
-        String idNumber = clientIdNumber.getText();
-        LocalDate localBirthDate = clientBirthDate.getValue();
-        String city = clientCity.getText();
-        String street = clientStreet.getText();
-        String apartmentNumber = clientApartmentNumber.getText();
-        String postalCode = clientPostalCode.getText();
+        if(AddNewClientController.getInstance().getAddOrEditButton().getText() == "Dodaj klienta") {
+            String firstName = clientName.getText();
+            String lastName = clientSurname.getText();
+            String email = clientEmail.getText();
+            String phone = clientPhone.getText();
+            String pesel = clientPesel.getText();
+            String idNumber = clientIdNumber.getText();
+            LocalDate localBirthDate = clientBirthDate.getValue();
+            String city = clientCity.getText();
+            String street = clientStreet.getText();
+            String apartmentNumber = clientApartmentNumber.getText();
+            String postalCode = clientPostalCode.getText();
 
-        if(localBirthDate != null) {
-            Calendar now = Calendar.getInstance();
-            Date createAt = now.getTime();
+            if (localBirthDate != null) {
+                Calendar now = Calendar.getInstance();
+                Date createAt = now.getTime();
 
+                Calendar calendarBirthDate = Calendar.getInstance();
+
+                calendarBirthDate.set(
+                        localBirthDate.getYear(),
+                        localBirthDate.getMonthValue() - 1,
+                        localBirthDate.getDayOfMonth()
+                );
+
+                Date birthDate = calendarBirthDate.getTime();
+
+                Client newClient = new Client(firstName, lastName, email, phone, createAt, pesel, idNumber, birthDate, city, street, apartmentNumber, postalCode);
+
+                if (AddNewClientController.getInstance().validate(newClient)) {
+
+                    HibernateSession hibernateSession = (HibernateSession) Container.getBean("hibernateSession");
+
+                    hibernateSession.getSession().persist(newClient);
+
+                    hibernateSession.getSession().flush();
+
+
+                    HomePageController.getInstance().changeContentToKlienci(event);
+                    //prompt o dodaniu nowego klienta, wymazanie pol.
+                }
+            } else {
+                System.out.println("Wprowadź datę urodzenia!");
+            }
+        }
+        else
+        {
+
+            LocalDate localBirthDate=clientBirthDate.getValue();
             Calendar calendarBirthDate = Calendar.getInstance();
-
             calendarBirthDate.set(
                     localBirthDate.getYear(),
                     localBirthDate.getMonthValue() - 1,
@@ -100,29 +134,36 @@ public class addNewClientController {
 
             Date birthDate = calendarBirthDate.getTime();
 
-            Client newClient = new Client(firstName, lastName, email, phone, createAt, pesel, idNumber, birthDate, city, street, apartmentNumber, postalCode);
+            this.client.setFirstName(clientName.getText());
+            this.client.setLastName(clientSurname.getText());
+            this.client.setEmail(clientEmail.getText());
+            this.client.setPhone(clientPhone.getText());
+            this.client.setPesel(clientPesel.getText());
+            this.client.setIdNumber(clientIdNumber.getText());
+            this.client.setBirthDate(birthDate);
+            this.client.setCity(clientCity.getText());
+            this.client.setStreet(clientStreet.getText());
+            this.client.setApartmentNumber(clientApartmentNumber.getText());
+            this.client.setPostalCode(clientPostalCode.getText());
 
-            if (addNewClientController.getInstance().validate(newClient)) {
-
+            if (AddNewClientController.getInstance().validate(this.client))
+            {
                 HibernateSession hibernateSession = (HibernateSession) Container.getBean("hibernateSession");
 
-                hibernateSession.getSession().persist(newClient);
+                hibernateSession.getSession().update(this.client);
+
                 hibernateSession.getSession().flush();
 
-                //prompt o dodaniu nowego klienta, wymazanie pol.
+
+                HomePageController.getInstance().changeContentToKlienci(event);
             }
         }
-        else
-        {
-            System.out.println("Wprowadź datę urodzenia!");
-        }
-
-
-        //HomePageController.getInstance().changeContentToKlienci(event);
 
 
 
-        //TODO: dodac walidacje, poprawic polskie znaki, zastanowić się nad iteracyjnym dodawaniem id (następny w tablicy)
+
+
+        //TODO: poprawic polskie znaki
 
 
     }
@@ -160,7 +201,8 @@ public class addNewClientController {
 
             if(!mailMatcher.matches())
             {
-                System.out.println("Wprowadzono nie poprawny mail!");
+                System.out.println("Wprowadzono niepoprawny mail!");
+                validation = false;
             }
 
         }
@@ -330,9 +372,17 @@ public class addNewClientController {
         return addOrEditButton;
     }
 
+    public LocalDate convertToLocalDateTimeViaInstant(Date dateToConvert) {
+        return dateToConvert.toInstant()
+                .atZone(ZoneId.systemDefault())
+                .toLocalDate();
+    }
+
     public void setClient(Client client)
     {
         this.client=client;
+
+        LocalDate localBirthDate = convertToLocalDateTimeViaInstant(client.getBirthDate());
 
         clientName.setText(client.getFirstName());
         clientSurname.setText(client.getLastName());
@@ -340,7 +390,7 @@ public class addNewClientController {
         clientPhone.setText(client.getPhone());
         clientPesel.setText(client.getPesel());
         clientIdNumber.setText(client.getIdNumber());
-        //aclientBirthDate.setText(String.valueOf(client.getBirthDate()));
+        clientBirthDate.setValue(localBirthDate);
         clientStreet.setText(client.getStreet());
         clientCity.setText(client.getCity());
         clientApartmentNumber.setText(client.getApartmentNumber());

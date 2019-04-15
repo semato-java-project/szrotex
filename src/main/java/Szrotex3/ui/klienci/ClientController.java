@@ -2,7 +2,7 @@ package Szrotex3.ui.klienci;
 
 import Szrotex3.model.Client;
 import Szrotex3.ui.MainController;
-import Szrotex3.ui.addNewClient.addNewClientController;
+import Szrotex3.ui.addNewClient.AddNewClientController;
 import Szrotex3.ui.homepage.HomePageController;
 import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
@@ -130,8 +130,8 @@ public class ClientController extends MainController {
     void handleEditClientAction(ActionEvent event) {
         HomePageController.getInstance().changeContentToAddNewClient(event);
         HomePageController.getInstance().setTopPath("Edytuj Klienta");
-        addNewClientController.getInstance().setClient(client);
-        addNewClientController.getInstance().getAddOrEditButton().setText("Edytuj Klienta");
+        AddNewClientController.getInstance().setClient(client);
+        AddNewClientController.getInstance().getAddOrEditButton().setText("Edytuj Klienta");
 
     }
 
