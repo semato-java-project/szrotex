@@ -73,7 +73,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton id="AddClientButton" fx:id="addoreditButton" layoutX="445.0" layoutY="429.0" onAction="#handleAddClientAction" text="Dodaj Klienta">
+      <JFXButton id="AddClientButton" fx:id="addOrEditButton" layoutX="445.0" layoutY="429.0" onAction="#handleAddClientAction" text="Dodaj Klienta">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
