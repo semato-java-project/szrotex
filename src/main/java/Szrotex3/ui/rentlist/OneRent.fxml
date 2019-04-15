@@ -20,12 +20,12 @@
             <Image url="@/assets/rent/reservationList_car.png" />
          </image>
       </ImageView>
-      <Text fx:id="Brand" fill="#242424" layoutX="255.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BMW">
+      <Text fx:id="carBrand" fill="#242424" layoutX="255.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BMW">
          <font>
             <Font name="Arial" size="20.0" />
          </font>
       </Text>
-      <Text fx:id="Model" fill="#016984" layoutX="255.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Continental">
+      <Text fx:id="carModel" fill="#016984" layoutX="255.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Continental">
          <font>
             <Font name="Arial Bold" size="27.0" />
          </font>
@@ -35,11 +35,11 @@
       <Text fill="#016984" layoutX="508.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Koszt całkowity:" />
       <Text fill="#016984" layoutX="508.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="od:" />
       <Text fill="#016984" layoutX="625.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="do:" />
-      <Text fx:id="EngineCapacity" layoutX="531.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2019-09-03" />
-      <Text fx:id="EngineCapacity1" layoutX="650.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2019-09-03" />
+      <Text fx:id="dateStart" layoutX="531.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2019-09-03" />
+      <Text fx:id="dateEnd" layoutX="650.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2019-09-03" />
       <Pane id="pricebackground" layoutX="606.0" layoutY="49.0" prefHeight="37.0" prefWidth="110.0">
          <children>
-            <Text fx:id="Price" fill="WHITE" layoutX="18.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2392">
+            <Text fx:id="rentPrice" fill="WHITE" layoutX="18.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2392">
                <font>
                   <Font name="Arial" size="27.0" />
                </font>
@@ -51,16 +51,16 @@
             </Text>
          </children>
       </Pane>
-      <Text fx:id="EngineCapacity2" layoutX="232.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" />
+      <Text fx:id="carId" layoutX="232.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" />
       <Text fill="#016984" layoutX="215.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="id:" />
-      <Text fx:id="EngineCapacity21" layoutX="39.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" />
+      <Text fx:id="clientId" layoutX="39.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" />
       <Text fill="#016984" layoutX="22.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="id:" />
-      <Text fx:id="Brand1" fill="#242424" layoutX="63.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Imie">
+      <Text fx:id="clientName" fill="#242424" layoutX="63.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Imie">
          <font>
             <Font name="Arial" size="20.0" />
          </font>
       </Text>
-      <Text fx:id="Brand11" fill="#016984" layoutX="63.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nazwisko">
+      <Text fx:id="clientSurname" fill="#016984" layoutX="63.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nazwisko">
          <font>
             <Font name="Arial Bold" size="20.0" />
          </font>
@@ -70,7 +70,7 @@
             <Image url="@/assets/rent/reservationList_date.png" />
          </image>
       </ImageView>
-      <Text fx:id="EngineCapacity22" layoutX="471.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" />
+      <Text fx:id="rentId" layoutX="471.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" />
       <Text fill="#016984" layoutX="454.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="id:" />
       <Pane id="focusPane" blendMode="SRC_ATOP" layoutY="-2.0" prefHeight="110.0" prefWidth="8.0" styleClass="CarBackground" />
    </children>
