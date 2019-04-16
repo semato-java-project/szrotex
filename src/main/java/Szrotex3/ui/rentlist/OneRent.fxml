@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="oneRentPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="110.0" prefWidth="730.0" stylesheets="@Rent.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Szrotex3.ui.rentlist.OneRentController">
+   <children>
+      <ImageView fitHeight="37.0" fitWidth="37.0" layoutX="16.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@/assets/rent/reservation_person.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="208.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@/assets/rent/reservationList_car.png" />
+         </image>
+      </ImageView>
+      <Text fx:id="carBrand" fill="#242424" layoutX="255.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BMW">
+         <font>
+            <Font name="Arial" size="20.0" />
+         </font>
+      </Text>
+      <Text fx:id="carModel" fill="#016984" layoutX="255.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Continental">
+         <font>
+            <Font name="Arial Bold" size="27.0" />
+         </font>
+      </Text>
+      <Separator layoutX="435.0" layoutY="19.0" orientation="VERTICAL" prefHeight="75.0" />
+      <Separator layoutX="193.0" layoutY="16.0" orientation="VERTICAL" prefHeight="75.0" />
+      <Text fill="#016984" layoutX="573.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="od:" />
+      <Text fill="#016984" layoutX="573.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="do:" />
+      <Text fx:id="dateStart" layoutX="597.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2019-09-03" />
+      <Text fx:id="dateEnd" layoutX="597.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2019-09-03" />
+      <Text fx:id="carId" layoutX="232.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" />
+      <Text fill="#016984" layoutX="215.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="id:" />
+      <Text fx:id="clientId" layoutX="39.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" />
+      <Text fill="#016984" layoutX="22.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="id:" />
+      <Text fx:id="clientName" fill="#242424" layoutX="63.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Imie">
+         <font>
+            <Font name="Arial" size="20.0" />
+         </font>
+      </Text>
+      <Text fx:id="clientSurname" fill="#016984" layoutX="63.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nazwisko">
+         <font>
+            <Font name="Arial Bold" size="20.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="448.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@/assets/rent/reservationList_date.png" />
+         </image>
+      </ImageView>
+      <Text fx:id="rentId" layoutX="511.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" />
+      <Text fill="#016984" layoutX="494.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="id:" />
+      <Pane id="focusPane" blendMode="SRC_ATOP" layoutY="-2.0" prefHeight="110.0" prefWidth="8.0" styleClass="CarBackground" />
+      <Pane id="totalBackground" layoutX="453.0" layoutY="58.0" prefHeight="33.0" prefWidth="148.0">
+         <children>
+            <Text fill="WHITE" layoutX="36.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Koszt całkowity:" />
+         </children>
+      </Pane>
+      <Pane id="pricebackground" layoutX="596.0" layoutY="58.0" prefHeight="33.0" prefWidth="120.0">
+         <children>
+            <Text fx:id="rentPrice" fill="WHITE" layoutX="26.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2392">
+               <font>
+                  <Font name="Arial" size="27.0" />
+               </font>
+            </Text>
+            <Text fx:id="Price1" fill="WHITE" layoutX="93.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="zł">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

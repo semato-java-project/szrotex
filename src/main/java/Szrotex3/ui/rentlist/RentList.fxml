@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane fx:id="rentAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="490.0" prefWidth="750.0" stylesheets="@Rent.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Szrotex3.ui.rentlist.RentListController">
+   <children>
+      <ScrollPane hbarPolicy="NEVER" prefHeight="490.0" prefWidth="750.0" styleClass="ScrollPane">
+         <content>
+            <VBox fx:id="rentContainer" prefHeight="490.0" prefWidth="750.0" />
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>

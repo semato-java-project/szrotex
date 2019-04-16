@@ -1,0 +1,65 @@
+#pricebackground{
+    -fx-background-color: #242424;
+}
+
+#oneRentPane
+{
+    -fx-background-color: #ffffff;
+}
+
+#oneRentPane:hover
+{
+    -fx-background-color: #f3f3f3;
+    -fx-pref-width: 725;
+}
+
+#focusPane {
+    -fx-opacity: 0;
+    -fx-background-color: #016984;
+}
+
+#oneRentPane:hover > #focusPane{
+    -fx-opacity: 1;
+}
+
+#totalBackground{
+    -fx-background-color: #016984;
+    -fx-text-fill: #FFF;
+}
+
+.ScrollPane{
+    -fx-background-color:transparent;
+}
+
+.scroll-bar:vertical .track{
+    -fx-background-color :transparent;
+    -fx-border-color :transparent;
+}
+
+.scroll-bar:vertical .increment-button ,
+.scroll-bar:vertical .decrement-button {
+    -fx-background-color :transparent;
+    -fx-background-radius : 0.0em;
+    -fx-padding :0.0 10.0 0.0 0.0;
+}
+
+.scroll-bar .increment-arrow,
+.scroll-bar .decrement-arrow{
+    -fx-shape : " ";
+    -fx-padding :0.15em 0.0;
+}
+
+.scroll-bar:vertical .increment-arrow,
+.scroll-bar:vertical .decrement-arrow{
+    -fx-shape : " ";
+    -fx-padding :0.0 0.15em;
+}
+
+
+.scroll-bar:vertical .thumb {
+    -fx-background-color: #757575
+}
+
+.scroll-bar:vertical .thumb:hover {
+    -fx-background-color: #555555;
+}
