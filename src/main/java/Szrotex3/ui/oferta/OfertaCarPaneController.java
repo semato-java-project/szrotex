@@ -1,6 +1,8 @@
 package Szrotex3.ui.oferta;
 
 import Szrotex3.model.Car;
+import Szrotex3.service.Container;
+import Szrotex3.service.Formatter;
 import Szrotex3.ui.homepage.HomePageController;
 import Szrotex3.ui.makereservation.MakeReservationController;
 import com.jfoenix.controls.JFXButton;
@@ -13,7 +15,6 @@ import javafx.scene.text.Text;
 import java.io.File;
 
 public class OfertaCarPaneController {
-
 
     private int CarIdForReservation;
 
@@ -63,6 +64,8 @@ public class OfertaCarPaneController {
 
     public void setCar(Car car){
 
+        Formatter formatter = (Formatter) Container.getBean("formatter");
+
         this.car = car;
 
         CarIdForReservation = car.getId();
@@ -74,15 +77,11 @@ public class OfertaCarPaneController {
         Transsmision.setText(car.getTranssmision());
         SeatsQuantity.setText(String.valueOf(car.getSeatsQuantity()));
         DoorsQuantity.setText(String.valueOf(car.getDoorsQuantity()));
-        Price.setText(String.valueOf(car.getVehicle().getPrice()));
+        Price.setText(formatter.formatPrice(car.getVehicle().getPrice()));
 
         Image image = new Image(new File(car.getVehicle().getLinkToImg()).toURI().toString());
-        System.out.println(new File(car.getVehicle().getLinkToImg()).toURI().toString()); //do testowania czy poprawna sciezka sie pojawia
         CarImg.setImage(image);
-
     }
-
-
 
     @FXML
     void ShowReservationDetails(ActionEvent event) {

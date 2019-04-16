@@ -3,6 +3,7 @@ package Szrotex3.ui.makereservation;
 import Szrotex3.model.Car;
 import Szrotex3.model.Client;
 import Szrotex3.service.Container;
+import Szrotex3.service.Formatter;
 import Szrotex3.service.Reservation;
 import Szrotex3.ui.MainController;
 import Szrotex3.ui.exception.UserException;
@@ -104,15 +105,16 @@ public class MakeReservationController extends MainController {
 
     public void setCar(Car car){
 
+        Formatter formatter = (Formatter) Container.getBean("formatter");
+
         this.car = car;
 
         CarId.setText(String.valueOf(car.getId()));
         Brand.setText(car.getBrand());
         Model.setText(car.getModel());
-        Price.setText(String.valueOf(car.getVehicle().getPrice()));
+        Price.setText(formatter.formatPrice(car.getVehicle().getPrice()));
         Image image = new Image(new File(car.getVehicle().getLinkToImg()).toURI().toString());
         CarImg.setImage(image);
-
     }
 
     @FXML
