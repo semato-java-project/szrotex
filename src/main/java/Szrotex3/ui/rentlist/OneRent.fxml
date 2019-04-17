@@ -70,11 +70,6 @@
                   <Font name="Arial" size="27.0" />
                </font>
             </Text>
-            <Text fx:id="Price1" fill="WHITE" layoutX="93.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="zł">
-               <font>
-                  <Font name="Arial" size="18.0" />
-               </font>
-            </Text>
          </children>
       </Pane>
    </children>

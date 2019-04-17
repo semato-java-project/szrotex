@@ -20,6 +20,11 @@ public class Vehicle {
     @Column(name="link_to_img")
     private String linkToImg;
 
+    @PrimaryKeyJoinColumn
+    @OneToOne(optional = true)
+    private Car car;
+
+
     public Vehicle() {
 
     }
@@ -62,6 +67,13 @@ public class Vehicle {
         this.linkToImg = linkToImg;
     }
 
+    public Car getCar() {
+        return car;
+    }
+
+    public void setCar(Car car) {
+        this.car = car;
+    }
 }
 
 

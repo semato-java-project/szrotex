@@ -1,6 +1,11 @@
 package Szrotex3.ui.rentlist;
 
+import Szrotex3.model.Car;
+import Szrotex3.model.Client;
 import Szrotex3.model.Reservation;
+import Szrotex3.model.Vehicle;
+import Szrotex3.service.Container;
+import Szrotex3.service.Formatter;
 import javafx.fxml.FXML;
 import javafx.scene.text.Text;
 
@@ -52,20 +57,29 @@ public class OneRentController {
 
     public void setReservation(Reservation reservation){
 
+        Szrotex3.service.Reservation reservationService = (Szrotex3.service.Reservation) Container.getBean("reservation");
+        Formatter formatter = (Formatter) Container.getBean("formatter");
+
         this.reservation = reservation;
 
-        carId.setText(String.valueOf(reservation.getVehicle().getId()));
-        ///carId.setText(reservation.getVehicle().getCar().....);
+        Vehicle vehicle = reservation.getVehicle();
+        Car car = vehicle.getCar();
+        Client client = reservation.getClient();
 
-        clientId.setText(String.valueOf(reservation.getClient().getId()));
-        clientName.setText(reservation.getClient().getFirstName());
-        clientSurname.setText(reservation.getClient().getLastName());
+        carBrand.setText(car.getBrand());
+        carModel.setText(car.getModel());
+
+        carId.setText(String.valueOf(car.getId()));
+
+        clientId.setText(String.valueOf(client.getId()));
+        clientName.setText(client.getFirstName());
+        clientSurname.setText(client.getLastName());
 
         rentId.setText(String.valueOf(reservation.getId()));
-        dateStart.setText(String.valueOf(reservation.getDateStart()));
-        dateEnd.setText(String.valueOf(reservation.getDateEnd()));
+        dateStart.setText(formatter.formatDateHumainReadable(reservation.getDateStart()));
+        dateEnd.setText(formatter.formatDateHumainReadable(reservation.getDateEnd()));
 
-        ///rentPrice.setText(String.valueOf(reservation.get));
+        rentPrice.setText(formatter.formatPrice(reservationService.countPrice(reservation)));
 
     }
 

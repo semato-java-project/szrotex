@@ -31,6 +31,8 @@
         <!-- Drop and re-create the database schema on startup -->
         <property name="hbm2ddl.auto">update</property>
 
+        <property name="hibernate.connection.useUnicode">yes</property>
+        <property name="hibernate.connection.characterEncoding">UTF-8</property>
 
         <mapping class="Szrotex3.model.Car"/>
         <mapping class="Szrotex3.model.Boat"/>
