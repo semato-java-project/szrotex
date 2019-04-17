@@ -9,11 +9,11 @@ import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.Calendar;
 import java.util.Date;
@@ -72,10 +72,46 @@ public class AddNewClientController {
     @FXML
     private JFXButton addOrEditButton;
 
+    @FXML
+    private Label clientNameLabel;
+
+    @FXML
+    private Label clientEmailLabel;
+
+    @FXML
+    private Label clientSurnameLabel;
+
+    @FXML
+    private Label clientPhoneLabel;
+
+    @FXML
+    private Label clientPeselLabel;
+
+    @FXML
+    private Label clientIdNumberLabel;
+
+    @FXML
+    private Label clientBirthDateLabel;
+
+    @FXML
+    private Label clientCityLabel;
+
+    @FXML
+    private Label clientStreetLabel;
+
+    @FXML
+    private Label clientApartmentNumberLabel;
+
+    @FXML
+    private Label clientPostalCodeLabel;
+
 
 
     @FXML
     void handleAddClientAction(ActionEvent event) {
+
+        clearLabels();
+
         if(HomePageController.getInstance().getTopPath() == "Dodaj Klienta") {
             String firstName = clientName.getText();
             String lastName = clientSurname.getText();
@@ -119,7 +155,9 @@ public class AddNewClientController {
 
                 }
             } else {
-                System.out.println("Wprowadź datę urodzenia!");
+                //System.out.println("Wprowadź datę urodzenia!");
+
+                clientBirthDateLabel.setText("Wprowadź datę urodzenia!");
             }
         }
         else
@@ -393,6 +431,22 @@ public class AddNewClientController {
         clientPostalCode.setText(client.getPostalCode());
     }
 
+
+    void clearLabels(){
+
+        clientNameLabel.setText("");
+        clientEmailLabel.setText("");
+        clientSurnameLabel.setText("");
+        clientPhoneLabel.setText("");
+        clientPeselLabel.setText("");
+        clientIdNumberLabel.setText("");
+        clientBirthDateLabel.setText("");
+        clientCityLabel.setText("");
+        clientStreetLabel.setText("");
+        clientApartmentNumberLabel.setText("");
+        clientPostalCodeLabel.setText("");
+
+    }
 
     @FXML
     void handleCancelAction(ActionEvent event) {
