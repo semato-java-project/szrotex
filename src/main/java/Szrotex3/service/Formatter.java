@@ -25,7 +25,7 @@ public class Formatter {
     }
 
     public String formatDateHumainReadable(Date date) {
-        SimpleDateFormat df = new SimpleDateFormat("dd MMM, yyyy", locale);
+        SimpleDateFormat df = new SimpleDateFormat("dd MMM, yyyy HH:mm", locale);
         return df.format(date);
     }
 
