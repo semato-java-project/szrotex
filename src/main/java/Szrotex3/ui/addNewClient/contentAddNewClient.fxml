@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="AddClientPane" prefHeight="490.0" prefWidth="750.0" stylesheets="@addNewClient.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Szrotex3.ui.addNewClient.AddNewClientController">
+<AnchorPane fx:id="addClientPane" prefHeight="490.0" prefWidth="750.0" stylesheets="@addNewClient.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Szrotex3.ui.addNewClient.AddNewClientController">
    <children>
       <JFXTextField fx:id="clientName" focusColor="#016984" layoutX="125.0" layoutY="116.0" promptText="Imie" />
       <JFXTextField fx:id="clientSurname" focusColor="#016984" layoutX="125.0" layoutY="176.0" promptText="Nazwisko" />
@@ -86,7 +86,7 @@
             <Image url="@/assets/client/client_address.png" />
          </image>
       </ImageView>
-      <JFXTextField fx:id="clientStreet" focusColor="#016984" layoutX="125.0" layoutY="356.0" prefWidth="95.0" promptText="Adres" text="Ulica" />
+      <JFXTextField fx:id="clientStreet" focusColor="#016984" layoutX="125.0" layoutY="356.0" prefWidth="95.0" promptText="Ulica" />
       <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="86.0" layoutY="359.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@/assets/client/client_address.png" />
