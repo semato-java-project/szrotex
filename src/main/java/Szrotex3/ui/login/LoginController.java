@@ -12,6 +12,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -83,7 +84,6 @@ public class LoginController extends MainController {
     }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
     }
 }
 
