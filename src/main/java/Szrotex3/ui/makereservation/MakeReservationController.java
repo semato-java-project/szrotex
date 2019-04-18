@@ -6,6 +6,7 @@ import Szrotex3.service.Container;
 import Szrotex3.service.Formatter;
 import Szrotex3.service.Reservation;
 import Szrotex3.ui.MainController;
+import Szrotex3.ui.alert.AlertController;
 import Szrotex3.ui.exception.UserException;
 import Szrotex3.ui.homepage.HomePageController;
 import com.jfoenix.controls.JFXButton;
@@ -189,11 +190,17 @@ public class MakeReservationController extends MainController {
             throw e; // wyświetlić popup/komunikat z message zamiast throwa
         }
 
-        // wyświetlić popup/komunikat, że się udało
+        BoxBlur blur = new BoxBlur(5,5,5);
+        makereservation_content_pane.setEffect(blur);
+
+        // tutaj założenia się mineły - ja myslalem ze w popup, klikając Potwierdź dopiero rezerwuje
+        // trzeba to jakoś ogarnąć
+
+        loadAlert("Rezerwacja przebiegła pomyślnie.",makereservation_content_pane);
+        System.out.println("decyzja uytkownika: " +  AlertController.getInstance().getDecision());
 
     }
 
-    // Jest opcja zeby wywalic te dwie metody? bez tego sie nie kompiluje
     @Override
     public void start(Stage primaryStage) throws Exception {
 

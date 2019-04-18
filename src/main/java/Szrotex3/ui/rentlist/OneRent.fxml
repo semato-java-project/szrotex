@@ -60,12 +60,12 @@
       <Pane id="focusPane" blendMode="SRC_ATOP" layoutY="-2.0" prefHeight="110.0" prefWidth="8.0" styleClass="CarBackground" />
       <Pane id="totalBackground" layoutX="453.0" layoutY="58.0" prefHeight="33.0" prefWidth="148.0">
          <children>
-            <Text fill="WHITE" layoutX="36.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Koszt całkowity:" />
+            <Text fill="WHITE" layoutX="24.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Koszt całkowity:" />
          </children>
       </Pane>
       <Pane id="pricebackground" layoutX="596.0" layoutY="58.0" prefHeight="33.0" prefWidth="120.0">
          <children>
-            <Text fx:id="rentPrice" fill="WHITE" layoutX="26.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2392">
+            <Text fx:id="rentPrice" fill="WHITE" layoutX="21.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2392">
                <font>
                   <Font name="Arial" size="27.0" />
                </font>
