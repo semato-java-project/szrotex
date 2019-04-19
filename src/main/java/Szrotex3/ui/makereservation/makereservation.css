@@ -25,3 +25,12 @@
 #SelectClientButton {
     -fx-background-color: #242424;
 }
+
+#totalBackground{
+    -fx-background-color: #016984;
+    -fx-text-fill: #FFF;
+}
+
+#pricebackground{
+    -fx-background-color: #242424;
+}

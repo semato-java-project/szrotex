@@ -3,30 +3,37 @@ package Szrotex3.ui.addNewClient;
 import Szrotex3.model.Client;
 import Szrotex3.service.Container;
 import Szrotex3.service.HibernateSession;
+import Szrotex3.ui.MainController;
+import Szrotex3.ui.alert.AlertController;
 import Szrotex3.ui.homepage.HomePageController;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
+import javafx.scene.effect.BoxBlur;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 
+import java.net.URL;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.ResourceBundle;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class AddNewClientController {
+public class AddNewClientController extends MainController {
 
     private static AddNewClientController instance;
 
     public AddNewClientController(){
         instance = this;
     }
+
     public static AddNewClientController getInstance(){
         return instance;
     }
@@ -34,7 +41,7 @@ public class AddNewClientController {
     private Client client;
 
     @FXML
-    private AnchorPane AddClientPane;
+    private AnchorPane addClientPane;
 
     @FXML
     private JFXTextField clientName;
@@ -72,10 +79,46 @@ public class AddNewClientController {
     @FXML
     private JFXButton addOrEditButton;
 
+    @FXML
+    private Label clientNameLabel;
+
+    @FXML
+    private Label clientEmailLabel;
+
+    @FXML
+    private Label clientSurnameLabel;
+
+    @FXML
+    private Label clientPhoneLabel;
+
+    @FXML
+    private Label clientPeselLabel;
+
+    @FXML
+    private Label clientIdNumberLabel;
+
+    @FXML
+    private Label clientBirthDateLabel;
+
+    @FXML
+    private Label clientCityLabel;
+
+    @FXML
+    private Label clientStreetLabel;
+
+    @FXML
+    private Label clientApartmentNumberLabel;
+
+    @FXML
+    private Label clientPostalCodeLabel;
+
 
 
     @FXML
     void handleAddClientAction(ActionEvent event) {
+
+        clearLabels();
+
         if(HomePageController.getInstance().getTopPath() == "Dodaj Klienta") {
             String firstName = clientName.getText();
             String lastName = clientSurname.getText();
@@ -113,13 +156,21 @@ public class AddNewClientController {
 
                     hibernateSession.getSession().flush();
 
-                    //prompt o dodaniu nowego klienta - opcjonalnie
+
+                    // do obsluzenia - jesli getDecision == true to dopiero dodaje
+                    BoxBlur blur = new BoxBlur(5,5,5);
+                    addClientPane.setEffect(blur);
+                    loadAlert("Czy napewno dodać nowego klienta?",addClientPane);
+                    System.out.println("decyzja uytkownika: " +  AlertController.getInstance().getDecision());
+
 
                     HomePageController.getInstance().changeContentToKlienci(event);
 
                 }
             } else {
-                System.out.println("Wprowadź datę urodzenia!");
+                //System.out.println("Wprowadź datę urodzenia!");
+
+                clientBirthDateLabel.setText("Wprowadź datę urodzenia!");
             }
         }
         else
@@ -394,9 +445,34 @@ public class AddNewClientController {
     }
 
 
+    void clearLabels(){
+
+        clientNameLabel.setText("");
+        clientEmailLabel.setText("");
+        clientSurnameLabel.setText("");
+        clientPhoneLabel.setText("");
+        clientPeselLabel.setText("");
+        clientIdNumberLabel.setText("");
+        clientBirthDateLabel.setText("");
+        clientCityLabel.setText("");
+        clientStreetLabel.setText("");
+        clientApartmentNumberLabel.setText("");
+        clientPostalCodeLabel.setText("");
+
+    }
+
     @FXML
     void handleCancelAction(ActionEvent event) {
         HomePageController.getInstance().changeContentToKlienci(event);
     }
 
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+
+    }
 }

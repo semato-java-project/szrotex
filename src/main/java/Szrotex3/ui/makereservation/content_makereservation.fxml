@@ -83,12 +83,17 @@
          </cursor></JFXButton>
       <Pane id="backgroundpane" layoutX="87.0" layoutY="426.0" prefHeight="25.0" prefWidth="387.0">
          <children>
-            <Text fill="WHITE" layoutX="46.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" text="(TEST) id pojazdu w bazie =">
+            <Text fill="WHITE" layoutX="206.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TEST / id pojazdu = ">
                <font>
                   <Font name="Arial" size="12.0" />
                </font>
             </Text>
-            <Text fx:id="CarId" fill="WHITE" layoutX="204.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0">
+            <Text fx:id="CarId" fill="WHITE" layoutX="364.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="16.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Podane ceny są kwotami brutto.">
                <font>
                   <Font name="Arial" size="12.0" />
                </font>
@@ -105,22 +110,17 @@
             <Font name="Arial" size="20.0" />
          </font>
       </Text>
-      <Text fill="#016984" layoutX="96.0" layoutY="351.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Koszt rezerwacji:">
+      <Text fill="#016984" layoutX="150.0" layoutY="345.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stawka dobowa za pojazd:">
          <font>
-            <Font name="Arial" size="20.0" />
+            <Font name="Arial" size="13.0" />
          </font>
       </Text>
-      <Text fx:id="Price" fill="#01647e" layoutX="298.0" layoutY="363.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2313 zł">
+      <Text fx:id="Price" fill="#01647e" layoutX="311.0" layoutY="347.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2313">
          <font>
-            <Font name="Arial Bold" size="34.0" />
+            <Font name="Arial Bold" size="20.0" />
          </font>
       </Text>
-      <Text fill="#01647e" layoutX="370.0" layoutY="379.0" strokeType="OUTSIDE" strokeWidth="0.0" text="brutto">
-         <font>
-            <Font name="Arial Bold" size="14.0" />
-         </font>
-      </Text>
-      <Text fx:id="ClientName" layoutX="138.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Imie">
+      <Text fx:id="ClientName" layoutX="129.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Imie">
          <font>
             <Font size="14.0" />
          </font>
@@ -135,5 +135,28 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
+      <Pane id="totalBackground" layoutX="88.0" layoutY="367.0" prefHeight="38.0" prefWidth="193.0">
+         <children>
+            <Text fill="WHITE" layoutX="15.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Koszt rezerwacji:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Pane id="pricebackground" layoutX="279.0" layoutY="367.0" prefHeight="38.0" prefWidth="151.0">
+         <children>
+            <Text fx:id="rentPrice" fill="WHITE" layoutX="38.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2392">
+               <font>
+                  <Font name="Arial" size="27.0" />
+               </font>
+            </Text>
+            <Text fx:id="rentPrice1" fill="WHITE" layoutX="121.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="zł">
+               <font>
+                  <Font name="Arial" size="27.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
    </children>
 </AnchorPane>

@@ -1,69 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import com.jfoenix.controls.JFXDatePicker?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="AddClientPane" prefHeight="490.0" prefWidth="750.0" stylesheets="@addNewClient.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Szrotex3.ui.addNewClient.AddNewClientController">
+<AnchorPane fx:id="addClientPane" prefHeight="490.0" prefWidth="750.0" stylesheets="@addNewClient.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Szrotex3.ui.addNewClient.AddNewClientController">
    <children>
-      <JFXTextField fx:id="clientName" focusColor="#016984" layoutX="125.0" layoutY="126.0" promptText="Imie" />
-      <JFXTextField fx:id="clientSurname" focusColor="#016984" layoutX="125.0" layoutY="186.0" promptText="Nazwisko" />
+      <JFXTextField fx:id="clientName" focusColor="#016984" layoutX="125.0" layoutY="116.0" promptText="Imie" />
+      <JFXTextField fx:id="clientSurname" focusColor="#016984" layoutX="125.0" layoutY="176.0" promptText="Nazwisko" />
       <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="335.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
 
          <image>
             <Image url="@/assets/baseline_account_circle_black_48dp.png" />
          </image>
       </ImageView>
-      <JFXTextField fx:id="clientPesel" focusColor="#016984" layoutX="125.0" layoutY="246.0" promptText="PESEL" />
-      <JFXDatePicker fx:id="clientBirthDate" layoutX="125.0" layoutY="306.0" promptText="Data urodzenia" > <!--focusColor="#016984"-->
+      <JFXTextField fx:id="clientPesel" focusColor="#016984" layoutX="125.0" layoutY="236.0" promptText="PESEL" />
+      <JFXDatePicker fx:id="clientBirthDate" defaultColor="#016984" layoutX="125.0" layoutY="296.0" promptText="Data urodzenia"> <!--focusColor="#016984"-->
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXDatePicker>
-      <JFXTextField fx:id="clientEmail" focusColor="#016984" layoutX="445.0" layoutY="126.0" promptText="Adres email" />
-      <JFXTextField fx:id="clientPhone" focusColor="#016984" layoutX="445.0" layoutY="186.0" promptText="Numer telefonu" />
-      <JFXTextField fx:id="clientIdNumber" focusColor="#016984" layoutX="445.0" layoutY="246.0" promptText="Numer dowodu" />
-      <JFXTextField fx:id="clientCity" focusColor="#016984" layoutX="445.0" layoutY="306.0" promptText="Miasto" />
-      <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="86.0" layoutY="139.0" pickOnBounds="true" preserveRatio="true">
+      <JFXTextField fx:id="clientEmail" focusColor="#016984" layoutX="445.0" layoutY="116.0" promptText="Adres email" />
+      <JFXTextField fx:id="clientPhone" focusColor="#016984" layoutX="445.0" layoutY="176.0" promptText="Numer telefonu" />
+      <JFXTextField fx:id="clientIdNumber" focusColor="#016984" layoutX="445.0" layoutY="236.0" promptText="Numer dowodu" />
+      <JFXTextField fx:id="clientCity" focusColor="#016984" layoutX="445.0" layoutY="296.0" promptText="Miasto" />
+      <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="86.0" layoutY="129.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@/assets/baseline_person_black_18dp.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="86.0" layoutY="199.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="86.0" layoutY="189.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@/assets/baseline_person_black_18dp.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="86.0" layoutY="259.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="86.0" layoutY="249.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@/assets/client/client_card.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="86.0" layoutY="319.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="86.0" layoutY="309.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@/assets/client/client_age.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="406.0" layoutY="129.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="406.0" layoutY="119.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@/assets/client/client_mail.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="406.0" layoutY="189.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="406.0" layoutY="179.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@/assets/client/client_phone.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="406.0" layoutY="249.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="406.0" layoutY="239.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@/assets/client/client_card.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="406.0" layoutY="309.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="406.0" layoutY="299.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@/assets/client/client_address.png" />
          </image>
@@ -78,18 +80,73 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXTextField id="housenumber" fx:id="clientApartmentNumber" focusColor="#016984" layoutX="445.0" layoutY="366.0" prefHeight="25.0" prefWidth="96.0" promptText="Numer Domu" />
-      <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="406.0" layoutY="369.0" pickOnBounds="true" preserveRatio="true">
+      <JFXTextField id="housenumber" fx:id="clientApartmentNumber" focusColor="#016984" layoutX="445.0" layoutY="356.0" prefHeight="25.0" prefWidth="96.0" promptText="Numer Domu" />
+      <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="406.0" layoutY="359.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@/assets/client/client_address.png" />
          </image>
       </ImageView>
-      <JFXTextField fx:id="clientStreet" focusColor="#016984" layoutX="125.0" layoutY="366.0" prefWidth="95.0" promptText="Adres" text="Ulica" />
-      <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="86.0" layoutY="369.0" pickOnBounds="true" preserveRatio="true">
+      <JFXTextField fx:id="clientStreet" focusColor="#016984" layoutX="125.0" layoutY="356.0" prefWidth="95.0" promptText="Ulica" />
+      <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="86.0" layoutY="359.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@/assets/client/client_address.png" />
          </image>
       </ImageView>
-      <JFXTextField id="postcode" fx:id="clientPostalCode" focusColor="#016984" layoutX="565.0" layoutY="366.0" prefHeight="25.0" prefWidth="96.0" promptText="Kod Pocztowy" />
+      <JFXTextField id="postcode" fx:id="clientPostalCode" focusColor="#016984" layoutX="565.0" layoutY="356.0" prefHeight="25.0" prefWidth="96.0" promptText="Kod Pocztowy" />
+      <Label fx:id="clientNameLabel" layoutX="125.0" layoutY="149.0" textFill="RED">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="clientEmailLabel" layoutX="445.0" layoutY="149.0" textFill="RED">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="clientSurnameLabel" layoutX="125.0" layoutY="209.0" textFill="RED">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="clientPhoneLabel" layoutX="445.0" layoutY="209.0" textFill="RED">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="clientPeselLabel" layoutX="125.0" layoutY="269.0" textFill="RED">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="clientIdNumberLabel" layoutX="445.0" layoutY="269.0" textFill="RED">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="clientBirthDateLabel" layoutX="125.0" layoutY="329.0" textFill="RED">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="clientCityLabel" layoutX="445.0" layoutY="329.0" textFill="RED">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="clientStreetLabel" layoutX="125.0" layoutY="389.0" textFill="RED">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="clientApartmentNumberLabel" layoutX="445.0" layoutY="389.0" textFill="RED">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="clientPostalCodeLabel" layoutX="565.0" layoutY="389.0" textFill="RED">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

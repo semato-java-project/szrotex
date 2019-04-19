@@ -1,5 +1,6 @@
 package Szrotex3.ui;
 
+import Szrotex3.ui.alert.AlertController;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -10,6 +11,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
@@ -18,7 +20,7 @@ import javafx.stage.StageStyle;
 import java.io.IOException;
 
 
-public abstract class MainController extends Application implements Initializable{
+public abstract class MainController extends Application implements Initializable {
 
     private double xOffset = 0;
     private double yOffset = 0;
@@ -52,8 +54,8 @@ public abstract class MainController extends Application implements Initializabl
     }
 
 
-    public void loadPage(String path){
-        try{
+    public void loadPage(String path) {
+        try {
 
             Parent root = FXMLLoader.load(getClass().getResource(path));
             Stage stage = new Stage(StageStyle.TRANSPARENT);
@@ -63,14 +65,42 @@ public abstract class MainController extends Application implements Initializabl
             Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
-            Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
-            stage.setX((primScreenBounds.getWidth() - stage.getWidth()) / 2);
-            stage.setY((primScreenBounds.getHeight() - stage.getHeight()) / 2);
+            setPosition(stage);
+            MovingStage(root, stage);
 
-            MovingStage(root,stage);
-        }   catch (IOException ex){
+        } catch (IOException ex) {
             ex.printStackTrace();
         }
+    }
+
+    public void loadAlert(String message, AnchorPane whereIsEffect) {
+
+        try {
+
+            final FXMLLoader loader = new FXMLLoader(getClass().getResource("/Szrotex3/ui/alert/Alert.fxml"));
+            loader.setController(new AlertController(message,whereIsEffect));
+            final Parent root = loader.load();
+            final Scene scene = new Scene(root);
+            Stage stage = new Stage(StageStyle.TRANSPARENT);
+            stage.initModality(Modality.APPLICATION_MODAL.APPLICATION_MODAL);
+            stage.setTitle("Semato - Alert");
+            stage.setScene(scene);
+            stage.setWidth(400);
+            stage.setHeight(120);
+            setPosition(stage);
+            stage.showAndWait();
+
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+
+    }
+
+    void setPosition(Stage stage){
+
+        Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
+        stage.setX((primScreenBounds.getWidth() - stage.getWidth()) / 2);
+        stage.setY((primScreenBounds.getHeight() - stage.getHeight()) / 2);
     }
 
 }

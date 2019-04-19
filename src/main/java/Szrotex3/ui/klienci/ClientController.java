@@ -3,6 +3,7 @@ package Szrotex3.ui.klienci;
 import Szrotex3.model.Client;
 import Szrotex3.ui.MainController;
 import Szrotex3.ui.addNewClient.AddNewClientController;
+import Szrotex3.ui.alert.AlertController;
 import Szrotex3.ui.homepage.HomePageController;
 import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
@@ -17,7 +18,7 @@ import javafx.stage.Stage;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class ClientController extends MainController {
+public class ClientController extends MainController{
 
     private Client client;
 
@@ -121,9 +122,13 @@ public class ClientController extends MainController {
 
     @FXML
     void handleDeleteClientAction(ActionEvent event) {
-        BoxBlur blur = new BoxBlur(5,5,5);
-        contentKlienciController.getInstance().getMainAnchorPane().setEffect(blur);
-        loadPage("/Szrotex3/ui/klienci/deleteClientAlert.fxml");
+
+       BoxBlur blur = new BoxBlur(5,5,5);
+       contentKlienciController.getInstance().getMainAnchorPane().setEffect(blur);
+       loadAlert("Czy napewno usunąć wybranego klienta?",contentKlienciController.getInstance().getMainAnchorPane());
+       System.out.println("decyzja uytkownika: " +  AlertController.getInstance().getDecision());
+
+
     }
 
     @FXML
