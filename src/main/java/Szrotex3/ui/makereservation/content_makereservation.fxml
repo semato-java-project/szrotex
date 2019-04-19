@@ -63,8 +63,8 @@
             </Text>
          </children>
       </Pane>
-      <JFXDatePicker fx:id="dateStart" defaultColor="#016984" layoutX="96.0" layoutY="202.0" promptText="Wybierz datę odbioru" />
-      <JFXDatePicker fx:id="dateEnd" defaultColor="#016984" layoutX="96.0" layoutY="273.0" promptText="Wybierz datę zwrotu" />
+      <JFXDatePicker fx:id="dateStart" onAction="#reservationParamsChangedActon" defaultColor="#016984" layoutX="96.0" layoutY="202.0" promptText="Wybierz datę odbioru" />
+      <JFXDatePicker fx:id="dateEnd" onAction="#reservationParamsChangedActon" defaultColor="#016984" layoutX="96.0" layoutY="273.0" promptText="Wybierz datę zwrotu" />
       <Text fill="#016984" layoutX="96.0" layoutY="185.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data:">
          <font>
             <Font name="Arial" size="20.0" />
@@ -75,8 +75,8 @@
             <Font name="Arial" size="20.0" />
          </font>
       </Text>
-      <JFXTimePicker fx:id="timeStart" defaultColor="#016984" layoutX="299.0" layoutY="202.0" prefWidth="110.0" />
-      <JFXTimePicker fx:id="timeEnd" defaultColor="#016984" layoutX="299.0" layoutY="273.0" prefWidth="110.0" />
+      <JFXTimePicker fx:id="timeStart" onAction="#reservationParamsChangedActon" defaultColor="#016984" layoutX="299.0" layoutY="202.0" prefWidth="110.0" />
+      <JFXTimePicker fx:id="timeEnd" onAction="#reservationParamsChangedActon" defaultColor="#016984" layoutX="299.0" layoutY="273.0" prefWidth="110.0" />
       <JFXButton id="reseveButton" layoutX="473.0" layoutY="423.0" onAction="#makeReservationActon" prefHeight="25.0" prefWidth="214.0" text="REZERWUJĘ">
          <cursor>
             <Cursor fx:constant="HAND" />
@@ -110,7 +110,7 @@
             <Font name="Arial" size="20.0" />
          </font>
       </Text>
-      <Text fill="#016984" layoutX="150.0" layoutY="345.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stawka dobowa za pojazd:">
+      <Text fill="#016984" layoutX="150.0" layoutY="345.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stawka dobowa:">
          <font>
             <Font name="Arial" size="13.0" />
          </font>
@@ -147,11 +147,6 @@
       <Pane id="pricebackground" layoutX="279.0" layoutY="367.0" prefHeight="38.0" prefWidth="151.0">
          <children>
             <Text fx:id="rentPrice" fill="WHITE" layoutX="38.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2392">
-               <font>
-                  <Font name="Arial" size="27.0" />
-               </font>
-            </Text>
-            <Text fx:id="rentPrice1" fill="WHITE" layoutX="121.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="zł">
                <font>
                   <Font name="Arial" size="27.0" />
                </font>

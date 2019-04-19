@@ -12,7 +12,7 @@
          <font>
             <Font name="Arial" size="18.0" />
          </font></Text>
-      <JFXButton id="cancelButton" fx:id="cancelButton" focusTraversable="false" layoutX="36.0" layoutY="74.0" onAction="#hancleCancelAction" text="Anuluj">
+      <JFXButton id="cancelButton" fx:id="cancelButton" focusTraversable="false" layoutX="36.0" layoutY="74.0" onAction="#handleCancelAction" text="Anuluj">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></JFXButton>

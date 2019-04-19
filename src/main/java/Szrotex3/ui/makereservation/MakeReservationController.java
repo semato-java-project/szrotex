@@ -25,9 +25,6 @@ import javafx.stage.Stage;
 
 import java.io.File;
 import java.net.URL;
-import java.time.LocalDate;
-import java.time.LocalTime;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.ResourceBundle;
 
@@ -67,6 +64,9 @@ public class MakeReservationController extends MainController {
 
     @FXML
     private Text Price;
+
+    @FXML
+    private Text rentPrice;
 
     @FXML
     private JFXDatePicker dateStart;
@@ -132,6 +132,11 @@ public class MakeReservationController extends MainController {
     }
 
     @FXML
+    void reservationParamsChangedActon(ActionEvent event) {
+        updatePrice();
+    }
+
+    @FXML
     void makeReservationActon(ActionEvent event) {
 
         try {
@@ -144,61 +149,74 @@ public class MakeReservationController extends MainController {
                 throw new UserException("Pojazd nie został wybrany.");
             }
 
-            LocalDate localDateStart = this.dateStart.getValue();
-            LocalDate localDateEnd = this.dateEnd.getValue();
+            Szrotex3.service.Date dateService = (Szrotex3.service.Date) Container.getBean("date");
 
-            LocalTime localTimeStart = this.timeStart.getValue();
-            LocalTime localTimeEnd = this.timeEnd.getValue();
+            Date dateStart = dateService.convertLocalDateLocalTimeToUtilDate(this.dateStart.getValue(), this.timeStart.getValue());
+            Date dateEnd = dateService.convertLocalDateLocalTimeToUtilDate(this.dateEnd.getValue(), this.timeEnd.getValue());
 
-            Calendar calendarStart = Calendar.getInstance();
-            Calendar calendarEnd = Calendar.getInstance();
+            if (dateStart == null || dateEnd == null) {
+                throw new UserException("Ramy czasowe rezerwacji nie zostały wprowadzone poprawnie.");
+            }
 
-            calendarStart.set(
-                    localDateStart.getYear(),
-                    localDateStart.getMonthValue() - 1,
-                    localDateStart.getDayOfMonth(),
-                    localTimeStart.getHour(),
-                    localTimeStart.getMinute(),
-                    0
-            );
-
-            calendarEnd.set(
-                    localDateEnd.getYear(),
-                    localDateEnd.getMonthValue() - 1,
-                    localDateEnd.getDayOfMonth(),
-                    localTimeEnd.getHour(),
-                    localTimeEnd.getMinute(),
-                    0
-            );
-
-            Date dateStart = calendarStart.getTime();
-            Date dateEnd = calendarEnd.getTime();
+            BoxBlur blur = new BoxBlur(5,5,5);
+            makereservation_content_pane.setEffect(blur);
 
             Reservation reservationService = (Reservation) Container.getBean("reservation");
-            Szrotex3.model.Reservation reservationObiect = reservationService.makeReservation(
+
+            boolean isAvailable = reservationService.isAvailable(
                     this.car.getVehicle(),
-                    this.client,
                     dateStart,
                     dateEnd
             );
 
-            if (reservationObiect == null) {
+            if (! isAvailable) {
                 throw new UserException("Rezerwacja nie może zostać wykonana w podanym terminie.");
             }
+
+            boolean confirmed = AlertController.loadTrueFalsePopup("Czy na pewno chcesz dodać tę rezerwację?", makereservation_content_pane);
+
+            if (confirmed) {
+                Szrotex3.model.Reservation reservationObiect = reservationService.makeReservation(
+                        this.car.getVehicle(),
+                        this.client,
+                        dateStart,
+                        dateEnd
+                );
+
+                if (reservationObiect != null) {
+                    AlertController.loadOkPopup("Rezerwacja została dodana.", makereservation_content_pane);
+                } else {
+                    AlertController.loadOkPopup("Rezerwacja nie została dodana.", makereservation_content_pane);
+                }
+
+                updatePrice();
+
+            }
+
         } catch (UserException e) {
-            String message = e.getMessage();
-            throw e; // wyświetlić popup/komunikat z message zamiast throwa
+            AlertController.loadOkPopup(e.getMessage(), makereservation_content_pane);
         }
 
-        BoxBlur blur = new BoxBlur(5,5,5);
-        makereservation_content_pane.setEffect(blur);
+    }
 
-        // tutaj założenia się mineły - ja myslalem ze w popup, klikając Potwierdź dopiero rezerwuje
-        // trzeba to jakoś ogarnąć
+    public void updatePrice() {
 
-        loadAlert("Rezerwacja przebiegła pomyślnie.",makereservation_content_pane);
-        System.out.println("decyzja uytkownika: " +  AlertController.getInstance().getDecision());
+        Szrotex3.service.Date dateService = (Szrotex3.service.Date) Container.getBean("date");
 
+        Date dateStart = dateService.convertLocalDateLocalTimeToUtilDate(this.dateStart.getValue(), this.timeStart.getValue());
+        Date dateEnd = dateService.convertLocalDateLocalTimeToUtilDate(this.dateEnd.getValue(), this.timeEnd.getValue());
+
+        if (dateStart == null || dateEnd == null) {
+            this.rentPrice.setText("b/d");
+            return;
+        }
+
+        Reservation reservationService = (Reservation) Container.getBean("reservation");
+        Formatter formatter = (Formatter) Container.getBean("formatter");
+
+        double rentPrice = reservationService.countPrice(this.car.getVehicle(), dateStart, dateEnd);
+
+        this.rentPrice.setText(formatter.formatPrice(rentPrice));
     }
 
     @Override
@@ -208,6 +226,6 @@ public class MakeReservationController extends MainController {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        this.rentPrice.setText("?");
     }
 }

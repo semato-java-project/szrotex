@@ -146,15 +146,26 @@ public class AddNewClientController extends MainController {
 
                 Date birthDate = calendarBirthDate.getTime();
 
-                Client newClient = new Client(firstName, lastName, email, phone, createAt, pesel, idNumber, birthDate, city, street, apartmentNumber, postalCode);
+                Client newClient = new Client(firstName,
+                        lastName,
+                        email,
+                        phone,
+                        createAt,
+                        pesel,
+                        idNumber,
+                        birthDate,
+                        city,
+                        street,
+                        apartmentNumber,
+                        postalCode
+                );
 
-                if (AddNewClientController.getInstance().validate(newClient)) {
+                if (this.validate(newClient)) {
 
                     BoxBlur blur = new BoxBlur(5,5,5);
                     addClientPane.setEffect(blur);
-                    loadAlert("Czy napewno dodać nowego klienta?",addClientPane);
 
-                    if(AlertController.getInstance().getDecision() == true) {
+                    if(AlertController.loadTrueFalsePopup("Czy napewno dodać nowego klienta?",addClientPane)) {
 
                         HibernateSession hibernateSession = (HibernateSession) Container.getBean("hibernateSession");
 
@@ -165,8 +176,8 @@ public class AddNewClientController extends MainController {
                         HomePageController.getInstance().changeContentToKlienci(event);
                     }
                 }
-            } else {
 
+            } else {
                 clientBirthDateLabel.setText("Wprowadź datę urodzenia!");
             }
         }
@@ -196,7 +207,7 @@ public class AddNewClientController extends MainController {
                 this.client.setApartmentNumber(clientApartmentNumber.getText());
                 this.client.setPostalCode(clientPostalCode.getText());
 
-                if (AddNewClientController.getInstance().validate(this.client))
+                if (this.validate(this.client) && AlertController.loadTrueFalsePopup("Zapisać zmiany?", addClientPane))
                 {
                     HibernateSession hibernateSession = (HibernateSession) Container.getBean("hibernateSession");
 
