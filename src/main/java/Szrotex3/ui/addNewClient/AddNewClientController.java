@@ -150,25 +150,22 @@ public class AddNewClientController extends MainController {
 
                 if (AddNewClientController.getInstance().validate(newClient)) {
 
-                    HibernateSession hibernateSession = (HibernateSession) Container.getBean("hibernateSession");
-
-                    hibernateSession.getSession().persist(newClient);
-
-                    hibernateSession.getSession().flush();
-
-
-                    // do obsluzenia - jesli getDecision == true to dopiero dodaje
                     BoxBlur blur = new BoxBlur(5,5,5);
                     addClientPane.setEffect(blur);
                     loadAlert("Czy napewno dodać nowego klienta?",addClientPane);
-                    System.out.println("decyzja uytkownika: " +  AlertController.getInstance().getDecision());
 
+                    if(AlertController.getInstance().getDecision() == true) {
 
-                    HomePageController.getInstance().changeContentToKlienci(event);
+                        HibernateSession hibernateSession = (HibernateSession) Container.getBean("hibernateSession");
 
+                        hibernateSession.getSession().persist(newClient);
+
+                        hibernateSession.getSession().flush();
+
+                        HomePageController.getInstance().changeContentToKlienci(event);
+                    }
                 }
             } else {
-                //System.out.println("Wprowadź datę urodzenia!");
 
                 clientBirthDateLabel.setText("Wprowadź datę urodzenia!");
             }
@@ -177,37 +174,42 @@ public class AddNewClientController extends MainController {
         {
 
             LocalDate localBirthDate=clientBirthDate.getValue();
-            Calendar calendarBirthDate = Calendar.getInstance();
-            calendarBirthDate.set(
-                    localBirthDate.getYear(),
-                    localBirthDate.getMonthValue() - 1,
-                    localBirthDate.getDayOfMonth()
-            );
+            if (localBirthDate != null) {
+                Calendar calendarBirthDate = Calendar.getInstance();
+                calendarBirthDate.set(
+                        localBirthDate.getYear(),
+                        localBirthDate.getMonthValue() - 1,
+                        localBirthDate.getDayOfMonth()
+                );
 
-            Date birthDate = calendarBirthDate.getTime();
+                Date birthDate = calendarBirthDate.getTime();
 
-            this.client.setFirstName(clientName.getText());
-            this.client.setLastName(clientSurname.getText());
-            this.client.setEmail(clientEmail.getText());
-            this.client.setPhone(clientPhone.getText());
-            this.client.setPesel(clientPesel.getText());
-            this.client.setIdNumber(clientIdNumber.getText());
-            this.client.setBirthDate(birthDate);
-            this.client.setCity(clientCity.getText());
-            this.client.setStreet(clientStreet.getText());
-            this.client.setApartmentNumber(clientApartmentNumber.getText());
-            this.client.setPostalCode(clientPostalCode.getText());
+                this.client.setFirstName(clientName.getText());
+                this.client.setLastName(clientSurname.getText());
+                this.client.setEmail(clientEmail.getText());
+                this.client.setPhone(clientPhone.getText());
+                this.client.setPesel(clientPesel.getText());
+                this.client.setIdNumber(clientIdNumber.getText());
+                this.client.setBirthDate(birthDate);
+                this.client.setCity(clientCity.getText());
+                this.client.setStreet(clientStreet.getText());
+                this.client.setApartmentNumber(clientApartmentNumber.getText());
+                this.client.setPostalCode(clientPostalCode.getText());
 
-            if (AddNewClientController.getInstance().validate(this.client))
-            {
-                HibernateSession hibernateSession = (HibernateSession) Container.getBean("hibernateSession");
+                if (AddNewClientController.getInstance().validate(this.client))
+                {
+                    HibernateSession hibernateSession = (HibernateSession) Container.getBean("hibernateSession");
 
-                hibernateSession.getSession().update(this.client);
+                    hibernateSession.getSession().update(this.client);
 
-                hibernateSession.getSession().flush();
+                    hibernateSession.getSession().flush();
 
 
-                HomePageController.getInstance().changeContentToKlienci(event);
+                    HomePageController.getInstance().changeContentToKlienci(event);
+                }
+            } else {
+
+                clientBirthDateLabel.setText("Wprowadź datę urodzenia!");
             }
         }
 
@@ -217,25 +219,25 @@ public class AddNewClientController extends MainController {
     private boolean validate(Client clientToValidate)
     {
         boolean validation=true;
-        String ifEmpty="Pole nie może być puste!";
+        String ifEmpty="Pole jest puste!";
 
         //Kazdy System.out.println można tutaj zamienić na alerta bądź wstawić do formularza pod każdym fieldem pole które będzie uzupełniane w ifach w momencie wystąpienia błędu
 
         if(clientToValidate.getFirstName().length() == 0)
         {
-            System.out.println(ifEmpty);
+            clientNameLabel.setText(ifEmpty);
             validation=false;
         }
 
         if(clientToValidate.getLastName().length() == 0)
         {
-            System.out.println(ifEmpty);
+            clientSurnameLabel.setText(ifEmpty);
             validation=false;
         }
 
         if(clientToValidate.getEmail().length() == 0)
         {
-            System.out.println(ifEmpty);
+            clientEmailLabel.setText(ifEmpty);
             validation=false;
         }
         else
@@ -248,7 +250,7 @@ public class AddNewClientController extends MainController {
 
             if(!mailMatcher.matches())
             {
-                System.out.println("Wprowadzono niepoprawny mail!");
+                clientEmailLabel.setText("Wprowadzono niepoprawny mail!");
                 validation = false;
             }
 
@@ -256,23 +258,23 @@ public class AddNewClientController extends MainController {
 
         if(clientToValidate.getPhone().length() == 0)
         {
-            System.out.println(ifEmpty);
+            clientPhoneLabel.setText(ifEmpty);
             validation=false;
         }
         else if(clientToValidate.getPhone().length() != 9)
         {
-            System.out.println("Dlugość telefonu musi wynosić 9 znaków");
+            clientPhoneLabel.setText("Dlugość telefonu powinna zawierać 9 znaków");
             validation=false;
         }
 
         if(clientToValidate.getPesel().length() == 0)
         {
-            System.out.println(ifEmpty);
+            clientPeselLabel.setText(ifEmpty);
             validation=false;
         }
         else if(clientToValidate.getPesel().length() != 11)
         {
-            System.out.println("Pesel ma 11 znaków!");
+            clientPeselLabel.setText("Pesel powinien mieć 11 znaków!");
             validation=false;
         }
         else
@@ -290,19 +292,19 @@ public class AddNewClientController extends MainController {
             }
 
             if(!validationPesel) {
-                System.out.println("Użyto nie poprawnych znaków!");
+                clientPeselLabel.setText("Użyto nie poprawnych znaków!");
                 validation = false;
             }
         }
 
         if(clientToValidate.getIdNumber().length() == 0)
         {
-            System.out.println(ifEmpty);
+            clientIdNumberLabel.setText(ifEmpty);
             validation=false;
         }
         else if(clientToValidate.getIdNumber().length() != 9)
         {
-            System.out.println("Numer dowodu ma 9 znaków!");
+            clientIdNumberLabel.setText("Numer powinien mieć 9 znaków!");
             validation=false;
         }
         else
@@ -329,14 +331,14 @@ public class AddNewClientController extends MainController {
 
             if(!validationIdNumber)
             {
-                System.out.println("Niepoprawny numer dowodu!");
+                clientIdNumberLabel.setText("Niepoprawny numer dowodu!");
                 validation=false;
             }
         }
 
         if(clientToValidate.getBirthDate() == null)
         {
-            System.out.println(ifEmpty);
+            clientBirthDateLabel.setText(ifEmpty);
             validation=false;
         }
         else
@@ -348,33 +350,33 @@ public class AddNewClientController extends MainController {
 
             if(clientToValidate.getBirthDate().after(today))
             {
-                System.out.println("Wprowadzono niepoprawną datę!");
+                clientBirthDateLabel.setText("Wprowadzono niepoprawną datę!");
                 validation=false;
             }
         }
 
         if(clientToValidate.getCity().length() == 0)
         {
-            System.out.println(ifEmpty);
+            clientCityLabel.setText(ifEmpty);
             validation=false;
         }
 
         if(clientToValidate.getStreet().length() == 0)
         {
-            System.out.println(ifEmpty);
+            clientStreetLabel.setText(ifEmpty);
             validation=false;
         }
 
         if(clientToValidate.getApartmentNumber().length() == 0)
         {
-            System.out.println(ifEmpty);
+            clientApartmentNumberLabel.setText(ifEmpty);
             validation=false;
         }
 
 
         if(clientToValidate.getPostalCode().length() == 0)
         {
-            System.out.println(ifEmpty);
+            clientPostalCodeLabel.setText(ifEmpty);
             validation=false;
         }
         else
@@ -406,7 +408,7 @@ public class AddNewClientController extends MainController {
 
             if(!validationPostalCode)
             {
-                System.out.println("Niepoprawny kod pocztowy!");
+                clientPostalCodeLabel.setText("Niepoprawny kod pocztowy!");
                 validation=false;
             }
         }

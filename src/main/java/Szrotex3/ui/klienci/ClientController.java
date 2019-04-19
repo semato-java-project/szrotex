@@ -86,11 +86,6 @@ public class ClientController extends MainController{
         }
     }
 
-    @FXML
-    void goToEditForm(ActionEvent event) {
-        HomePageController.getInstance().changeContentToEditClient(event);
-    }
-
     public void setClient(Client client)
     {
         this.client=client;
@@ -126,7 +121,10 @@ public class ClientController extends MainController{
        BoxBlur blur = new BoxBlur(5,5,5);
        contentKlienciController.getInstance().getMainAnchorPane().setEffect(blur);
        loadAlert("Czy napewno usunąć wybranego klienta?",contentKlienciController.getInstance().getMainAnchorPane());
-       System.out.println("decyzja uytkownika: " +  AlertController.getInstance().getDecision());
+       if(AlertController.getInstance().getDecision()==true) {
+            this.client.setActive(false);
+            HomePageController.getInstance().changeContentToKlienci(event);
+       }
 
 
     }

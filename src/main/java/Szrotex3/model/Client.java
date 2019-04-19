@@ -52,6 +52,9 @@ public class Client {
     @Column(name="postal_code")
     private String postalCode;
 
+    @Column(name="is_active")
+    private boolean isActive;
+
     public Client()
     {
     }
@@ -174,6 +177,14 @@ public class Client {
 
     public void setPostalCode(String postalCode) {
         this.postalCode = postalCode;
+    }
+
+    public boolean isActive() {
+        return isActive;
+    }
+
+    public void setActive(boolean active) {
+        isActive = active;
     }
 
     public int getAge()
