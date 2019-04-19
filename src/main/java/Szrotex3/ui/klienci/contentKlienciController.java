@@ -54,9 +54,11 @@ public class contentKlienciController implements Initializable {
         for (int i = 0; i < clientObjects.size(); i++) {
                 Node clients;
             try {
-                clients = FXMLLoader.load(getClass().getResource("client.fxml"));
-                ClientController.getInstance().setClient(clientObjects.get(i));
-                client_container.getChildren().add(clients);
+                if(clientObjects.get(i).isActive()==true) {
+                    clients = FXMLLoader.load(getClass().getResource("client.fxml"));
+                    ClientController.getInstance().setClient(clientObjects.get(i));
+                    client_container.getChildren().add(clients);
+                }
             } catch (IOException e) {
                 e.printStackTrace();
             }

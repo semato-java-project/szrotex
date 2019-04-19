@@ -58,9 +58,11 @@ public class MakeReservationSelectClientController implements Initializable {
         for (int i = 0; i < clientObjects.size(); i++) {
             AnchorPane clientsPane;
             try {
-                clientsPane = FXMLLoader.load(getClass().getResource("mk_reserv_one_client_pane.fxml"));
-                MkReservOneClientController.getInstance().setClient(clientObjects.get(i));
-                SelectClient_container.getChildren().add(clientsPane);
+                if(clientObjects.get(i).isActive()==true) {
+                    clientsPane = FXMLLoader.load(getClass().getResource("mk_reserv_one_client_pane.fxml"));
+                    MkReservOneClientController.getInstance().setClient(clientObjects.get(i));
+                    SelectClient_container.getChildren().add(clientsPane);
+                }
             } catch (IOException e) {
                 e.printStackTrace();
             }
