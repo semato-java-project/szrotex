@@ -2,6 +2,7 @@ package Szrotex3.service;
 
 import Szrotex3.model.Client;
 import Szrotex3.model.Vehicle;
+import Szrotex3.ui.exception.UserException;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
@@ -25,7 +26,7 @@ public class Reservation {
     public boolean isAvailable(Vehicle vehicle, Date dateStart, Date dateEnd) {
 
         if (dateStart.compareTo(dateEnd) >= 0) {
-            throw new RuntimeException("End date must be greather than start date.");
+            throw new UserException("Data końca rezerwacji musi być większa od daty początku.");
         }
 
         Session session = this.hibernateSession.getSession();
@@ -77,9 +78,18 @@ public class Reservation {
     }
 
     public double countPrice(Szrotex3.model.Reservation reservation) {
-        long diff = reservation.getDateEnd().getTime() - reservation.getDateStart().getTime();
-        return (reservation.getVehicle().getPrice() * diff) / (1000 * 60 * 60 * 24);
+        return countPrice(
+            reservation.getVehicle(),
+            reservation.getDateStart(),
+            reservation.getDateEnd()
+        );
     }
+
+    public double countPrice(Vehicle vehicle, Date dateStart, Date dateEnd) {
+        long diff = dateEnd.getTime() - dateStart.getTime();
+        return (vehicle.getPrice() * diff) / (1000 * 60 * 60 * 24);
+    }
+
 
 
 }

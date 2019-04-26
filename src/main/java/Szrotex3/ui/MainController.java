@@ -1,6 +1,5 @@
 package Szrotex3.ui;
 
-import Szrotex3.ui.alert.AlertController;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -11,7 +10,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
@@ -73,31 +71,7 @@ public abstract class MainController extends Application implements Initializabl
         }
     }
 
-    public void loadAlert(String message, AnchorPane whereIsEffect) {
-
-        try {
-
-            final FXMLLoader loader = new FXMLLoader(getClass().getResource("/Szrotex3/ui/alert/Alert.fxml"));
-            loader.setController(new AlertController(message,whereIsEffect));
-            final Parent root = loader.load();
-            final Scene scene = new Scene(root);
-            Stage stage = new Stage(StageStyle.TRANSPARENT);
-            stage.initModality(Modality.APPLICATION_MODAL.APPLICATION_MODAL);
-            stage.setTitle("Semato - Alert");
-            stage.setScene(scene);
-            stage.setWidth(400);
-            stage.setHeight(120);
-            setPosition(stage);
-            stage.showAndWait();
-
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
-
-    }
-
-    void setPosition(Stage stage){
-
+    public static void setPosition(Stage stage){
         Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
         stage.setX((primScreenBounds.getWidth() - stage.getWidth()) / 2);
         stage.setY((primScreenBounds.getHeight() - stage.getHeight()) / 2);

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="120.0" prefWidth="400.0" stylesheets="@Alert.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" >
+   <children>
+      <Text fx:id="message" fill="WHITE" layoutX="34.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="350.0">
+         <font>
+            <Font name="Arial" size="18.0" />
+         </font></Text>
+      <JFXButton id="cancelButton" fx:id="cancelButton" focusTraversable="false" layoutX="36.0" layoutY="74.0" onAction="#handleOkAction" text="Ok">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXButton>
+   </children>
+</AnchorPane>

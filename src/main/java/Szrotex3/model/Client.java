@@ -53,7 +53,7 @@ public class Client {
     private String postalCode;
 
     @Column(name="is_active")
-    private boolean isActive;
+    private boolean isActive = true;
 
     public Client()
     {

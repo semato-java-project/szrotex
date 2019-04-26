@@ -120,13 +120,11 @@ public class ClientController extends MainController{
 
        BoxBlur blur = new BoxBlur(5,5,5);
        contentKlienciController.getInstance().getMainAnchorPane().setEffect(blur);
-       loadAlert("Czy napewno usunąć wybranego klienta?",contentKlienciController.getInstance().getMainAnchorPane());
-       if(AlertController.getInstance().getDecision()==true) {
+
+       if(AlertController.loadTrueFalsePopup("Czy napewno usunąć wybranego klienta?",contentKlienciController.getInstance().getMainAnchorPane())) {
             this.client.setActive(false);
             HomePageController.getInstance().changeContentToKlienci(event);
        }
-
-
     }
 
     @FXML
