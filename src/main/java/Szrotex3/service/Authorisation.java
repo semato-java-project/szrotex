@@ -14,7 +14,7 @@ import java.security.NoSuchAlgorithmException;
 import java.util.Random;
 
 @Service
-public class Authorisation {
+public class Authorisation implements ServiceInterface {
 
     private HibernateSession hibernateSession;
 
@@ -22,6 +22,10 @@ public class Authorisation {
     public Authorisation(HibernateSession hibernateSession) {
 
         this.hibernateSession = hibernateSession;
+    }
+
+    public String getName() {
+        return "authorisation";
     }
 
     public String md5Hash(String input) {

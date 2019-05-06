@@ -8,11 +8,15 @@ import java.time.LocalTime;
 import java.util.Calendar;
 
 @Service
-public class Date {
+public class Date implements ServiceInterface {
 
     @Autowired
     public Date() {
 
+    }
+
+    public String getName() {
+        return "date";
     }
 
     public java.util.Date convertLocalDateLocalTimeToUtilDate(LocalDate localDate, LocalTime localTime) {

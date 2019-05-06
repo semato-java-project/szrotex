@@ -9,13 +9,17 @@ import java.util.Date;
 import java.util.Locale;
 
 @Service
-public class Formatter {
+public class Formatter implements ServiceInterface {
 
     Locale locale = new Locale("pl", "PL");
 
     @Autowired
     public Formatter() {
 
+    }
+
+    public String getName() {
+        return "formatter";
     }
 
     public String formatPrice(double price) {

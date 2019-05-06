@@ -3,6 +3,7 @@ import Szrotex3.model.User;
 import Szrotex3.service.Authorisation;
 import Szrotex3.service.Container;
 import Szrotex3.service.Registry;
+import Szrotex3.service.ServiceInterface;
 import Szrotex3.ui.MainController;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
@@ -12,7 +13,6 @@ import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -59,7 +59,13 @@ public class LoginController extends MainController {
         String uname = username.getText();
         String pass = password.getText();
 
-        Authorisation authorisation = (Authorisation) Container.getBean("authorisation");
+        ServiceInterface service = Container.getBean("authorisation");
+
+        if (! service.getName().equals("authorisation")) {
+            throw new RuntimeException("Invalid service received. Bean system malfunction!");
+        }
+
+        Authorisation authorisation = (Authorisation) service;
 
         try {
             User signedUser = authorisation.getAuthorizedUser(uname, pass);

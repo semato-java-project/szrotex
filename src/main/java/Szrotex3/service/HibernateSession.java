@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class HibernateSession {
+public class HibernateSession implements ServiceInterface {
 
     private Session session = null;
     private SessionFactory sessionFactory = null;
@@ -21,6 +21,10 @@ public class HibernateSession {
                 .buildSessionFactory();
 
         this.session = this.sessionFactory.openSession();
+    }
+
+    public String getName() {
+        return "hibernateSession";
     }
 
     public Session getSession() {
