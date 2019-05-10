@@ -5,13 +5,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class Registry {
+public class Registry implements ServiceInterface {
 
     private User signedUser = null;
 
     @Autowired
     public Registry() {
 
+    }
+
+    public String getName() {
+        return "registry";
     }
 
     public User getSignedUser() {

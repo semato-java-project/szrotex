@@ -13,7 +13,7 @@ import java.util.Date;
 import java.util.List;
 
 @Service
-public class Reservation {
+public class Reservation implements ServiceInterface {
 
     private HibernateSession hibernateSession;
 
@@ -21,6 +21,10 @@ public class Reservation {
     public Reservation(HibernateSession hibernateSession) {
 
         this.hibernateSession = hibernateSession;
+    }
+
+    public String getName() {
+        return "reservation";
     }
 
     public boolean isAvailable(Vehicle vehicle, Date dateStart, Date dateEnd) {
@@ -89,7 +93,5 @@ public class Reservation {
         long diff = dateEnd.getTime() - dateStart.getTime();
         return (vehicle.getPrice() * diff) / (1000 * 60 * 60 * 24);
     }
-
-
 
 }

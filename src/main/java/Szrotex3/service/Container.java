@@ -25,8 +25,8 @@ public class Container {
         return Container.instance;
     }
 
-    public static Object getBean(String name) {
-        return Container.getInstance().factory.getBean(name);
+    public static ServiceInterface getBean(String name) {
+        return (ServiceInterface) Container.getInstance().factory.getBean(name);
     }
 
 }
